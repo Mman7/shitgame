@@ -1241,36 +1241,6 @@
                 "\"Bright\"",
                 "no"
               ]
-            },
-            {
-              "type": {
-                "value": "FileSystem::SaveStringToFileSync"
-              },
-              "parameters": [
-                "ToJSON(Player_No1)",
-                "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_1.txt\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FileSystem::SaveStringToFileSync"
-              },
-              "parameters": [
-                "ToJSON(Player_No2)",
-                "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_2.txt\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FileSystem::SaveStringToFileSync"
-              },
-              "parameters": [
-                "ToJSON(Player_No3)",
-                "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_3.txt\"",
-                ""
-              ]
             }
           ]
         },
@@ -2269,12 +2239,16 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "runtimeScene.setBackgroundColor(100,100,240);",
+                    "// window.myGlobalObject = {",
+                    "//     name: \"Eric\",",
+                    "//     age: 21,",
+                    "//     skills: [\"JavaScript\", \"Flutter\"]",
+                    "// };",
                     "console.log('execute host');",
                     "const net = require(\"net\");",
                     "const { stdin } = require(\"process\");",
                     "const readline = require(\"readline\");",
-                    "// build command",
-                    "// nexe -i \"tcp_test.js\" -r \"public/**/*.html\" -o \"./dist/tcp.exe\" -t x64-14.15.3",
+                    "",
                     "const server = net.createServer((socket) => {",
                     "  console.log(\"Client connected\");",
                     "  socket.write(\"Welcome to the TCP server!\");",
@@ -2296,21 +2270,13 @@
                     "  });",
                     "});",
                     "",
-                    "// const rl = readline.createInterface({",
-                    "//   input: process.stdin,",
-                    "//   output: process.stdout,",
-                    "//   terminal: false,",
-                    "// });",
-                    "",
-                    "// console.log(`type 1 for start server, 2 for connect server`);",
-                    "",
                     "    server.listen(9898, \"26.0.14.224\", (e) => {",
                     "      const address = server.address();",
                     "      console.log(`Server listening on ${address.address}:${address.port}`);",
                     "    });",
                     ""
                   ],
-                  "parameterObjects": "",
+                  "parameterObjects": "Txt_Player_1",
                   "useStrict": true,
                   "eventsSheetExpanded": true
                 }
@@ -2535,6 +2501,7 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "runtimeScene.setBackgroundColor(100,100,240);",
+                    "",
                     "console.log('executed join');",
                     "const net = require(\"net\");",
                     "const client = new net.Socket();",
@@ -2546,82 +2513,26 @@
                     "const player3 = runtimeScene.getObjects(\"Txt_Player_3\")[0];",
                     "console.log(player3);",
                     "",
-                    "    // client.connect(9898, \"26.0.14.224\", (cli) => {",
-                    "    //   console.log(\"Connected to server\");",
-                    "    //   client.write(`Connected from client ${client.address().address}`);",
-                    "    // });",
+                    "    client.connect(9898, \"26.0.14.224\", (cli) => {",
+                    "      console.log(\"Connected to server\");",
+                    "      client.write(`Connected from client ${client.address().address}`);",
+                    "    });",
                     "    ",
-                    "    // client.on(\"data\", (data) => {",
-                    "    //   // console.log('Received from server:', data.toString());",
-                    "    //   console.log(\"Received from server:\", data.toString());",
-                    "    //   // client.end();",
-                    "    //   // rl.on(\"line\", (input) => {",
-                    "    //   //   if (input.trim()) {",
-                    "    //   //     client.write(input);",
-                    "    //   //   }",
-                    "    //   // });",
-                    "    // });",
+                    "    client.on(\"data\", (data) => {",
+                    "      console.log(\"Received from server:\", data.toString());",
+                    "    });",
                     "",
-                    "    // client.on(\"end\", () => {",
-                    "    //   console.log(\"Disconnected from server\");",
-                    "    // });",
+                    "    client.on(\"end\", () => {",
+                    "      console.log(\"Disconnected from server\");",
+                    "    });",
                     "",
-                    "    // client.on(\"error\", (err) => {",
-                    "    //   console.error(\"Client error:\", err);",
-                    "    // });"
+                    "    client.on(\"error\", (err) => {",
+                    "      console.error(\"Client error:\", err);",
+                    "    });"
                   ],
                   "parameterObjects": "Btn_Empty3",
                   "useStrict": true,
                   "eventsSheetExpanded": true
-                },
-                {
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": [
-                    "runtimeScene.setBackgroundColor(100,100,240);",
-                    "console.log('niga');",
-                    "const net = require(\"net\");",
-                    "const { stdin } = require(\"process\");",
-                    "const readline = require(\"readline\");",
-                    "// build command",
-                    "// nexe -i \"tcp_test.js\" -r \"public/**/*.html\" -o \"./dist/tcp.exe\" -t x64-14.15.3",
-                    "const server = net.createServer((socket) => {",
-                    "  console.log(\"Client connected\");",
-                    "  socket.write(\"Welcome to the TCP server!\");",
-                    "  socket.on(\"data\", (data) => {",
-                    "    console.log(\"Received data:\", data.toString());",
-                    "    rl.on(\"line\", (input) => {",
-                    "      if (input.trim()) {",
-                    "        socket.write(input);",
-                    "      }",
-                    "    });",
-                    "  });",
-                    "",
-                    "  socket.on(\"end\", () => {",
-                    "    console.log(\"Client disconnected\");",
-                    "  });",
-                    "",
-                    "  socket.on(\"error\", (err) => {",
-                    "    console.error(\"Socket error:\", err);",
-                    "  });",
-                    "});",
-                    "",
-                    "// const rl = readline.createInterface({",
-                    "//   input: process.stdin,",
-                    "//   output: process.stdout,",
-                    "//   terminal: false,",
-                    "// });",
-                    "",
-                    "// console.log(`type 1 for start server, 2 for connect server`);",
-                    "",
-                    "    server.listen(9898, \"26.0.14.224\", (e) => {",
-                    "      const address = server.address();",
-                    "      console.log(`Server listening on ${address.address}:${address.port}`);",
-                    "    });",
-                    ""
-                  ],
-                  "parameterObjects": "",
-                  "useStrict": true,
-                  "eventsSheetExpanded": false
                 }
               ]
             },
@@ -4453,6 +4364,33 @@
       },
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "runtimeScene.setBackgroundColor(100,100,240);",
+                "const a = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';",
+                "console.log(a);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -4593,7 +4531,7 @@
             "runtimeScene.setBackgroundColor(255,0,0);",
             "// runtimeScene.setEventsFunction(() => {",
             "",
-            "",
+            "// client.write(`Connected from client ${client.address().address}`);",
             "",
             "// console.log(\"NIGGA\");",
             "",
@@ -4798,7 +4736,6 @@
           "comment": "Up"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5360,18 +5297,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::SaveStringToFileSync"
-                  },
-                  "parameters": [
-                    "ToJSON(Player_No1)",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_1.txt\"",
-                    ""
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -5387,18 +5313,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::SaveStringToFileSync"
-                  },
-                  "parameters": [
-                    "ToJSON(Player_No2)",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_2.txt\"",
-                    ""
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -5414,18 +5329,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::SaveStringToFileSync"
-                  },
-                  "parameters": [
-                    "ToJSON(Player_No3)",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_3.txt\"",
-                    ""
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Comment",
@@ -5454,28 +5358,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::LoadStringFromFileAsync"
-                  },
-                  "parameters": [
-                    "Temp_Variable_1",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_1.txt\"",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "JSONToVariableStructure2"
-                  },
-                  "parameters": [
-                    "VariableString(Temp_Variable_1)",
-                    "Player_No1"
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -5492,28 +5375,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::LoadStringFromFileAsync"
-                  },
-                  "parameters": [
-                    "Temp_Variable_2",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_2.txt\"",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "JSONToVariableStructure2"
-                  },
-                  "parameters": [
-                    "VariableString(Temp_Variable_2)",
-                    "Player_No2"
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -5530,28 +5392,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FileSystem::LoadStringFromFileAsync"
-                  },
-                  "parameters": [
-                    "Temp_Variable_3",
-                    "FileSystem::ExecutableFolderPath() + FileSystem::PathDelimiter() + \"Player_3.txt\"",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "JSONToVariableStructure2"
-                  },
-                  "parameters": [
-                    "VariableString(Temp_Variable_3)",
-                    "Player_No3"
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Comment",
