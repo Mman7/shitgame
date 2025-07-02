@@ -460,6 +460,11 @@
       "type": "structure",
       "children": [
         {
+          "name": "Animation",
+          "type": "string",
+          "value": "Stand"
+        },
+        {
           "name": "Position_X",
           "type": "number",
           "value": 280
@@ -476,6 +481,11 @@
       "type": "structure",
       "children": [
         {
+          "name": "Animation",
+          "type": "string",
+          "value": "Stand"
+        },
+        {
           "name": "Position_X",
           "type": "number",
           "value": 370
@@ -491,6 +501,11 @@
       "name": "Player_No3",
       "type": "structure",
       "children": [
+        {
+          "name": "Animation",
+          "type": "string",
+          "value": "Stand"
+        },
         {
           "name": "Position_X",
           "type": "number",
@@ -2239,44 +2254,55 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "runtimeScene.setBackgroundColor(100,100,240);",
-                    "// window.myGlobalObject = {",
-                    "//     name: \"Eric\",",
-                    "//     age: 21,",
-                    "//     skills: [\"JavaScript\", \"Flutter\"]",
-                    "// };",
                     "console.log('execute host');",
                     "const net = require(\"net\");",
-                    "const { stdin } = require(\"process\");",
-                    "const readline = require(\"readline\");",
                     "",
                     "const server = net.createServer((socket) => {",
                     "  console.log(\"Client connected\");",
                     "  socket.write(\"Welcome to the TCP server!\");",
+                    "  //TODO send player is selected",
+                    "  socket.pipe(socket);",
                     "  socket.on(\"data\", (data) => {",
-                    "    console.log(\"Received data:\", data.toString());",
-                    "    rl.on(\"line\", (input) => {",
-                    "      if (input.trim()) {",
-                    "        socket.write(input);",
-                    "      }",
-                    "    });",
+                    "    socket.write(data)  ",
                     "  });",
-                    "",
                     "  socket.on(\"end\", () => {",
+                    "  ",
                     "    console.log(\"Client disconnected\");",
                     "  });",
                     "",
                     "  socket.on(\"error\", (err) => {",
                     "    console.error(\"Socket error:\", err);",
+                    "    });",
                     "  });",
-                    "});",
                     "",
                     "    server.listen(9898, \"26.0.14.224\", (e) => {",
                     "      const address = server.address();",
                     "      console.log(`Server listening on ${address.address}:${address.port}`);",
                     "    });",
+                    "",
+                    "// const client = new net.Socket();",
+                    "",
+                    "// client.connect(9898, \"26.0.14.224\", (cli) => {",
+                    "//       console.log(\"Connected to server\");",
+                    "//       client.write(`Connected from client ${client.address().address}`);",
+                    "//     });",
+                    "    ",
+                    "    // client.on(\"data\", (data) => {",
+                    "    //   // console.log(\"Received from server:\", data.toString());",
+                    "    // });",
+                    "",
+                    "    // client.on(\"end\", () => {",
+                    "    //   console.log(\"Disconnected from server\");",
+                    "    // });",
+                    "",
+                    "    // client.on(\"error\", (err) => {",
+                    "    //   console.error(\"Client error:\", err);",
+                    "    // });",
+                    "",
+                    "    // window.tcp = client;",
                     ""
                   ],
-                  "parameterObjects": "Txt_Player_1",
+                  "parameterObjects": "",
                   "useStrict": true,
                   "eventsSheetExpanded": true
                 }
@@ -2501,7 +2527,7 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "runtimeScene.setBackgroundColor(100,100,240);",
-                    "",
+                    "console.log(window.a);",
                     "console.log('executed join');",
                     "const net = require(\"net\");",
                     "const client = new net.Socket();",
@@ -4375,14 +4401,33 @@
               ]
             }
           ],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\""
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
                 "runtimeScene.setBackgroundColor(100,100,240);",
-                "const a = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';",
-                "console.log(a);"
+                "//TODO https://chatgpt.com/c/68629ce3-c954-800b-a3ef-c8215bf9069c",
+                "const net = require(\"net\");",
+                "",
+                " const client = new net.Socket();",
+                "",
+                "    client.connect(9898, \"26.0.14.224\", (cli) => {",
+                "      // console.log(\"Connected to server\");",
+                "      // client.write(`Connected from client ${client.address().address}`);",
+                "    });",
+                "",
+                "    window.tcp = client;"
               ],
               "parameterObjects": "",
               "useStrict": true,
@@ -4435,6 +4480,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4472,6 +4518,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4526,92 +4573,98 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\"",
+                ">=",
+                "0.05"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\""
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::JsCode",
           "inlineCode": [
-            "runtimeScene.setBackgroundColor(255,0,0);",
-            "// runtimeScene.setEventsFunction(() => {",
+            "runtimeScene.setBackgroundColor(255,0,0); ",
+            "///------------------------------------- MODEL ---------------------------------------------",
+            "class Player{",
+            "  constructor({number}){",
+            "      this.playerNumber = number;",
+            "      this.playerProps =  runtimeScene.getGame().getVariables().get(`Player_No${this.playerNumber}`);",
+            "      this.posX = this.playerProps.getChild(\"Position_X\").getAsNumber();",
+            "      this.posY = this.playerProps.getChild(\"Position_Y\").getAsNumber();",
+            "  }",
+            "  getPlayer = () => this.playerProps;",
+            "  setPosX = (value) => this.playerProps.getChild(\"Position_X\").setNumber(value)",
+            "  setPosY = (value) => this.playerProps.getChild(\"Position_Y\").setNumber(value)",
             "",
-            "// client.write(`Connected from client ${client.address().address}`);",
+            "  toJSON(){",
+            "    return JSON.stringify({",
+            "      \"Player\": `${this.playerNumber}`,",
+            "      \"Position\": {",
+            "       \"x\" : this.posX,",
+            "       \"y\" : this.posY,",
+            "    },},);",
+            "  }",
+            "}",
             "",
-            "// console.log(\"NIGGA\");",
+            "///------------------------------------- MODEL ---------------------------------------------",
+            "function isJSON(str) {",
+            "    try {",
+            "        JSON.parse(str);",
+            "    } catch (e) {",
+            "        return false;",
+            "    }",
+            "    return true;",
+            "}",
+            "",
+            "const game = runtimeScene.getGame()",
+            "const player = game.getVariables().get(\"Player_Number\").getAsNumber;",
+            "const player1 = new Player({number : 1});",
+            "const player2 = new Player({number : 2});",
+            "const player3 = new Player({number : 3});",
+            "const convertData = (data ) => data.split('\\n')[0]",
+            "",
+            " window.tcp.on(\"data\", (data) => {",
+            "    const dataFromServer  = data.toString();",
+            "    var splitData = convertData(dataFromServer)",
+            "    if(isJSON(splitData)){",
+            "      var jsonData = JSON.parse(splitData);",
+            "      player2.setPosX(jsonData['Position']['x'])",
+            "      console.log(player2.posX)",
+            "    }",
+            "    });",
+            "",
+            "    window.tcp.on(\"end\", () => {",
+            "      console.log(\"Disconnected from server\");",
+            "    });",
+            "",
+            "    window.tcp.on(\"error\", (err) => {",
+            "      console.error(\"Client error:\", err);",
+            "    });",
             "",
             "",
-            "// });",
-            "// let myTextObject = runtimeScene.getObjects(\"Txt_Cout\")[0];",
-            "// // myTextObject.setString(\"New text content here!\");",
+            "window.tcp.write(player1.toJSON() + '\\n');",
             "",
             "",
-            "// console.log(\"NIGGERRRRRRRRRRRRRRRRR\");",
-            "",
-            "// const net = require(\"net\");",
-            "// const { stdin } = require(\"process\");",
-            "// const readline = require(\"readline\");",
-            "// // build command",
-            "// // nexe -i \"tcp_test.js\" -r \"public/**/*.html\" -o \"./dist/tcp.exe\" -t x64-14.15.3",
-            "// const server = net.createServer((socket) => {",
-            "//   console.log(\"Client connected\");",
-            "//   socket.write(\"Welcome to the TCP server!\");",
-            "//   socket.on(\"data\", (data) => {",
-            "//     console.log(\"Received data:\", data.toString());",
-            "//     rl.on(\"line\", (input) => {",
-            "//       if (input.trim()) {",
-            "//         socket.write(input);",
-            "//       }",
-            "//     });",
-            "//   });",
-            "",
-            "//   socket.on(\"end\", () => {",
-            "//     console.log(\"Client disconnected\");",
-            "//   });",
-            "",
-            "//   socket.on(\"error\", (err) => {",
-            "//     console.error(\"Socket error:\", err);",
-            "//   });",
-            "// });",
-            "",
-            "// // const rl = readline.createInterface({",
-            "// //   input: process.stdin,",
-            "// //   output: process.stdout,",
-            "// //   terminal: false,",
-            "// // });",
-            "",
-            "// // console.log(`type 1 for start server, 2 for connect server`);",
-            "",
-            "//     server.listen(9898, \"26.0.14.224\", (e) => {",
-            "//       const address = server.address();",
-            "//       console.log(`Server listening on ${address.address}:${address.port}`);",
-            "//     });",
-            "",
-            "// // rl.on(\"line\", (line) => {",
             "  ",
-            "  ",
-            "// //   if (line === \"2\") {",
-            "// //     const client = new net.Socket();",
-            "// //     client.connect(9898, \"26.0.14.224\", (cli) => {",
-            "// //       console.log(\"Connected to server\");",
-            "// //       client.write(`Connected from client ${client.address().address}`);",
-            "// //     });",
-            "",
-            "// //     client.on(\"data\", (data) => {",
-            "// //       // console.log('Received from server:', data.toString());",
-            "// //       console.log(\"Received from server:\", data.toString());",
-            "// //       // client.end();",
-            "// //       rl.on(\"line\", (input) => {",
-            "// //         if (input.trim()) {",
-            "// //           client.write(input);",
-            "// //         }",
-            "// //       });",
-            "// //     });",
-            "",
-            "// //     client.on(\"end\", () => {",
-            "// //       console.log(\"Disconnected from server\");",
-            "// //     });",
-            "",
-            "// //     client.on(\"error\", (err) => {",
-            "// //       console.error(\"Client error:\", err);",
-            "// //     });}",
-            "//   }",
-            "// );",
             ""
           ],
           "parameterObjects": "",
@@ -4843,7 +4896,6 @@
           "comment": "Down"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
