@@ -4682,8 +4682,9 @@
             "window.tcp.on(\"error\", (err) => {",
             "  console.error(\"Client error:\", err);",
             "});",
-            "",
-            "window.tcp.write(player1.toJSON() + \"\\n\");",
+            "if(player == 1) window.tcp.write(player1.toJSON() + \"\\n\");",
+            "if(player == 2) window.tcp.write(player2.toJSON() + \"\\n\");",
+            "if(player == 3) window.tcp.write(player3.toJSON() + \"\\n\");",
             ""
           ],
           "parameterObjects": "",
