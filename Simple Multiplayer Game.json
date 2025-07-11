@@ -1,7 +1,7 @@
 {
   "firstLayout": "Main Menu",
   "gdVersion": {
-    "build": 233,
+    "build": 236,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -460,14 +460,14 @@
       "type": "structure",
       "children": [
         {
-          "name": "Angle",
-          "type": "string",
-          "value": "right"
-        },
-        {
           "name": "Animation",
           "type": "string",
           "value": "Stand"
+        },
+        {
+          "name": "Facing_Direction",
+          "type": "string",
+          "value": "Right"
         },
         {
           "name": "Position_X",
@@ -486,14 +486,14 @@
       "type": "structure",
       "children": [
         {
-          "name": "Angle",
-          "type": "string",
-          "value": "right"
-        },
-        {
           "name": "Animation",
           "type": "string",
           "value": "Stand"
+        },
+        {
+          "name": "Facing_Direction",
+          "type": "string",
+          "value": "Left"
         },
         {
           "name": "Position_X",
@@ -512,14 +512,14 @@
       "type": "structure",
       "children": [
         {
-          "name": "Angle",
-          "type": "string",
-          "value": "right"
-        },
-        {
           "name": "Animation",
           "type": "string",
           "value": "Stand"
+        },
+        {
+          "name": "Facing_Direction",
+          "type": "string",
+          "value": "Left"
         },
         {
           "name": "Position_X",
@@ -555,7 +555,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5079575118131733,
+        "zoomFactor": 0.4598521426736333,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -570,8 +570,8 @@
           "name": "Txt_Play",
           "persistentUuid": "a17ed344-fb63-406c-a367-10562e702576",
           "width": 0,
-          "x": 893,
-          "y": 540,
+          "x": 871,
+          "y": 435,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -603,8 +603,8 @@
           "name": "Btn_Empty",
           "persistentUuid": "888f5704-baa3-4325-a7e6-85b1ebbbd18f",
           "width": 500,
-          "x": 960,
-          "y": 540,
+          "x": 938,
+          "y": 435,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -620,8 +620,8 @@
           "name": "Btn_Empty2",
           "persistentUuid": "c1c8ec3f-1e8f-4c5b-8e2d-53d72cc03783",
           "width": 417,
-          "x": 1702,
-          "y": 78,
+          "x": 1365,
+          "y": 803,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -643,8 +643,8 @@
           "name": "host_btn_txt",
           "persistentUuid": "dcb29c02-330f-4b44-97ce-4b1b92f16eb5",
           "width": 399,
-          "x": 1489,
-          "y": 77,
+          "x": 1152,
+          "y": 802,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -660,8 +660,8 @@
           "name": "Btn_Empty3",
           "persistentUuid": "2af6ce8e-6d47-425c-8d1e-e138e8c6ec25",
           "width": 416.7228260869562,
-          "x": 1700,
-          "y": 275,
+          "x": 1366,
+          "y": 942,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -682,9 +682,26 @@
           "name": "join_btn_txt",
           "persistentUuid": "fdea278f-c0fc-4448-9d79-66b47e088930",
           "width": 0,
-          "x": 1624,
-          "y": 273,
+          "x": 1290,
+          "y": 940,
           "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 3,
+          "height": 132,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TextInput_Ip",
+          "persistentUuid": "1db5631e-434f-4f2a-b11c-70fdbd217138",
+          "width": 764,
+          "x": 326,
+          "y": 901,
+          "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1195,6 +1212,33 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "TextInput_Ip",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Insert host Ip",
+            "fontResourceName": "",
+            "fontSize": 80,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "255;255;255",
+            "borderOpacity": 255,
+            "borderWidth": 20,
+            "readOnly": false,
+            "disabled": false,
+            "paddingX": 10,
+            "paddingY": 15,
+            "textAlign": "center",
+            "maxLength": 0
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1233,6 +1277,9 @@
           },
           {
             "objectName": "Txt_Which_Player"
+          },
+          {
+            "objectName": "TextInput_Ip"
           }
         ]
       },
@@ -1271,6 +1318,15 @@
                 "\"Bright\"",
                 "no"
               ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "Multiplayer Lobby"
             }
           ]
         },
@@ -2267,43 +2323,10 @@
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": [
-                    "runtimeScene.setBackgroundColor(100,100,240);",
-                    "console.log('execute host');",
-                    "const net = require(\"net\");",
-                    "",
-                    "// udp_server.js",
-                    "const dgram = require('dgram');",
-                    "const server = dgram.createSocket('udp4');",
-                    "",
-                    "server.on('listening', () => {",
-                    "  const address = server.address();",
-                    "  console.log(`UDP server listening on ${address.address}:${address.port}`);",
-                    "});",
-                    "const clients = new Set();",
-                    "server.on('message', (msg, rinfo) => {",
-                    "  // const response = msg;",
-                    "   for (const client of clients) {",
-                    "    if (client !== senderId) {",
-                    "      const [ip, port] = client.split(':');",
-                    "      server.send(msg, 0, msg.length, parseInt(port), ip, (err) => {",
-                    "        if (err) console.error(`Failed to send to ${client}:`, err.message);",
-                    "      });",
-                    "    }",
-                    "  }",
-                    "  // server.send(response, 0, response.length, rinfo.port, rinfo.address);",
-                    "});",
-                    "",
-                    "server.bind(41234,'26.0.14.224',() => {",
-                    "  server.setBroadcast(true); ",
-                    "  console.log('UDP broadcast server ready on port 41234');",
-                    "});",
-                    "",
-                    ""
-                  ],
+                  "inlineCode": "window.client.hostLobby()",
                   "parameterObjects": "",
                   "useStrict": true,
-                  "eventsSheetExpanded": true
+                  "eventsSheetExpanded": false
                 }
               ]
             }
@@ -2525,12 +2548,13 @@
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
-                    "// runtimeScene.setBackgroundColor(100,100,240);",
-                    ""
+                    "const textInputValue = runtimeScene.getObjects('TextInput_Ip')[0].getText();\r",
+                    "window.client.setHostIp(textInputValue);\r",
+                    "window.client.joinLobby();"
                   ],
                   "parameterObjects": "Btn_Empty3",
                   "useStrict": true,
-                  "eventsSheetExpanded": true
+                  "eventsSheetExpanded": false
                 }
               ]
             },
@@ -2662,7 +2686,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5079575118131732,
+        "zoomFactor": 0.5995738389111078,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -3773,7 +3797,6 @@
           ],
           "behaviors": [
             {
-              "isFolded": true,
               "name": "PlatformerCharacterAnimator",
               "type": "PlatformerCharacterAnimator::PlatformerCharacterAnimator",
               "EnableAnimationChanges": true,
@@ -3788,7 +3811,6 @@
               "Flippable": "Flippable"
             },
             {
-              "isFolded": true,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 1500,
@@ -4362,51 +4384,6 @@
       },
       "events": [
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Timer\""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "runtimeScene.setBackgroundColor(100,100,240);",
-                "// const net = require(\"net\");",
-                "",
-                "//  const client = new net.Socket();",
-                "// console.log('connect execute')",
-                "//     client.connect(9898, \"26.0.14.224\", (cli) => {",
-                "//       // console.log(\"Connected to server\");",
-                "//       // client.write(`Connected from client ${client.address().address}`);",
-                "//     });",
-                "",
-                "    // window.tcp = client;"
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
-          ]
-        },
-        {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -4418,108 +4395,115 @@
           "conditions": [
             {
               "type": {
-                "value": "NumberVariable"
+                "value": "DepartScene"
               },
               "parameters": [
-                "Player_Number",
-                "=",
-                "1"
+                ""
               ]
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Player_No1.Position_X",
-                "=",
-                "Player_1.X()"
-              ]
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "class Player {",
+                "  constructor({ number }) {",
+                "    this.playerNumber = number",
+                "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
+                "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
+                "    this.posX = this.object.x;",
+                "    this.posY = this.object.y;",
+                "    this.angle = this.object.angle",
+                "    this.animationName = this.object.getAnimationName();",
+                "  }",
+                "  setPos = (valX,valY) => this.object.setPosition(valX,valY)",
+                "  setAni = (aniName) => this.object.setAnimationName(aniName);",
+                "  setAngle = (angle) => this.object.setAngle(angle)",
+                "  setFlip = (value) => value === 'Right' ? this.object.flipX(false) : this.object.flipX(value)",
+                "}",
+                "",
+                "const player1 = new Player({number: 1})",
+                "const player2 = new Player({number: 2})",
+                "const player3 = new Player({number: 3})",
+                " window.player1 = player1",
+                " window.player2 = player2",
+                " window.player3 = player3",
+                "",
+                "const client = window.client;",
+                "client.client.on('message', (msg, rinfo) => {",
+                "  console.log(`data received from ${rinfo.address}`)",
+                "  setImmediate(() => {",
+                "    const data = JSON.parse(msg.toString());",
+                "    if(data.TYPE === 'MOVEMENT'){",
+                "    const playerInData = data.Player;",
+                "    const playerPosInData = data.Position;",
+                "    const playerAngle = data.Angle;",
+                "    const playerAni = data.Animation;",
+                "    const facingDir = data.FacingDir;",
+                "    const x = playerPosInData['x'];",
+                "    const y = playerPosInData['y'];",
+                "    switch (data.Player) {",
+                "      case 1:",
+                "        player2.setPos(x,y)",
+                "        player2.setAni(playerAni)",
+                "        player2.setFlip(facingDir)",
+                "        break;",
+                "",
+                "      case 2:",
+                "        player2.setPos(x,y)",
+                "        player2.setAni(playerAni)",
+                "        player2.setFlip(facingDir)",
+                "        break;",
+                "",
+                "      case 3:",
+                "        player3.setPos(x,y)",
+                "        player3.setAni(playerAni)",
+                "        player3.setFlip(facingDir)",
+                "        break;",
+                "",
+                "      default:",
+                "      throw new Error('data incorrect or player not fouond');",
+                "    }",
+                "  }",
+                "  });",
+                "});"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
             },
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Player_No1.Position_Y",
-                "=",
-                "Player_1.Y()"
-              ]
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Player Model % Handle movements",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [],
+              "parameters": []
             }
           ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "Player_Number",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Player_No2.Position_X",
-                "=",
-                "Player_2.X()"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Player_No2.Position_Y",
-                "=",
-                "Player_2.Y()"
-              ]
-            }
-          ]
+          "conditions": [],
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "Player_Number",
-                "=",
-                "3"
-              ]
-            }
-          ],
+          "conditions": [],
           "actions": [
             {
               "type": {
-                "value": "SetNumberVariable"
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
-                "Player_No3.Position_X",
+                "Txt_Cout",
+                "Text",
                 "=",
-                "Player_3.X()"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Player_No3.Position_Y",
-                "=",
-                "Player_3.Y()"
+                "ToString(Player_1.X())"
               ]
             }
           ]
@@ -4536,7 +4520,29 @@
                 "Txt_Cout",
                 "Text",
                 "=",
-                "FileSystem::ExecutableFolderPath()"
+                "Player_No2.Position_X"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"timer\""
               ]
             }
           ]
@@ -4550,9 +4556,9 @@
               },
               "parameters": [
                 "",
-                "\"Timer\"",
+                "\"timer\"",
                 ">=",
-                "0.05"
+                "0.01"
               ]
             }
           ],
@@ -4563,108 +4569,56 @@
               },
               "parameters": [
                 "",
-                "\"Timer\""
+                "\"timer\""
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": [
-            "runtimeScene.setBackgroundColor(255, 0, 0);",
-            "///------------------------------------- MODEL ---------------------------------------------",
-            "// TODO ADD FACING DIRECTION",
-            "class Player {",
-            "  constructor({ number }) {",
-            "    this.playerNumber = number;",
-            "    this.playerProps = runtimeScene.getGame().getVariables().get(`Player_No${this.playerNumber}`);",
-            "    this.posX = this.playerProps.getChild(\"Position_X\").getAsNumber();",
-            "    this.posY = this.playerProps.getChild(\"Position_Y\").getAsNumber();",
-            "    this.angle = this.playerProps.getChild(\"Angle\").getAsNumber();",
-            "  }",
-            "  flipCharacter = () => this.playerProps.flipX(true)",
-            "  setPosX = (value) => this.playerProps.getChild(\"Position_X\").setNumber(value);",
-            "  setPosY = (value) => this.playerProps.getChild(\"Position_Y\").setNumber(value);",
-            "",
-            "  toJSON() {",
-            "    return JSON.stringify({",
-            "      Player: this.playerNumber,",
-            "      Position: {",
-            "        x: this.posX,",
-            "        y: this.posY,",
-            "      },",
-            "    });",
-            "  }",
-            "}",
-            "",
-            "///------------------------------------- MODEL ---------------------------------------------",
-            "function isJSON(str) {",
-            "  try {",
-            "    JSON.parse(str);",
-            "  } catch (e) {",
-            "    return false;",
-            "  }",
-            "  return true;",
-            "}",
-            "const game = runtimeScene.getGame();",
-            "const player = game.getVariables().get(\"Player_Number\").getAsNumber();",
-            "const player1 = new Player({ number: 1 });",
-            "const player2 = new Player({ number: 2 });",
-            "const player3 = new Player({ number: 3 });",
-            "//TODO angle",
-            "",
-            "",
-            "const dgram = require('dgram');",
-            "const client = dgram.createSocket('udp4');",
-            "",
-            "function sendData(message){",
-            "client.send(Buffer.from(message), 0, message.length, 41234, '26.0.14.224', (err) => {",
-            "  if (err) console.error(err);",
-            "  else console.log('Message sent');",
-            "})",
-            "}",
-            "",
-            "client.on('message', (msg, rinfo) => {",
-            "  const dataFromServer = msg.toString();",
-            "  console.log(dataFromServer)",
-            "  var splitData = dataFromServer.split('\\n')[0];",
-            "  if (isJSON(splitData)) {",
-            "    var jsonData = JSON.parse(splitData);",
-            "    const playerInData = jsonData[\"Player\"];",
-            "    const playerPosInData = jsonData[\"Position\"];",
-            "    switch (jsonData[\"Player\"]) {",
-            "      case 1:",
-            "        player1.setPosY(playerPosInData[\"y\"]);",
-            "        player2.setPosY(playerPosInData[\"y\"]);",
-            "        break;",
-            "      case 2:",
-            "        player2.setPosX(playerPosInData[\"x\"]);",
-            "        player2.setPosY(playerPosInData[\"y\"]);",
-            "",
-            "        break;",
-            "      case 3:",
-            "        player3.setPosX(playerPosInData[\"x\"]);",
-            "        player3.setPosY(playerPosInData[\"y\"]);",
-            "",
-            "        break;",
-            "      default:",
-            "      throw new Error('data incorrect player not fouond');",
-            "    }",
-            "  }",
-            "});",
-            "",
-            "if(player === 1) sendData(player1.toJSON() + \"\\n\");",
-            "if(player === 2) sendData(player2.toJSON() + \"\\n\");",
-            "if(player === 3) sendData(player3.toJSON() + \"\\n\");"
           ],
-          "parameterObjects": "",
-          "useStrict": true,
-          "eventsSheetExpanded": true
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "class PlayerData {",
+                "  constructor({ number }) {",
+                "    this.playerNumber = number",
+                "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
+                "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
+                "    this.posX = this.object.x;",
+                "    this.posY = this.object.y;",
+                "    this.angle = this.object.angle",
+                "    this.animationName = this.object.getAnimationName();",
+                "  }",
+                "  toJSON() {",
+                "    return JSON.stringify({",
+                "      TYPE: 'MOVEMENT',",
+                "      Player: this.playerNumber,",
+                "      FacingDir: this.facingDir,",
+                "      Angle: this.angle,",
+                "      Animation: this.animationName,",
+                "      Position: {",
+                "        x: this.posX,",
+                "        y: this.posY,",
+                "      },",
+                "    });",
+                "  }",
+                "}",
+                "",
+                "const player1Data = new PlayerData({number: 1})",
+                "const player2Data = new PlayerData({number: 2})",
+                "const player3Data = new PlayerData({number: 3})",
+                "",
+                "const game = runtimeScene.getGame();",
+                "const player = game.getVariables().get(\"Player_Number\").getAsNumber();",
+                "",
+                "if(player === 1) window.client.sendToAll(player1Data.toJSON());",
+                "if(player === 2) window.client.sendToAll(player2Data.toJSON());",
+                "if(player === 3) window.client.sendToAll(player3Data.toJSON());",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ]
         }
       ],
       "layers": [
@@ -4993,7 +4947,6 @@
           "comment": "Left"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5008,6 +4961,19 @@
           ],
           "actions": [],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");",
+                "// var d = runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").getAsString(\"Left\");",
+                "// console.log(d)",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -5101,7 +5067,6 @@
           "comment": "Right"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5116,6 +5081,16 @@
           ],
           "actions": [],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -5303,319 +5278,91 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Main Menu",
+      "name": "Multiplayer Lobby",
+      "events": [
         {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "name": "Multiplayer",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Save"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Load"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Move"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "=",
-                    "Player_No1.Position_X",
-                    "=",
-                    "Player_No1.Position_Y"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "=",
-                    "Player_No2.Position_X",
-                    "=",
-                    "Player_No2.Position_Y"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "=",
-                    "Player_No3.Position_X",
-                    "=",
-                    "Player_No3.Position_Y"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Reset"
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.X_Position",
-                    "=",
-                    "280"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Y_Position",
-                    "=",
-                    "765"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "Temp_Variable_1",
-                    "=",
-                    "\"Temp\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "Temp_Variable_2",
-                    "=",
-                    "\"Temp\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "Temp_Variable_3",
-                    "=",
-                    "\"Temp\""
-                  ]
-                }
-              ]
-            }
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const dgram = require('dgram');",
+            "",
+            "class Client{",
+            "    constructor(hostIp){",
+            "        const client = dgram.createSocket('udp4');",
+            "        this.port = 41234;",
+            "        this.hostIp;",
+            "        this.connectorList = [];",
+            "        client.bind(this.port)",
+            "        this.client = client;",
+            "    } ",
+            "    setHostIp(ip){",
+            "        this.hostIp = ip;",
+            "    }",
+            "    sendToAll(data){",
+            "        for(var i in this.connectorList){",
+            "            var ip = this.connectorList[i]['address'];",
+            "            this.client.send(data,this.port,ip)",
+            "        }",
+            "        console.log('data send')",
+            "    }",
+            "    addConnector(newIp){",
+            "        // prevent split digit bug",
+            "        if(newIp.length < 8) return;",
+            "        // check list includes newIp",
+            "        if( this.connectorList.indexOf(newIp) !== -1) return;",
+            "        this.connectorList.push(newIp);",
+            "    }",
+            "    hostLobby(){",
+            "        this.client.on('message',(msg,rinfo)=>{",
+            "            const data = JSON.parse(msg.toString())",
+            "            if(data.TYPE == 'REQUEST')",
+            "                {",
+            "                    const res = JSON.stringify({",
+            "                        TYPE: 'RESPONSE',",
+            "                        CONNECTOR_LIST : `${this.connectorList}`",
+            "                    })",
+            "                    this.addConnector(rinfo)",
+            "                    this.client.send(res,this.port,rinfo.address)",
+            "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
+            "                }",
+            "            ",
+            "        })",
+            "        console.log('host')",
+            "    }",
+            "   ",
+            "    joinLobby(){",
+            "        const msg = JSON.stringify({",
+            "            TYPE: 'REQUEST',",
+            "        })",
+            "        // debug test overrite ip",
+            "        console.log(this.hostIp)",
+            "        this.client.send(Buffer.from(msg), this.port, `${this.hostIp}`, (err) => {",
+            "            if (err) console.error(err);",
+            "        })",
+            "        this.client.on('message',(msg,rinfo)=>{",
+            "            const data = JSON.parse(msg.toString())",
+            "            if(data.TYPE === 'RESPONSE'){",
+            "            const list = data['TYPE']['CONNECTOR_LIST']",
+            "            for(var i in list){",
+            "                console.log(i)",
+            "                this.addConnector(i)",
+            "            }}",
+            "            console.log('Joined to ' + rinfo.address)",
+            "        })",
+            "        console.log('join')",
+            "    }",
+            "}",
+            "",
+            "window.client = new Client();",
+            "console.log('add client to global')"
           ],
-          "parameters": []
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
         }
       ]
     }
