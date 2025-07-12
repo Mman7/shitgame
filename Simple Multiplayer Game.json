@@ -2573,7 +2573,8 @@
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
-                    "const recentHostIp = localStorage.getItem('HOSTIP')",
+                    "let recentHostIp = localStorage.getItem('HOSTIP')",
+                    "if(recentHostIp === null) recentHostIp = '';",
                     "const textInputValue = runtimeScene.getObjects('TextInput_Ip')[0].setText(recentHostIp)"
                   ],
                   "parameterObjects": "",
@@ -4429,6 +4430,17 @@
           "actions": [],
           "events": [
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Player Model % Handle movements",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [],
+              "parameters": []
+            },
+            {
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
                 "class Player {",
@@ -4444,7 +4456,7 @@
                 "  setPos = (valX,valY) => this.object.setPosition(valX,valY)",
                 "  setAni = (aniName) => this.object.setAnimationName(aniName);",
                 "  setAngle = (angle) => this.object.setAngle(angle)",
-                "  setFlip = (value) => value === 'Right' ? this.object.flipX(false) : this.object.flipX(value)",
+                "  setFlip = (value) => value === 'Right' ? this.object.flipX(false) : this.object.flipX(true)",
                 "}",
                 "",
                 "const player1 = new Player({number: 1})",
@@ -4471,7 +4483,7 @@
                 "      case 1:",
                 "        player1.setPos(x,y)",
                 "        player1.setAni(playerAni)",
-                "        player1.setFlip(facingDir)",
+                "        player2.setFlip(facingDir)",
                 "        break;",
                 "",
                 "      case 2:",
@@ -4496,17 +4508,6 @@
               "parameterObjects": "",
               "useStrict": true,
               "eventsSheetExpanded": true
-            },
-            {
-              "colorB": 228,
-              "colorG": 176,
-              "colorR": 74,
-              "creationTime": 0,
-              "name": "Player Model % Handle movements",
-              "source": "",
-              "type": "BuiltinCommonInstructions::Group",
-              "events": [],
-              "parameters": []
             }
           ]
         },
@@ -4640,7 +4641,7 @@
               ],
               "parameterObjects": "",
               "useStrict": true,
-              "eventsSheetExpanded": true
+              "eventsSheetExpanded": false
             }
           ]
         }
@@ -5348,7 +5349,7 @@
             "                        TYPE: 'RESPONSE',",
             "                        CONNECTOR_LIST : `${this.connectorList}`",
             "                    })",
-            "                    this.addConnector(rinfo)",
+            "                    this.addConnector(rinfo.address)",
             "                    this.client.send(res,this.port,rinfo.address)",
             "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
             "                }",
