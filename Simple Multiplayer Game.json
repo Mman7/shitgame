@@ -2559,6 +2559,30 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "const recentHostIp = localStorage.getItem('HOSTIP')",
+                    "const textInputValue = runtimeScene.getObjects('TextInput_Ip')[0].setText(recentHostIp)"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            },
+            {
               "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
@@ -5302,9 +5326,10 @@
             "    }",
             "    sendToAll(data){",
             "        for(var i in this.connectorList){",
-            "            var ip = this.connectorList[i]['address'];",
+            "            var ip = this.connectorList[i];",
             "            this.client.send(data,this.port,ip)",
             "        }",
+            "        console.log(this.connectorList)",
             "        console.log('data send')",
             "    }",
             "    addConnector(newIp){",
@@ -5337,7 +5362,7 @@
             "            TYPE: 'REQUEST',",
             "        })",
             "        // debug test overrite ip",
-            "        console.log(this.hostIp)",
+            "        localStorage.setItem('HOSTIP',this.hostIp)",
             "        this.client.send(Buffer.from(msg), this.port, `${this.hostIp}`, (err) => {",
             "            if (err) console.error(err);",
             "        })",
@@ -5345,6 +5370,8 @@
             "            const data = JSON.parse(msg.toString())",
             "            if(data.TYPE === 'RESPONSE'){",
             "            const list = data['TYPE']['CONNECTOR_LIST']",
+            "            this.addConnector(rinfo.address)",
+            "            // this.addConnector(rinfo.address['address'])",
             "            for(var i in list){",
             "                console.log(i)",
             "                this.addConnector(i)",
