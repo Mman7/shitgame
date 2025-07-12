@@ -4445,9 +4445,9 @@
                 "    const y = playerPosInData['y'];",
                 "    switch (data.Player) {",
                 "      case 1:",
-                "        player2.setPos(x,y)",
-                "        player2.setAni(playerAni)",
-                "        player2.setFlip(facingDir)",
+                "        player1.setPos(x,y)",
+                "        player1.setAni(playerAni)",
+                "        player1.setFlip(facingDir)",
                 "        break;",
                 "",
                 "      case 2:",
@@ -4966,8 +4966,6 @@
               "inlineCode": [
                 "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
                 "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");",
-                "// var d = runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").getAsString(\"Left\");",
-                "// console.log(d)",
                 ""
               ],
               "parameterObjects": "",
