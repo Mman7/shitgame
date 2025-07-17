@@ -4416,6 +4416,48 @@
             "characterSize": 100,
             "color": "0;0;0"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Txt_Invalid_Name",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Your name is too long!!!",
+          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "textAlignment": "center",
+          "characterSize": 100,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Your name is too long!!!",
+            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 100,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -4432,6 +4474,9 @@
           },
           {
             "objectName": "TextInput_Name"
+          },
+          {
+            "objectName": "Txt_Invalid_Name"
           },
           {
             "objectName": "Txt_Host_Or_Join"
@@ -4857,7 +4902,7 @@
                   "parameters": [
                     "Game_Status",
                     "=",
-                    "\"Host Or Join\""
+                    "\"Check Name\""
                   ]
                 },
                 {
@@ -4887,17 +4932,108 @@
                     "TextInput_Name",
                     ""
                   ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "StrLength(Player_Name)",
+                        ">",
+                        "12"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_Invalid_Name",
+                        "475",
+                        "500",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Txt_Invalid_Name",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Game_Status",
+                        "=",
+                        "\"Enter Name\""
+                      ]
+                    }
+                  ]
                 },
                 {
-                  "type": {
-                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Host Or Join\"",
-                    "",
-                    "",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "StrLength(Player_Name)",
+                        "<=",
+                        "12"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Game_Status",
+                        "=",
+                        "\"Host Or Join\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Host Or Join\"",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -5132,6 +5268,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Button Join",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7297,6 +7434,13 @@
       },
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Players Color"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -7429,328 +7573,6 @@
               ]
             }
           ]
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "folded": true,
-          "name": "Disable Color",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DepartScene"
-                  },
-                  "parameters": [
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color1\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color2\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color3\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color4\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color5\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color6\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color7\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color8\"",
-                    "no"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DepartScene"
-                  },
-                  "parameters": [
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color1\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color2\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color3\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color4\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color5\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color6\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color7\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color8\"",
-                    "no"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DepartScene"
-                  },
-                  "parameters": [
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color1\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color2\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color3\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color4\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color5\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color6\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color7\"",
-                    "no"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color8\"",
-                    "no"
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
         },
         {
           "colorB": 228,
@@ -8199,7 +8021,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Host Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -8407,6 +8228,15 @@
                     "\"Start Game\""
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": "console.log('Add some jiba here')",
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
               ]
             }
           ],
@@ -8611,6 +8441,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Change Color",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -8781,714 +8612,6 @@
                     "",
                     "\"Change Color\"",
                     ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Change Color P1"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color1\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color2\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color3\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "4"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color4\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "5"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color5\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "6"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color6\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "7"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color7\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No1.Color",
-                    "=",
-                    "8"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "Effect",
-                    "\"Color8\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Change Color P2"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color1\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color2\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color3\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "4"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color4\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "5"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color5\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "6"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color6\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "7"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color7\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No2.Color",
-                    "=",
-                    "8"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "Effect",
-                    "\"Color8\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Change Color P2"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color1\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color2\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color3\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "4"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color4\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "5"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color5\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "6"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color6\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "7"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color7\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_No3.Color",
-                    "=",
-                    "8"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "Effect",
-                    "\"Color8\"",
-                    "yes"
                   ]
                 }
               ]
@@ -12536,7 +11659,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5800155239904865,
+        "zoomFactor": 0.40272258333259164,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -13022,7 +12145,14 @@
           "include": {
             "includeConfig": 0
           },
-          "target": "Player Movement"
+          "target": "Players Movement"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Players Color"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -13439,6 +12569,845 @@
           ],
           "parameters": []
         },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "COUT",
+                "Text",
+                "=",
+                "ToString(StrLength(Player_No1.Name))"
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "ButtonFSM",
+          "type": "ButtonStates::ButtonFSM"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior"
+        },
+        {
+          "name": "PlatformerCharacterAnimator",
+          "type": "PlatformerCharacterAnimator::PlatformerCharacterAnimator"
+        },
+        {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        }
+      ]
+    }
+  ],
+  "externalEvents": [
+    {
+      "associatedLayout": "Main Menu",
+      "name": "Multiplayer Lobby",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const dgram = require('dgram');",
+            "",
+            "class LobbyStatus {",
+            "  constructor() {",
+            "    this.update()",
+            "  }",
+            "  gameVar = runtimeScene.getGame().getVariables();",
+            "",
+            "  getPlayerStatus = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Status\").getAsString();",
+            "  setPlayerStatus = (num,str) => this.gameVar.get(`Player_No${num}`).getChild(\"Status\").setString(str);",
+            "",
+            "  getPlayerName = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Name\").getAsString();",
+            "  setPlayerName = (num,str) => this.gameVar.get(`Player_No${num}`).getChild(\"Name\").setString(str);",
+            "",
+            "  getPlayerColor = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Color\").getAsNumber();",
+            "  setPlayerColor = (num,value) => this.gameVar.get(`Player_No${num}`).getChild(\"Color\").setNumber(value);",
+            "",
+            "  update(){",
+            "    [this.player1Status,this.player2Status,this.player3Status] = [this.getPlayerStatus(1),this.getPlayerStatus(2),this.getPlayerStatus(3)];",
+            "    [this.player1Color,this.player2Color,this.player3Color] = [this.getPlayerColor(1),this.getPlayerColor(2),this.getPlayerColor(3)];",
+            "    [this.player1Name,this.player2Name,this.player3Name] = [this.getPlayerName(1),this.getPlayerName(2),this.getPlayerName(3)];",
+            "  }",
+            "",
+            "  applyData(lobby){",
+            "    for(var i = 1; i <= 3; i++){",
+            "        this.setPlayerStatus(i,lobby[`Player${i}Status`]);",
+            "        this.setPlayerColor(i,lobby[`Player${i}Color`]);",
+            "        this.setPlayerName(i,lobby[`Player${i}Name`]);",
+            "    }",
+            "  }",
+            "",
+            "  toJSON() {",
+            "    return JSON.stringify({",
+            "      TYPE: 'LOBBY_STATUS',",
+            "      LOBBY: {",
+            "          Player1Status: this.player1Status,",
+            "          Player2Status: this.player2Status,",
+            "          Player3Status: this.player3Status,",
+            "          Player1Name: this.player1Name,",
+            "          Player2Name: this.player2Name,",
+            "          Player3Name: this.player3Name,",
+            "          Player1Color: this.player1Color,",
+            "          Player2Color: this.player2Color,",
+            "          Player3Color: this.player3Color,",
+            "      }",
+            "    });",
+            "  }",
+            "}",
+            "",
+            "class Client{",
+            "    constructor(hostIp){",
+            "        this.lobby = new LobbyStatus();",
+            "        const client = dgram.createSocket('udp4');",
+            "        this.port = 54122;",
+            "        this.hostIp;",
+            "        this.connectorList = [];",
+            "        client.bind(this.port)",
+            "        this.client = client;",
+            "        // for dev testing",
+            "        // this.hostLobby()",
+            "    }",
+            "    setHostIp(ip){",
+            "        this.hostIp = ip;",
+            "    }",
+            "    sendToAll(data){",
+            "        for(var i in this.connectorList){",
+            "            var ip = this.connectorList[i];",
+            "            this.client.send(data,this.port,ip)",
+            "        }",
+            "    }",
+            "    addConnector(newIp){",
+            "        // prevent split digit bug",
+            "        if(newIp.length < 8) return;",
+            "        // check list includes newIp",
+            "        if( this.connectorList.indexOf(newIp) !== -1) return;",
+            "        this.connectorList.push(newIp);",
+            "    }",
+            "    ",
+            "    hostLobby(){",
+            "        console.log('lobby host')",
+            "        this.client.on('message',(msg,rinfo)=>{",
+            "            const data = JSON.parse(msg.toString())",
+            "            if(data.TYPE == 'REQUEST')",
+            "                {",
+            "                    const lobbystat = new LobbyStatus().toJSON();",
+            "                    const res = JSON.stringify({",
+            "                        TYPE: 'RESPONSE',",
+            "                        CONNECTOR_LIST : `${this.connectorList}`,",
+            "                        Lobby: lobbystat,",
+            "                    })",
+            "                    this.addConnector(rinfo.address)",
+            "                    this.client.send(res,this.port,rinfo.address)",
+            "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
+            "                }",
+            "            if(data.TYPE === 'REQUEST_LOBBY'){",
+            "               this.sendLobbyStatus(rinfo.address)",
+            "            }",
+            "            if(data.TYPE === 'LOBBY_STATUS'){",
+            "                const lobby = data.LOBBY;",
+            "",
+            "                this.lobby.applyData(lobby)",
+            "            }",
+            "        })",
+            "    }",
+            "",
+            "    sendLobbyStatus(sendToIp){",
+            "         const lobbyStatus = this.lobby.toJSON();",
+            "         this.client.send(lobbyStatus,this.port,sendToIp)",
+            "    }",
+            "",
+            "    joinLobby(){",
+            "        const msg = JSON.stringify({",
+            "            TYPE: 'REQUEST',",
+            "        })",
+            "        // debug test overrite ip",
+            "        if(this.hostIp == undefined) return;",
+            "        localStorage.setItem('HOSTIP',this.hostIp);",
+            "",
+            "        this.client.send(Buffer.from(msg), this.port, `${this.hostIp}`, (err) => {",
+            "            if (err) console.error(err);",
+            "            runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('404');",
+            "        })",
+            "",
+            "        this.client.on('message',(msg,rinfo)=>{",
+            "            const data = JSON.parse(msg.toString())",
+            "            if(data.TYPE === 'RESPONSE'){",
+            "                const list  = data.CONNECTOR_LIST;",
+            "                const lobbyStat = data.LobbyStatus;",
+            "                this.addConnector(rinfo.address)",
+            "                for(var i in list){",
+            "                    this.addConnector(i)",
+            "                }",
+            "                console.log('Joined to ' + rinfo.address)",
+            "                // Apply host data",
+            "                const lobbyStatus = JSON.parse(data.Lobby);",
+            "                const lobby = lobbyStatus.LOBBY;",
+            "                this.lobby.applyData(lobby)",
+            "                runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('200');",
+            "            }",
+            "            // Player is auto picked by non-code events",
+            "        })",
+            "    }",
+            "}",
+            "",
+            "window.client = new Client();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Game Scene",
+      "name": "Players Movement",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Up"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"w\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Player_1",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Player_2",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Player_3",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Down"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"s\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Player_1",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Player_2",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Player_3",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Left"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"a\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Player_1",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Player_2",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Player_3",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Right"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"d\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Player_1",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Player_2",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Player_3",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Jump"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateJumpKey"
+                  },
+                  "parameters": [
+                    "Player_1",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateJumpKey"
+                  },
+                  "parameters": [
+                    "Player_2",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateJumpKey"
+                  },
+                  "parameters": [
+                    "Player_3",
+                    "PlatformerObject"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Change Color",
+      "name": "Players Color",
+      "events": [
         {
           "colorB": 228,
           "colorG": 176,
@@ -14481,839 +14450,6 @@
             }
           ],
           "parameters": []
-        },
-        {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "COUT",
-                "Text",
-                "=",
-                "ToString(StrLength(Player_No1.Name))"
-              ]
-            }
-          ]
-        }
-      ],
-      "layers": [
-        {
-          "ambientLightColorB": 200,
-          "ambientLightColorG": 200,
-          "ambientLightColorR": 200,
-          "camera3DFarPlaneDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearPlaneDistance": 3,
-          "cameraType": "",
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
-          "name": "",
-          "renderingType": "",
-          "visibility": true,
-          "cameras": [
-            {
-              "defaultSize": true,
-              "defaultViewport": true,
-              "height": 0,
-              "viewportBottom": 1,
-              "viewportLeft": 0,
-              "viewportRight": 1,
-              "viewportTop": 0,
-              "width": 0
-            }
-          ],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Light",
-              "doubleParameters": {
-                "elevation": 45,
-                "intensity": 1,
-                "rotation": 0
-              },
-              "stringParameters": {
-                "groundColor": "64;64;64",
-                "skyColor": "255;255;255",
-                "top": "Y-"
-              },
-              "booleanParameters": {}
-            }
-          ]
-        }
-      ],
-      "behaviorsSharedData": [
-        {
-          "name": "Animation",
-          "type": "AnimatableCapability::AnimatableBehavior"
-        },
-        {
-          "name": "ButtonFSM",
-          "type": "ButtonStates::ButtonFSM"
-        },
-        {
-          "name": "Effect",
-          "type": "EffectCapability::EffectBehavior"
-        },
-        {
-          "name": "Flippable",
-          "type": "FlippableCapability::FlippableBehavior"
-        },
-        {
-          "name": "Opacity",
-          "type": "OpacityCapability::OpacityBehavior"
-        },
-        {
-          "name": "Platform",
-          "type": "PlatformBehavior::PlatformBehavior"
-        },
-        {
-          "name": "PlatformerCharacterAnimator",
-          "type": "PlatformerCharacterAnimator::PlatformerCharacterAnimator"
-        },
-        {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior"
-        },
-        {
-          "name": "Resizable",
-          "type": "ResizableCapability::ResizableBehavior"
-        },
-        {
-          "name": "Scale",
-          "type": "ScalableCapability::ScalableBehavior"
-        },
-        {
-          "name": "Text",
-          "type": "TextContainerCapability::TextContainerBehavior"
-        }
-      ]
-    }
-  ],
-  "externalEvents": [
-    {
-      "associatedLayout": "Game Scene",
-      "name": "Player Movement",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Up"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"w\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateUpKey"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateUpKey"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateUpKey"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Down"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"s\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateDownKey"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateDownKey"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateDownKey"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Left"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"a\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
-                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");",
-                ""
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateLeftKey"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateLeftKey"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateLeftKey"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Right"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"d\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
-                "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateRightKey"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateRightKey"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateRightKey"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Jump"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Space\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateJumpKey"
-                  },
-                  "parameters": [
-                    "Player_1",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateJumpKey"
-                  },
-                  "parameters": [
-                    "Player_2",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Player_Number",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::SimulateJumpKey"
-                  },
-                  "parameters": [
-                    "Player_3",
-                    "PlatformerObject"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "associatedLayout": "Main Menu",
-      "name": "Multiplayer Lobby",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": [
-            "const dgram = require('dgram');",
-            "",
-            "class LobbyStatus {",
-            "  constructor() {",
-            "    this.update()",
-            "  }",
-            "  gameVar = runtimeScene.getGame().getVariables();",
-            "",
-            "  getPlayerStatus = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Status\").getAsString();",
-            "  setPlayerStatus = (num,str) => this.gameVar.get(`Player_No${num}`).getChild(\"Status\").setString(str);",
-            "",
-            "  getPlayerName = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Name\").getAsString();",
-            "  setPlayerName = (num,str) => this.gameVar.get(`Player_No${num}`).getChild(\"Name\").setString(str);",
-            "",
-            "  getPlayerColor = (num) => this.gameVar.get(`Player_No${num}`).getChild(\"Color\").getAsNumber();",
-            "  setPlayerColor = (num,value) => this.gameVar.get(`Player_No${num}`).getChild(\"Color\").setNumber(value);",
-            "",
-            "  update(){",
-            "    [this.player1Status,this.player2Status,this.player3Status] = [this.getPlayerStatus(1),this.getPlayerStatus(2),this.getPlayerStatus(3)];",
-            "    [this.player1Color,this.player2Color,this.player3Color] = [this.getPlayerColor(1),this.getPlayerColor(2),this.getPlayerColor(3)];",
-            "    [this.player1Name,this.player2Name,this.player3Name] = [this.getPlayerName(1),this.getPlayerName(2),this.getPlayerName(3)];",
-            "  }",
-            "",
-            "  applyData(lobby){",
-            "    for(var i = 1; i <= 3; i++){",
-            "        this.setPlayerStatus(i,lobby[`Player${i}Status`]);",
-            "        this.setPlayerColor(i,lobby[`Player${i}Color`]);",
-            "        this.setPlayerName(i,lobby[`Player${i}Name`]);",
-            "    }",
-            "  }",
-            "",
-            "  toJSON() {",
-            "    return JSON.stringify({",
-            "      TYPE: 'LOBBY_STATUS',",
-            "      LOBBY: {",
-            "          Player1Status: this.player1Status,",
-            "          Player2Status: this.player2Status,",
-            "          Player3Status: this.player3Status,",
-            "          Player1Name: this.player1Name,",
-            "          Player2Name: this.player2Name,",
-            "          Player3Name: this.player3Name,",
-            "          Player1Color: this.player1Color,",
-            "          Player2Color: this.player2Color,",
-            "          Player3Color: this.player3Color,",
-            "      }",
-            "    });",
-            "  }",
-            "}",
-            "",
-            "class Client{",
-            "    constructor(hostIp){",
-            "        this.lobby = new LobbyStatus();",
-            "        const client = dgram.createSocket('udp4');",
-            "        this.port = 54122;",
-            "        this.hostIp;",
-            "        this.connectorList = [];",
-            "        client.bind(this.port)",
-            "        this.client = client;",
-            "        // for dev testing",
-            "        // this.hostLobby()",
-            "    }",
-            "    setHostIp(ip){",
-            "        this.hostIp = ip;",
-            "    }",
-            "    sendToAll(data){",
-            "        for(var i in this.connectorList){",
-            "            var ip = this.connectorList[i];",
-            "            this.client.send(data,this.port,ip)",
-            "        }",
-            "    }",
-            "    addConnector(newIp){",
-            "        // prevent split digit bug",
-            "        if(newIp.length < 8) return;",
-            "        // check list includes newIp",
-            "        if( this.connectorList.indexOf(newIp) !== -1) return;",
-            "        this.connectorList.push(newIp);",
-            "    }",
-            "    ",
-            "    hostLobby(){",
-            "        console.log('lobby host')",
-            "        this.client.on('message',(msg,rinfo)=>{",
-            "            const data = JSON.parse(msg.toString())",
-            "            if(data.TYPE == 'REQUEST')",
-            "                {",
-            "                    const lobbystat = new LobbyStatus().toJSON();",
-            "                    const res = JSON.stringify({",
-            "                        TYPE: 'RESPONSE',",
-            "                        CONNECTOR_LIST : `${this.connectorList}`,",
-            "                        Lobby: lobbystat,",
-            "                    })",
-            "                    this.addConnector(rinfo.address)",
-            "                    this.client.send(res,this.port,rinfo.address)",
-            "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
-            "                }",
-            "            if(data.TYPE === 'REQUEST_LOBBY'){",
-            "               this.sendLobbyStatus(rinfo.address)",
-            "            }",
-            "            if(data.TYPE === 'LOBBY_STATUS'){",
-            "                const lobby = data.LOBBY;",
-            "",
-            "                this.lobby.applyData(lobby)",
-            "            }",
-            "        })",
-            "    }",
-            "",
-            "    sendLobbyStatus(sendToIp){",
-            "         const lobbyStatus = this.lobby.toJSON();",
-            "         this.client.send(lobbyStatus,this.port,sendToIp)",
-            "    }",
-            "",
-            "    joinLobby(){",
-            "        const msg = JSON.stringify({",
-            "            TYPE: 'REQUEST',",
-            "        })",
-            "        // debug test overrite ip",
-            "        if(this.hostIp == undefined) return;",
-            "        localStorage.setItem('HOSTIP',this.hostIp);",
-            "",
-            "        this.client.send(Buffer.from(msg), this.port, `${this.hostIp}`, (err) => {",
-            "            if (err) console.error(err);",
-            "            runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('404');",
-            "        })",
-            "",
-            "        this.client.on('message',(msg,rinfo)=>{",
-            "            const data = JSON.parse(msg.toString())",
-            "            if(data.TYPE === 'RESPONSE'){",
-            "                const list  = data.CONNECTOR_LIST;",
-            "                const lobbyStat = data.LobbyStatus;",
-            "                this.addConnector(rinfo.address)",
-            "                for(var i in list){",
-            "                    this.addConnector(i)",
-            "                }",
-            "                console.log('Joined to ' + rinfo.address)",
-            "                // Apply host data",
-            "                const lobbyStatus = JSON.parse(data.Lobby);",
-            "                const lobby = lobbyStatus.LOBBY;",
-            "                this.lobby.applyData(lobby)",
-            "                runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('200');",
-            "            }",
-            "            // Player is auto picked by non-code events",
-            "        })",
-            "    }",
-            "}",
-            "",
-            "window.client = new Client();"
-          ],
-          "parameterObjects": "",
-          "useStrict": true,
-          "eventsSheetExpanded": true
         }
       ]
     }
