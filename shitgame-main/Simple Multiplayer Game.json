@@ -15195,7 +15195,7 @@
             "        client.bind(this.port)",
             "        this.client = client;",
             "        // for dev testing",
-            "        this.hostLobby()",
+            "        // this.hostLobby()",
             "    }",
             "    setHostIp(ip){",
             "        this.hostIp = ip;",
