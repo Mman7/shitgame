@@ -363,6 +363,14 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "a.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "a.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -11654,7 +11662,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.40272258333259164,
+        "zoomFactor": 0.41630252177333316,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -11818,6 +11826,22 @@
           "x": 460,
           "y": 880,
           "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT2",
+          "persistentUuid": "b6ca7614-0816-429d-bb38-6ba1b4d70a9b",
+          "width": 0,
+          "x": 859,
+          "y": 199,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -12106,6 +12130,17 @@
             "characterSize": 25,
             "color": "0;0;0"
           }
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "COUT2",
+          "texture": "a.jpg",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 0.2,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -12131,6 +12166,9 @@
           },
           {
             "objectName": "COUT"
+          },
+          {
+            "objectName": "COUT2"
           }
         ]
       },
@@ -12211,8 +12249,10 @@
                     "class Player {",
                     "  constructor({ number }) {",
                     "    this.playerNumber = number",
+                    "    // Get the object ",
                     "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
-                    "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
+                    "    // get global variable",
+                    "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_No${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
                     "    this.posX = this.object.x;",
                     "    this.posY = this.object.y;",
                     "    this.angle = this.object.angle",
@@ -12436,7 +12476,7 @@
             "  constructor({ number }) {",
             "    this.playerNumber = number",
             "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
-            "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
+            "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_No${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
             "    this.posX = this.object.x;",
             "    this.posY = this.object.y;",
             "    this.angle = this.object.angle",
@@ -12478,11 +12518,53 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Players Name",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"F4\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "const myNewObject = runtimeScene.createObject(\"COUT2\");",
+                    "const p = runtimeScene.getObjects(`Player_1`)[0];",
+                    "myNewObject.setPosition(p.x - 500, p.y - 500); ",
+                    "",
+                    "const sleep = (time) => {",
+                    "  return new Promise((resolve) => setTimeout(resolve, time))",
+                    "}",
+                    "",
+                    "const doSomething = async () => {",
+                    "  for (let i = 0; i <= 4000; i ++) {",
+                    "    await sleep(0.1)",
+                    "    myNewObject.setWidth(i += 10)",
+                    "    myNewObject.setHeight(i  += 10)",
+                    "  }",
+                    "}",
+                    "",
+                    "doSomething()"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
