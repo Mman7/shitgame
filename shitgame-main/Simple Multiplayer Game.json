@@ -1,7 +1,7 @@
 {
   "firstLayout": "Main Menu",
   "gdVersion": {
-    "build": 236,
+    "build": 237,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -5605,13 +5605,7 @@
                     "window.client.joinLobby();\r",
                     "if(textInputValue){\r",
                     "    runtimeScene.getObjects('TextInput_Ip')[0].deleteFromScene();\r",
-                    "}\r",
-                    "\r",
-                    "const html = document;\r",
-                    "\r",
-                    "html.addEventListener('click',()=>{\r",
-                    "    console.log('dd')\r",
-                    "})"
+                    "}"
                   ],
                   "parameterObjects": "Btn_Join",
                   "useStrict": true,
@@ -7441,6 +7435,7 @@
           "target": "Players Color"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -8232,7 +8227,7 @@
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "console.log('Add some jiba here')",
+                  "inlineCode": "window.client.sendStart()",
                   "parameterObjects": "",
                   "useStrict": true,
                   "eventsSheetExpanded": false
@@ -12408,7 +12403,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12433,53 +12427,51 @@
                 "\"timer\""
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "class PlayerData {",
-                "  constructor({ number }) {",
-                "    this.playerNumber = number",
-                "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
-                "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
-                "    this.posX = this.object.x;",
-                "    this.posY = this.object.y;",
-                "    this.angle = this.object.angle",
-                "    this.animationName = this.object.getAnimationName();",
-                "  }",
-                "  toJSON() {",
-                "    return JSON.stringify({",
-                "      TYPE: 'MOVEMENT',",
-                "      Player: this.playerNumber,",
-                "      FacingDir: this.facingDir,",
-                "      Angle: this.angle,",
-                "      Animation: this.animationName,",
-                "      Position: {",
-                "        x: this.posX,",
-                "        y: this.posY,",
-                "      },",
-                "    });",
-                "  }",
-                "}",
-                "",
-                "const player1Data = new PlayerData({number: 1})",
-                "const player2Data = new PlayerData({number: 2})",
-                "const player3Data = new PlayerData({number: 3})",
-                "",
-                "const game = runtimeScene.getGame();",
-                "const player = game.getVariables().get(\"Player_Number\").getAsNumber();",
-                "",
-                "if(player === 1) window.client.sendToAll(player1Data.toJSON());",
-                "if(player === 2) window.client.sendToAll(player2Data.toJSON());",
-                "if(player === 3) window.client.sendToAll(player3Data.toJSON());",
-                ""
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": true
-            }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "class PlayerData {",
+            "  constructor({ number }) {",
+            "    this.playerNumber = number",
+            "    this.object = runtimeScene.getObjects(`Player_${this.playerNumber}`)[0];",
+            "    this.facingDir = runtimeScene.getGame().getVariables().get(`Player_${this.playerNumber}`).getChild(\"Facing_Direction\").getAsString();",
+            "    this.posX = this.object.x;",
+            "    this.posY = this.object.y;",
+            "    this.angle = this.object.angle",
+            "    this.animationName = this.object.getAnimationName();",
+            "  }",
+            "  toJSON() {",
+            "    return JSON.stringify({",
+            "      TYPE: 'MOVEMENT',",
+            "      Player: this.playerNumber,",
+            "      FacingDir: this.facingDir,",
+            "      Angle: this.angle,",
+            "      Animation: this.animationName,",
+            "      Position: {",
+            "        x: this.posX,",
+            "        y: this.posY,",
+            "      },",
+            "    });",
+            "  }",
+            "}",
+            "",
+            "const player1Data = new PlayerData({number: 1})",
+            "const player2Data = new PlayerData({number: 2})",
+            "const player3Data = new PlayerData({number: 3})",
+            "",
+            "const game = runtimeScene.getGame();",
+            "const player = game.getVariables().get(\"Player_Number\").getAsNumber();",
+            "",
+            "if(player === 1) window.client.sendToAll(player1Data.toJSON());",
+            "if(player === 2) window.client.sendToAll(player2Data.toJSON());",
+            "if(player === 3) window.client.sendToAll(player3Data.toJSON());",
+            ""
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
         },
         {
           "colorB": 228,
@@ -12760,6 +12752,22 @@
             "            this.client.send(data,this.port,ip)",
             "        }",
             "    }",
+            "    sendToAllExcept(data,exceptIp){",
+            "        for(var i in this.connectorList){",
+            "            if(i === exceptIp) return;",
+            "            var ip = this.connectorList[i];",
+            "            this.client.send(data,this.port,ip)",
+            "        }",
+            "    }",
+            "    sendStart(){",
+            "        const gameStatus = runtimeScene.getGame().getVariables().get('Game_Status').getAsString();",
+            "        const data = JSON.stringify({",
+            "            TYPE: 'GAME_STATUS',",
+            "            GameStatus: gameStatus,",
+            "        })",
+            "        // const data = ",
+            "        this.sendToAll(data);",
+            "    }",
             "    addConnector(newIp){",
             "        // prevent split digit bug",
             "        if(newIp.length < 8) return;",
@@ -12789,7 +12797,6 @@
             "            }",
             "            if(data.TYPE === 'LOBBY_STATUS'){",
             "                const lobby = data.LOBBY;",
-            "",
             "                this.lobby.applyData(lobby)",
             "            }",
             "        })",
@@ -12828,6 +12835,9 @@
             "                const lobby = lobbyStatus.LOBBY;",
             "                this.lobby.applyData(lobby)",
             "                runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('200');",
+            "            }",
+            "            if(data.TYPE === 'GAME_STATUS'){",
+            "                runtimeScene.getGame().getVariables().get('Game_Status').setString(data.Game_Status);",
             "            }",
             "            // Player is auto picked by non-code events",
             "        })",
