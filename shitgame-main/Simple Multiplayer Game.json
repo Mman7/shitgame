@@ -699,6 +699,255 @@
         "name": "Flag 5.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Jaro-Regular-VariableFont_opsz.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "Jaro-Regular-VariableFont_opsz.ttf",
+        "userAdded": false
+      },
+      {
+        "file": "Rectangle 1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Rectangle 1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Super Mario Bros (NES) Music - Overworld Theme.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Super Mario Bros (NES) Music - Overworld Theme.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "idle000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "idle000.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "idle001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "idle001.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "idle002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "idle002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "idle003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "idle003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "flying000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "flying000.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "flying001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "flying001.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "flying002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "flying002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "flying003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "flying003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack000.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack001.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack004.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack005.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack005.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack006.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack006.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "attack007.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "attack007.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hurt000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hurt000.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hurt001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hurt001.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hurt002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hurt002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hurt003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hurt003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death007.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death007.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death006.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death006.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death005.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death005.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death004.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death001.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -2449,7 +2698,7 @@
     },
     {
       "assetStoreId": "",
-      "bold": true,
+      "bold": false,
       "italic": false,
       "name": "Txt_Volume",
       "smoothed": true,
@@ -2459,34 +2708,34 @@
       "effects": [],
       "behaviors": [],
       "string": "Volume",
-      "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+      "font": "Jaro-Regular-VariableFont_opsz.ttf",
       "textAlignment": "center",
       "characterSize": 100,
       "color": {
-        "b": 0,
-        "g": 0,
-        "r": 0
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
-        "bold": true,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
         "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 10,
         "shadowAngle": 90,
-        "shadowBlurRadius": 2,
+        "shadowBlurRadius": 3.7,
         "shadowColor": "0;0;0",
-        "shadowDistance": 4,
+        "shadowDistance": 5,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
         "text": "Volume",
-        "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+        "font": "Jaro-Regular-VariableFont_opsz.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 100,
-        "color": "0;0;0"
+        "color": "255;255;255"
       }
     },
     {
@@ -2528,39 +2777,39 @@
           "width": 16
         },
         "Label": {
-          "bold": true,
+          "bold": false,
           "italic": false,
           "smoothed": true,
           "underlined": false,
           "string": "It displays the value when it changes.",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 50,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 5,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "It displays the value when it changes.",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 50,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         "Thumb": {
@@ -2577,7 +2826,7 @@
     },
     {
       "assetStoreId": "",
-      "bold": true,
+      "bold": false,
       "italic": false,
       "name": "Txt_Apply",
       "smoothed": true,
@@ -2611,34 +2860,34 @@
         }
       ],
       "string": "APPLY",
-      "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+      "font": "Jaro-Regular-VariableFont_opsz.ttf",
       "textAlignment": "center",
       "characterSize": 100,
       "color": {
-        "b": 0,
-        "g": 0,
-        "r": 0
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
-        "bold": true,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
         "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 10,
         "shadowAngle": 90,
-        "shadowBlurRadius": 2,
+        "shadowBlurRadius": 3.7,
         "shadowColor": "0;0;0",
-        "shadowDistance": 4,
+        "shadowDistance": 5,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
         "text": "APPLY",
-        "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+        "font": "Jaro-Regular-VariableFont_opsz.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 100,
-        "color": "0;0;0"
+        "color": "255;255;255"
       }
     },
     {
@@ -2719,7 +2968,7 @@
     },
     {
       "assetStoreId": "",
-      "bold": true,
+      "bold": false,
       "italic": false,
       "name": "Txt_Happy_Content",
       "smoothed": true,
@@ -2729,34 +2978,34 @@
       "effects": [],
       "behaviors": [],
       "string": "Happy Content",
-      "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+      "font": "Jaro-Regular-VariableFont_opsz.ttf",
       "textAlignment": "center",
       "characterSize": 100,
       "color": {
-        "b": 0,
-        "g": 0,
-        "r": 0
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
-        "bold": true,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
         "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 10,
         "shadowAngle": 90,
-        "shadowBlurRadius": 2,
+        "shadowBlurRadius": 3.7,
         "shadowColor": "0;0;0",
-        "shadowDistance": 4,
+        "shadowDistance": 5,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
         "text": "Happy Content",
-        "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+        "font": "Jaro-Regular-VariableFont_opsz.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 100,
-        "color": "0;0;0"
+        "color": "255;255;255"
       }
     },
     {
@@ -2846,7 +3095,7 @@
     },
     {
       "assetStoreId": "",
-      "bold": true,
+      "bold": false,
       "italic": false,
       "name": "Txt_Hint",
       "smoothed": true,
@@ -2856,34 +3105,34 @@
       "effects": [],
       "behaviors": [],
       "string": "Check this at your own risk!!!",
-      "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+      "font": "Jaro-Regular-VariableFont_opsz.ttf",
       "textAlignment": "center",
       "characterSize": 30,
       "color": {
-        "b": 0,
-        "g": 0,
-        "r": 0
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
-        "bold": true,
-        "isOutlineEnabled": false,
+        "bold": false,
+        "isOutlineEnabled": true,
         "isShadowEnabled": false,
         "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 5,
         "shadowAngle": 90,
-        "shadowBlurRadius": 2,
+        "shadowBlurRadius": 3.7,
         "shadowColor": "0;0;0",
-        "shadowDistance": 4,
+        "shadowDistance": 5,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
         "text": "Check this at your own risk!!!",
-        "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+        "font": "Jaro-Regular-VariableFont_opsz.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 30,
-        "color": "0;0;0"
+        "color": "255;255;255"
       }
     },
     {
@@ -3030,7 +3279,7 @@
         {
           "name": "Status",
           "type": "string",
-          "value": "NULL"
+          "value": "Picked"
         }
       ]
     },
@@ -3098,11 +3347,11 @@
       "disableInputWhenNotFocused": true,
       "mangledName": "Main_32Menu",
       "name": "Main Menu",
-      "r": 201,
+      "r": 154,
       "standardSortMethod": true,
       "stopSoundsOnStartup": false,
       "title": "",
-      "v": 254,
+      "v": 213,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -3113,7 +3362,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.352690493477123,
+        "zoomFactor": 0.3895856273827293,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -3154,7 +3403,7 @@
           "name": "Txt_Play",
           "persistentUuid": "a17ed344-fb63-406c-a367-10562e702576",
           "width": 0,
-          "x": 850,
+          "x": 868,
           "y": 520,
           "zOrder": 2,
           "numberProperties": [],
@@ -3170,8 +3419,8 @@
           "layer": "",
           "name": "Txt_Title",
           "persistentUuid": "2789a144-8d0c-492b-b1d8-2a13937f6327",
-          "width": 1110,
-          "x": 410,
+          "width": 807,
+          "x": 556,
           "y": 240,
           "zOrder": 3,
           "numberProperties": [],
@@ -3369,7 +3618,7 @@
           "name": "Txt_Settings",
           "persistentUuid": "adc0e46d-4753-4d7b-8021-a0e0e5eb05ca",
           "width": 0,
-          "x": 740,
+          "x": 797,
           "y": 665,
           "zOrder": 14,
           "numberProperties": [],
@@ -3385,7 +3634,7 @@
           "name": "Txt_Exit",
           "persistentUuid": "1704f99d-968a-4b1f-b9ea-0c5f3d11ba45",
           "width": 0,
-          "x": 855,
+          "x": 882,
           "y": 810,
           "zOrder": 15,
           "numberProperties": [],
@@ -3396,7 +3645,7 @@
       "objects": [
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Play",
           "smoothed": true,
@@ -3430,39 +3679,39 @@
             }
           ],
           "string": "PLAY",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "PLAY",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Title",
           "smoothed": true,
@@ -3472,39 +3721,39 @@
           "effects": [],
           "behaviors": [],
           "string": "SHIT GAME",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 200,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "SHIT GAME",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 200,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Btn_Host",
           "smoothed": true,
@@ -3538,39 +3787,39 @@
             }
           ],
           "string": "HOST",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "HOST",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Btn_Join",
           "smoothed": true,
@@ -3604,34 +3853,34 @@
             }
           ],
           "string": "JOIN",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "JOIN",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
@@ -3644,7 +3893,7 @@
           "content": {
             "initialValue": "",
             "placeholder": "INSERT HOST IP HERE",
-            "fontResourceName": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "fontResourceName": "Jaro-Regular-VariableFont_opsz.ttf",
             "fontSize": 60,
             "inputType": "text area",
             "textColor": "0;0;0",
@@ -3663,7 +3912,7 @@
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Host_Or_Join",
           "smoothed": true,
@@ -3673,39 +3922,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Do you want to host or join the game?",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 80,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Do you want to host or join the game?",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 80,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_FailToJoin",
           "smoothed": true,
@@ -3715,34 +3964,34 @@
           "effects": [],
           "behaviors": [],
           "string": "Lobby not exist!!!",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 150,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Lobby not exist!!!",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 150,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
@@ -5260,8 +5509,8 @@
           "content": {
             "initialValue": "",
             "placeholder": "ENTER YOUR NAME HERE",
-            "fontResourceName": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
-            "fontSize": 60,
+            "fontResourceName": "Jaro-Regular-VariableFont_opsz.ttf",
+            "fontSize": 50,
             "inputType": "text area",
             "textColor": "0;0;0",
             "fillColor": "255;255;255",
@@ -5274,12 +5523,13 @@
             "paddingX": 0,
             "paddingY": 0,
             "textAlign": "center",
-            "maxLength": 0
+            "maxLength": 0,
+            "spellCheck": false
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Enter_Name",
           "smoothed": true,
@@ -5289,39 +5539,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Enter your name:",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Enter your name:",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Invalid_Name",
           "smoothed": true,
@@ -5331,39 +5581,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Your name is too long!!!",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Your name is too long!!!",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Settings",
           "smoothed": true,
@@ -5397,39 +5647,39 @@
             }
           ],
           "string": "SETTINGS",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "SETTINGS",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Exit",
           "smoothed": true,
@@ -5463,34 +5713,34 @@
             }
           ],
           "string": "EXIT",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "EXIT",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
@@ -5534,6 +5784,72 @@
             "characterSize": 50,
             "color": "0;0;0"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Txt_Confirm",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [
+            {
+              "effectType": "ColorReplace",
+              "name": "Bright",
+              "doubleParameters": {
+                "epsilon": 0.4
+              },
+              "stringParameters": {
+                "newColor": "59;59;59",
+                "originalColor": "0;0;0"
+              },
+              "booleanParameters": {}
+            }
+          ],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 2.0247e-320
+            }
+          ],
+          "string": "CONFIRM",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
+          "textAlignment": "center",
+          "characterSize": 100,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 3,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 5,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "CONFIRM",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 100,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -5564,6 +5880,9 @@
               },
               {
                 "objectName": "TextInput_Name"
+              },
+              {
+                "objectName": "Txt_Confirm"
               },
               {
                 "objectName": "Txt_Invalid_Name"
@@ -6140,7 +6459,7 @@
                   "parameters": [
                     "",
                     "Txt_Volume",
-                    "425",
+                    "470",
                     "350",
                     ""
                   ]
@@ -6186,7 +6505,7 @@
                   "parameters": [
                     "",
                     "Txt_Happy_Content",
-                    "100",
+                    "220",
                     "550",
                     ""
                   ]
@@ -6274,7 +6593,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Hint",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -6312,7 +6630,7 @@
                       "parameters": [
                         "",
                         "White_Box",
-                        "1230",
+                        "1215",
                         "550",
                         ""
                       ]
@@ -6324,7 +6642,7 @@
                       "parameters": [
                         "White_Box",
                         "Resizable",
-                        "410",
+                        "360",
                         "50"
                       ]
                     },
@@ -6456,31 +6774,69 @@
                   ]
                 }
               ]
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "folded": true,
-          "name": "Button Settings Apply",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
+            },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Button Settings Apply",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
                 {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Or"
-                  },
-                  "parameters": [],
-                  "subInstructions": [
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
                     {
                       "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::IsFocused"
+                          },
+                          "parameters": [
+                            "Txt_Apply",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::IsPressed"
+                          },
+                          "parameters": [
+                            "Txt_Apply",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "Effect",
+                        "\"Bright\"",
+                        "yes"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
                         "value": "ButtonStates::ButtonFSM::IsFocused"
                       },
                       "parameters": [
@@ -6491,6 +6847,7 @@
                     },
                     {
                       "type": {
+                        "inverted": true,
                         "value": "ButtonStates::ButtonFSM::IsPressed"
                       },
                       "parameters": [
@@ -6499,238 +6856,199 @@
                         ""
                       ]
                     }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "Effect",
+                        "\"Bright\"",
+                        "no"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsPressed"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "Scale",
+                        "=",
+                        "0.9"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ButtonStates::ButtonFSM::IsPressed"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "Scale",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsClicked"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Txt_Volume",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "SquareWhiteSlider",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Txt_Happy_Content",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "SquareWhiteToggle",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Hint",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Txt_Apply",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_Title",
+                        "556",
+                        "240",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_Play",
+                        "868",
+                        "520",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_Settings",
+                        "797",
+                        "665",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_Exit",
+                        "882",
+                        "810",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "Effect",
-                    "\"Bright\"",
-                    "yes"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "ButtonStates::ButtonFSM::IsFocused"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "ButtonFSM",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "ButtonStates::ButtonFSM::IsPressed"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "ButtonFSM",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::EnableEffect"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "Effect",
-                    "\"Bright\"",
-                    "no"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "ButtonStates::ButtonFSM::IsPressed"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "ButtonFSM",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ScalableCapability::ScalableBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "Scale",
-                    "=",
-                    "0.9"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "ButtonStates::ButtonFSM::IsPressed"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "ButtonFSM",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ScalableCapability::ScalableBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "Scale",
-                    "=",
-                    "1"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "ButtonStates::ButtonFSM::IsClicked"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    "ButtonFSM",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Txt_Volume",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "SquareWhiteSlider",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Txt_Happy_Content",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "SquareWhiteToggle",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Hint",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Txt_Apply",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Txt_Title",
-                    "410",
-                    "240",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Txt_Play",
-                    "850",
-                    "520",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Txt_Settings",
-                    "740",
-                    "665",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Txt_Exit",
-                    "855",
-                    "810",
-                    ""
-                  ]
-                }
-              ]
+              "parameters": []
             }
           ],
           "parameters": []
@@ -6927,6 +7245,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -6954,7 +7273,7 @@
                   "parameters": [
                     "",
                     "Txt_Enter_Name",
-                    "600",
+                    "675",
                     "300",
                     ""
                   ]
@@ -6997,6 +7316,33 @@
                   "parameters": [
                     "TextInput_Name"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Txt_Confirm",
+                    "800",
+                    "700",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "const textInputValue = runtimeScene.getObjects('TextInput_Name')[0];",
+                    "const saveName = localStorage.getItem('name');",
+                    "if(saveName == undefined || null) return;",
+                    "textInputValue.setText(saveName);",
+                    ""
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
                 }
               ]
             },
@@ -7005,21 +7351,39 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "KeyFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Return\""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "StringVariable"
                   },
                   "parameters": [
                     "Game_Status",
                     "=",
                     "\"Enter Name\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Return\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsClicked"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ],
@@ -7061,6 +7425,15 @@
                     "TextInput_Name",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Txt_Confirm",
+                    ""
+                  ]
                 }
               ],
               "events": [
@@ -7092,7 +7465,7 @@
                       "parameters": [
                         "",
                         "Txt_Invalid_Name",
-                        "475",
+                        "550",
                         "500",
                         ""
                       ]
@@ -7127,6 +7500,7 @@
                   ]
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -7163,9 +7537,179 @@
                         ""
                       ]
                     }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": [
+                        "const name = runtimeScene.getVariables().get(\"Player_Name\").getAsString()",
+                        "if(!name) return;",
+                        "localStorage.setItem('name',name);",
+                        "",
+                        ""
+                      ],
+                      "parameterObjects": "",
+                      "useStrict": true,
+                      "eventsSheetExpanded": false
+                    }
                   ]
                 }
               ]
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Button Name Confirm",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::IsFocused"
+                          },
+                          "parameters": [
+                            "Txt_Confirm",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::IsPressed"
+                          },
+                          "parameters": [
+                            "Txt_Confirm",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "Effect",
+                        "\"Bright\"",
+                        "yes"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ButtonStates::ButtonFSM::IsFocused"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ButtonStates::ButtonFSM::IsPressed"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "Effect",
+                        "\"Bright\"",
+                        "no"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsPressed"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "Scale",
+                        "=",
+                        "0.9"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ButtonStates::ButtonFSM::IsPressed"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "Scale",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
             }
           ],
           "parameters": []
@@ -7574,12 +8118,14 @@
                 },
                 {
                   "type": {
-                    "value": "MettreX"
+                    "value": "MettreXY"
                   },
                   "parameters": [
                     "Txt_Host_Or_Join",
                     "=",
-                    "550"
+                    "670",
+                    "=",
+                    "300"
                   ]
                 },
                 {
@@ -7607,31 +8153,32 @@
                   "parameters": [
                     "",
                     "TextInput_Ip",
-                    "600",
-                    "500",
+                    "700",
+                    "450",
                     ""
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
                   },
                   "parameters": [
                     "TextInput_Ip",
                     "Resizable",
-                    "=",
-                    "680"
+                    "500",
+                    "125"
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                    "value": "Create"
                   },
                   "parameters": [
-                    "TextInput_Ip",
-                    "Resizable",
-                    "=",
-                    "180"
+                    "",
+                    "Txt_Confirm",
+                    "775",
+                    "725",
+                    ""
                   ]
                 },
                 {
@@ -7678,17 +8225,9 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
-                {
-                  "type": {
-                    "value": "KeyFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Return\""
-                  ]
-                },
                 {
                   "type": {
                     "value": "StringVariable"
@@ -7697,6 +8236,33 @@
                     "Game_Status",
                     "=",
                     "\"Enter IP\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Return\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsClicked"
+                      },
+                      "parameters": [
+                        "Txt_Confirm",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ],
@@ -7717,6 +8283,15 @@
                   },
                   "parameters": [
                     "Txt_Host_Or_Join",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Txt_Confirm",
                     ""
                   ]
                 }
@@ -8143,7 +8718,7 @@
                   "parameters": [
                     "",
                     "Txt_FailToJoin",
-                    "400",
+                    "500",
                     "515",
                     ""
                   ]
@@ -8811,7 +9386,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4027225833325913,
+        "zoomFactor": 0.37687720367508865,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -8826,8 +9401,8 @@
           "name": "Txt_P1",
           "persistentUuid": "3db1e950-69a3-4371-95a3-702e27eb3225",
           "width": 0,
-          "x": 760,
-          "y": 370,
+          "x": 255,
+          "y": 161,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -8842,8 +9417,8 @@
           "name": "Txt_P2",
           "persistentUuid": "e2b77a47-768d-45ce-bfc9-aed76833d534",
           "width": 0,
-          "x": 760,
-          "y": 520,
+          "x": 255,
+          "y": 350,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -8858,8 +9433,8 @@
           "name": "Txt_P3",
           "persistentUuid": "04beeef1-e8ff-4171-9495-85a1beca3946",
           "width": 0,
-          "x": 760,
-          "y": 670,
+          "x": 255,
+          "y": 540,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -8867,15 +9442,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 125,
           "keepRatio": true,
           "layer": "",
           "name": "Player_1",
           "persistentUuid": "3acc1034-7eb5-4fea-9071-5e187f764512",
-          "width": 0,
-          "x": 630,
-          "y": 315,
+          "width": 92.78350515463917,
+          "x": 125,
+          "y": 90,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -8883,15 +9459,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 125,
           "keepRatio": true,
           "layer": "",
           "name": "Player_2",
           "persistentUuid": "9361eedf-dea4-4ec5-94fc-7acb8bba9dc4",
-          "width": 0,
-          "x": 630,
-          "y": 465,
+          "width": 92.78350515463917,
+          "x": 125,
+          "y": 280,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -8899,15 +9476,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 125,
           "keepRatio": true,
           "layer": "",
           "name": "Player_3",
           "persistentUuid": "d430173e-d7a8-4356-968c-9290d7088201",
-          "width": 0,
-          "x": 630,
-          "y": 615,
+          "width": 92.78350515463917,
+          "x": 125,
+          "y": 463,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -8923,9 +9501,9 @@
           "name": "Platform",
           "persistentUuid": "99cee833-6b5c-43bd-ac1f-82d5f8325930",
           "width": 93,
-          "x": 665,
-          "y": 415,
-          "zOrder": 7,
+          "x": 167,
+          "y": 217,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -8940,9 +9518,9 @@
           "name": "Platform",
           "persistentUuid": "29c895fa-68eb-4e01-9d4b-dbb9bbc6d5d0",
           "width": 93,
-          "x": 665,
-          "y": 715,
-          "zOrder": 7,
+          "x": 167,
+          "y": 590,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -8957,25 +9535,9 @@
           "name": "Platform",
           "persistentUuid": "4d6fe110-e208-419e-8960-cd65e40e49a3",
           "width": 93,
-          "x": 665,
-          "y": 565,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Txt_Title",
-          "persistentUuid": "8aa380c9-9a81-4554-a503-1757f757851e",
-          "width": 0,
-          "x": 700,
-          "y": 100,
-          "zOrder": 8,
+          "x": 167,
+          "y": 407,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -8989,9 +9551,60 @@
           "name": "Txt_Change_Color",
           "persistentUuid": "a668b173-afe0-4d31-b41f-ada9dd3b3bc4",
           "width": 0,
-          "x": 75,
-          "y": 980,
+          "x": 120,
+          "y": 950,
           "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 130,
+          "keepRatio": true,
+          "layer": "",
+          "name": "White_Box2",
+          "persistentUuid": "aef40cff-4bc3-4aa7-b39e-e842ed9a8027",
+          "width": 130,
+          "x": 104,
+          "y": 85,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 130,
+          "keepRatio": true,
+          "layer": "",
+          "name": "White_Box2",
+          "persistentUuid": "6275a7e1-7c78-47c7-9d9f-53d8fbbb28ad",
+          "width": 130,
+          "x": 104,
+          "y": 276,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 130,
+          "keepRatio": true,
+          "layer": "",
+          "name": "White_Box2",
+          "persistentUuid": "87e0fbfc-29c7-4791-8119-13d4d011908f",
+          "width": 130,
+          "x": 104,
+          "y": 458,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -9000,7 +9613,7 @@
       "objects": [
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Choose_Color",
           "smoothed": true,
@@ -9010,39 +9623,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Which color do you want to choose?",
-          "font": "44aceaa249d2ecb8bfe3eb7bedcb17aac44c0f5f13f9f58d85427a5afa7e92f0_CarterOne-Regular.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 80,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Which color do you want to choose?",
-            "font": "44aceaa249d2ecb8bfe3eb7bedcb17aac44c0f5f13f9f58d85427a5afa7e92f0_CarterOne-Regular.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 80,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_P1",
           "smoothed": true,
@@ -9052,39 +9665,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Name",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 75,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Name",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 75,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_P2",
           "smoothed": true,
@@ -9094,39 +9707,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Name",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 75,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Name",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 75,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_P3",
           "smoothed": true,
@@ -9136,34 +9749,34 @@
           "effects": [],
           "behaviors": [],
           "string": "Name",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 75,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Name",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 75,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
@@ -9236,7 +9849,7 @@
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Wait_Host1",
           "smoothed": true,
@@ -9246,39 +9859,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Waiting the host to start.",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 60,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Waiting the host to start.",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 60,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Wait_Host2",
           "smoothed": true,
@@ -9288,39 +9901,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Waiting the host to start..",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 60,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Waiting the host to start..",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 60,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Wait_Host3",
           "smoothed": true,
@@ -9330,39 +9943,39 @@
           "effects": [],
           "behaviors": [],
           "string": "Waiting the host to start...",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 60,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "Waiting the host to start...",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 60,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Start",
           "smoothed": true,
@@ -9396,81 +10009,39 @@
             }
           ],
           "string": "START",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 75,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "START",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
-            "textAlignment": "center",
-            "verticalTextAlignment": "center",
-            "characterSize": 75,
-            "color": "0;0;0"
-          }
-        },
-        {
-          "assetStoreId": "",
-          "bold": true,
-          "italic": false,
-          "name": "Txt_Title",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "SHIT GAME",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
-          "textAlignment": "center",
-          "characterSize": 100,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          },
-          "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "SHIT GAME",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Txt_Change_Color",
           "smoothed": true,
@@ -9504,43 +10075,101 @@
             }
           ],
           "string": "CHANGE COLOR",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 60,
+          "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
             "text": "CHANGE COLOR",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 60,
-            "color": "0;0;0"
+            "characterSize": 100,
+            "color": "255;255;255"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "White_Box2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Rectangle 1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 137,
+                            "y": 0
+                          },
+                          {
+                            "x": 137,
+                            "y": 137
+                          },
+                          {
+                            "x": 0,
+                            "y": 137
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
-          {
-            "objectName": "Txt_Title"
-          },
           {
             "objectName": "Txt_Choose_Color"
           },
@@ -9570,6 +10199,9 @@
           },
           {
             "objectName": "Txt_Change_Color"
+          },
+          {
+            "objectName": "White_Box2"
           }
         ]
       },
@@ -10196,8 +10828,8 @@
                   "parameters": [
                     "",
                     "Txt_Start",
-                    "835",
-                    "875",
+                    "1500",
+                    "950",
                     ""
                   ]
                 }
@@ -10466,8 +11098,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host1",
-                    "600",
-                    "910",
+                    "1200",
+                    "950",
                     ""
                   ]
                 },
@@ -10495,8 +11127,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host2",
-                    "600",
-                    "910",
+                    "1200",
+                    "950",
                     ""
                   ]
                 },
@@ -10524,8 +11156,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host3",
-                    "600",
-                    "910",
+                    "1200",
+                    "950",
                     ""
                   ]
                 },
@@ -10904,7 +11536,7 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "Txt_Enter_Name",
+          "name": "Txt_Color",
           "persistentUuid": "14f4d6f2-e93a-4fe2-b09c-99ed4cf59e24",
           "width": 0,
           "x": 440,
@@ -11142,44 +11774,44 @@
         },
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
-          "name": "Txt_Enter_Name",
+          "name": "Txt_Color",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Choose your favourite:",
-          "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+          "string": "Choose your favourite color:",
+          "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
           "characterSize": 100,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           },
           "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 10,
             "shadowAngle": 90,
-            "shadowBlurRadius": 2,
+            "shadowBlurRadius": 3.7,
             "shadowColor": "0;0;0",
-            "shadowDistance": 4,
+            "shadowDistance": 5,
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Choose your favourite:",
-            "font": "8c9a07c662ceae43dd999872f6bd6916cb95b58c2ae373fd0a8aa58b91ce7c43_Roboto-BoldItalic.ttf",
+            "text": "Choose your favourite color:",
+            "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
             "characterSize": 100,
-            "color": "0;0;0"
+            "color": "255;255;255"
           }
         },
         {
@@ -11803,7 +12435,7 @@
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Txt_Enter_Name"
+            "objectName": "Txt_Color"
           },
           {
             "objectName": "Color_1"
@@ -13802,7 +14434,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.49138775453293637,
+        "zoomFactor": 0.4027225833325921,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -13835,7 +14467,7 @@
           "width": 0,
           "x": 280,
           "y": 765,
-          "zOrder": 1,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13868,7 +14500,7 @@
           "width": 0,
           "x": 370,
           "y": 765,
-          "zOrder": 4,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13982,7 +14614,7 @@
           "width": 105.00000000000003,
           "x": 644,
           "y": 796,
-          "zOrder": 11,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -15137,11 +15769,799 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Demon",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Fly",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "idle000.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "idle001.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "idle002.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "idle003.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Attack",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack000.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack001.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack002.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack003.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack004.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack005.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack006.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "attack007.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hurt",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.3,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "hurt001.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dead",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death007.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death006.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death005.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death004.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death003.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death002.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death001.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 7,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 6
+                          },
+                          {
+                            "x": 74,
+                            "y": 65
+                          },
+                          {
+                            "x": 7,
+                            "y": 65
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
+          {
+            "folderName": "Enemy",
+            "children": [
+              {
+                "objectName": "Demon"
+              }
+            ]
+          },
           {
             "objectName": "Txt_P1"
           },
@@ -15232,10 +16652,10 @@
               },
               "parameters": [
                 "",
-                "Kirby dream land theme song.mp3",
+                "Super Mario Bros (NES) Music - Overworld Theme.mp3",
                 "1",
                 "",
-                "30",
+                "10",
                 ""
               ]
             },
@@ -15753,6 +17173,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Mechanics",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -16232,6 +17653,94 @@
                         "CameraCenterX()",
                         "=",
                         "CameraCenterY()"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "disabled": true,
+              "folded": true,
+              "name": "2",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "Player_1",
+                        "Demon",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Demon",
+                        "Animation",
+                        "=",
+                        "\"Hurt\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Demon",
+                        "Animation",
+                        "=",
+                        "\"Hurt\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                      },
+                      "parameters": [
+                        "Demon",
+                        "Animation"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Demon",
+                        "Animation",
+                        "=",
+                        "\"Fly\""
                       ]
                     }
                   ]
@@ -35442,7 +36951,7 @@
           "name": "Txt_Host_Or_Join",
           "persistentUuid": "38202f8c-cb2e-48d5-b644-c229ca371488",
           "width": 0,
-          "x": 295,
+          "x": 416,
           "y": 230,
           "zOrder": 9,
           "numberProperties": [],
@@ -35458,7 +36967,7 @@
           "name": "Txt_Btn_Join",
           "persistentUuid": "96b4e7fc-83ad-4cca-b6fb-8dd8f0ada88a",
           "width": 0,
-          "x": 830,
+          "x": 873,
           "y": 700,
           "zOrder": 12,
           "numberProperties": [],
@@ -35474,7 +36983,7 @@
           "name": "Txt_Btn_Host",
           "persistentUuid": "90eb8879-f548-472a-828d-7a250c2640db",
           "width": 0,
-          "x": 825,
+          "x": 862,
           "y": 490,
           "zOrder": 13,
           "numberProperties": [],
@@ -35483,7 +36992,7 @@
         }
       ],
       "editionSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -35491,43 +37000,8 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.3645833333333333,
-        "windowMask": false
-      }
-    },
-    {
-      "associatedLayout": "Lobby",
-      "name": "Which Color?",
-      "instances": [
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Txt_Choose_Color",
-          "persistentUuid": "03f4aa91-7bbd-4a0d-9317-3d9bc024fb4d",
-          "width": 0,
-          "x": 293,
-          "y": 218,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        }
-      ],
-      "editionSettings": {
-        "grid": false,
-        "gridType": "rectangular",
-        "gridWidth": 32,
-        "gridHeight": 32,
-        "gridOffsetX": 0,
-        "gridOffsetY": 0,
-        "gridColor": 10401023,
-        "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.3645833333333333,
+        "snap": true,
+        "zoomFactor": 0.4163025217733326,
         "windowMask": false
       }
     }
