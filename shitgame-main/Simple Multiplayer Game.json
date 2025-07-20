@@ -1187,6 +1187,128 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-0.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-5.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-6.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-7.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-8.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-9.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-10.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-11.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "78f04438-f443-4804-9856-481ab4f1b252-12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "78f04438-f443-4804-9856-481ab4f1b252-12.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "鸡你太美-啊啊哟！.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "鸡你太美-啊啊哟！.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "10.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -4575,6 +4697,74 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Platform1_Fix",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "canBeGrabbed": true,
+          "name": "Platform",
+          "platformType": "NormalPlatform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "yGrabOffset": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "default",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "10.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -4638,6 +4828,9 @@
           },
           {
             "objectName": "Platform1_Bottom_Right"
+          },
+          {
+            "objectName": "Platform1_Fix"
           }
         ]
       },
@@ -15903,7 +16096,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.35269049347712617,
+        "zoomFactor": 0.36458333333333925,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -16030,26 +16223,10 @@
           "layer": "",
           "name": "Block",
           "persistentUuid": "24f608a5-5e20-4642-91c0-2ade8cdfe229",
-          "width": 2916,
-          "x": 1065,
-          "y": 1584,
+          "width": 1118,
+          "x": 3729,
+          "y": 1839,
           "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Platform1_Top_Left",
-          "persistentUuid": "bc13a097-897d-47b3-8467-bddbcdcff137",
-          "width": 0,
-          "x": 179,
-          "y": 861,
-          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -16063,9 +16240,9 @@
           "layer": "",
           "name": "Platform1_Top",
           "persistentUuid": "126d87b1-a475-47fb-baf3-96c6ff5abcfb",
-          "width": 1265,
-          "x": 307,
-          "y": 861,
+          "width": 1570,
+          "x": 1722,
+          "y": 1365,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -16080,8 +16257,8 @@
           "name": "Platform1_Top_Right",
           "persistentUuid": "e3f445bc-0519-44cf-bcce-6f87080d7ea2",
           "width": 0,
-          "x": 1572,
-          "y": 861,
+          "x": 1633,
+          "y": 1284,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -16091,14 +16268,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 246,
+          "height": 293,
           "keepRatio": true,
           "layer": "",
           "name": "Platform1_Inside",
           "persistentUuid": "14ac4f91-b3f9-4595-acba-e361e679aeb2",
-          "width": 1272,
-          "x": 307,
-          "y": 988,
+          "width": 1661,
+          "x": 1658,
+          "y": 1463,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -16108,7 +16285,7 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 240,
+          "height": 748,
           "keepRatio": true,
           "layer": "",
           "name": "Platform1_Inside_Left",
@@ -16116,7 +16293,7 @@
           "width": 129,
           "x": 179,
           "y": 989,
-          "zOrder": 12,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -16125,29 +16302,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 245,
-          "layer": "",
-          "name": "Platform1_Inside_Right",
-          "persistentUuid": "81bc81cc-453f-4e85-bcd7-ea402dbcc4ec",
-          "width": 127,
-          "x": 1572,
-          "y": 989,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "height": 155,
           "keepRatio": true,
           "layer": "",
           "name": "Platform1_Bottom_Left",
           "persistentUuid": "57a08879-e59c-4a8a-ac2d-0a1a240ed79b",
-          "width": 0,
+          "width": 128,
           "x": 185,
-          "y": 1229,
+          "y": 1699,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -16162,9 +16324,9 @@
           "layer": "",
           "name": "Platform1_Bottom",
           "persistentUuid": "a5737829-6433-486f-9916-27b82d4e7883",
-          "width": 1284,
+          "width": 2978,
           "x": 313,
-          "y": 1228,
+          "y": 1724,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -16172,15 +16334,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 152,
           "keepRatio": true,
           "layer": "",
           "name": "Platform1_Bottom_Right",
           "persistentUuid": "7f2455c5-57ca-4b95-8a3a-460ede284308",
-          "width": 0,
-          "x": 1569,
-          "y": 1233,
+          "width": 128,
+          "x": 3282,
+          "y": 1701,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -16214,13 +16377,410 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "UI",
-          "name": "COUT",
-          "persistentUuid": "754bda06-d52b-4cd9-b128-ac096486b5de",
+          "layer": "",
+          "name": "Platform1_Top_Left",
+          "persistentUuid": "38fdb192-5ced-41a7-9196-486401a38927",
           "width": 0,
-          "x": 215,
-          "y": 634,
-          "zOrder": 13,
+          "x": 179,
+          "y": 861,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "71622431-32b4-4f19-b6c8-612c009cfe40",
+          "width": 0,
+          "x": 3287,
+          "y": 1366,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "0c3d6d95-338d-426a-9931-4697cff5411c",
+          "width": 0,
+          "x": 1074,
+          "y": 949,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "3b12d6b2-b602-4c22-8ba7-823e397fc1f5",
+          "width": 0,
+          "x": 1215,
+          "y": 1035,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "0083416d-9d2d-49c0-89f0-ffd4203c1d55",
+          "width": 0,
+          "x": 1356,
+          "y": 1119,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "56aa7bf7-5c9c-45b4-bbc7-b0971f5654d2",
+          "width": 0,
+          "x": 1495,
+          "y": 1205,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "348abce3-e63d-4a08-bcdd-fb744e55e991",
+          "width": 624,
+          "x": 307,
+          "y": 861,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "630588b2-edc5-4126-bcdc-c32c3a8c6068",
+          "width": 104,
+          "x": 948,
+          "y": 952,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "811ee4e7-6123-4b2c-a7e1-4c09e7c723f8",
+          "width": 122,
+          "x": 1044,
+          "y": 949,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "078e4999-dd3b-45e7-a544-bd05c2af5e8f",
+          "width": 122,
+          "x": 1096,
+          "y": 1035,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "227178cc-958d-4950-85d6-1c408ba9a7fb",
+          "width": 122,
+          "x": 1237,
+          "y": 1119,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "543a3f0c-b40f-48bc-aa79-abac87634fa7",
+          "width": 0,
+          "x": 1628,
+          "y": 1370,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "82715313-24f4-4082-8c02-672b88485c46",
+          "width": 0,
+          "x": 1069,
+          "y": 1035,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "2302b66a-bf46-42ee-a3ce-d2b0ac4ac4bd",
+          "width": 0,
+          "x": 1210,
+          "y": 1121,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "822fec06-5f39-4611-a6f8-7370ae335027",
+          "width": 122,
+          "x": 1375,
+          "y": 1205,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "d89739b3-3ef5-4e6c-beeb-6e3f4b327c64",
+          "width": 0,
+          "x": 1352,
+          "y": 1206,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 742,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Inside",
+          "persistentUuid": "1e5d5965-8969-4bbc-8322-1a5119792833",
+          "width": 850,
+          "x": 307,
+          "y": 988,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 575,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Inside",
+          "persistentUuid": "e4df6844-0252-4b0f-8d16-ec21b953a9f4",
+          "width": 214,
+          "x": 1148,
+          "y": 1152,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 458,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Inside",
+          "persistentUuid": "40d4554d-762c-4e6c-ab95-2031243af2a8",
+          "width": 214,
+          "x": 1336,
+          "y": 1274,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top",
+          "persistentUuid": "8c62569a-79c8-44b4-a8cd-a4b5447de689",
+          "width": 122,
+          "x": 1511,
+          "y": 1284,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Fix",
+          "persistentUuid": "98cab65e-920c-4c2d-828a-f43945def59d",
+          "width": 0,
+          "x": 1490,
+          "y": 1291,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 391,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Inside",
+          "persistentUuid": "f4c77991-f03c-46bd-b953-c0ece03642f2",
+          "width": 214,
+          "x": 1481,
+          "y": 1351,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Top_Right",
+          "persistentUuid": "eb2be691-2aa8-4441-b6b7-4200cb0cccb4",
+          "width": 0,
+          "x": 927,
+          "y": 861,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 210,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform1_Inside_Right",
+          "persistentUuid": "17203397-02d1-43bc-8dbe-4d8808d3f2f5",
+          "width": 127,
+          "x": 3288,
+          "y": 1494,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 43,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Block",
+          "persistentUuid": "b0950b76-9de0-44f8-abae-4f0b109c313f",
+          "width": 1118,
+          "x": -333,
+          "y": 1674,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -18070,6 +18630,498 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Reward2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-8.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-9.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-10.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-11.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "78f04438-f443-4804-9856-481ab4f1b252-12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 160,
+                        "y": 160
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 320
+                          },
+                          {
+                            "x": 0,
+                            "y": 320
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -18122,6 +19174,9 @@
             "children": [
               {
                 "objectName": "Reward1"
+              },
+              {
+                "objectName": "Reward2"
               },
               {
                 "objectName": "COUT2"
@@ -18187,7 +19242,7 @@
                 "Weight of the World  NieR_ Automata - Violin _ Piano Cover.mp3",
                 "1",
                 "",
-                "30",
+                "25",
                 ""
               ]
             },
@@ -18949,11 +20004,12 @@
               "colorR": 74,
               "creationTime": 0,
               "folded": true,
-              "name": "Player Touch Block",
+              "name": "Player Touch Block (Dead)",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -19128,6 +20184,17 @@
                     },
                     {
                       "type": {
+                        "value": "ModVolumeMusicCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "/",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "PlaySound"
                       },
                       "parameters": [
@@ -19194,6 +20261,17 @@
                             "Player_No1.Status",
                             "=",
                             "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVolumeMusicCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "1",
+                            "*",
+                            "2"
                           ]
                         }
                       ],
@@ -19274,7 +20352,7 @@
                               "parameters": [
                                 "Game_Status",
                                 "=",
-                                "\"Jump Scare\""
+                                "\"Jump Scare1\""
                               ]
                             }
                           ]
@@ -19284,6 +20362,7 @@
                   ]
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -19307,46 +20386,328 @@
                         "",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreXY"
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Status",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Scream Tom 1.mp3",
+                        "",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Player_2",
+                        "Animation",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
                       },
                       "parameters": [
                         "Player_2",
                         "=",
-                        "370",
+                        "-90"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                      },
+                      "parameters": [
+                        "Player_2",
+                        "Flippable",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Black_TxtBackground2",
+                        "940",
+                        "500",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Resizable",
+                        "2000",
+                        "200"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
                         "=",
-                        "765"
+                        "8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_YouDied",
+                        "775",
+                        "480",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "=",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVolumeMusicCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "/",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Elden Ring  YOU DIED [Sound Effect].mp3",
+                        "",
+                        "50",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "7"
                       ]
                     }
                   ],
                   "events": [
                     {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Teleport Player Back To Bonfre"
+                    },
+                    {
                       "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                      "conditions": [],
+                      "actions": [
                         {
                           "type": {
-                            "value": "BooleanVariable"
+                            "value": "MettreXY"
                           },
                           "parameters": [
-                            "Happy_Content",
-                            "True",
-                            ""
+                            "Player_2",
+                            "=",
+                            "Respawn.Position_X",
+                            "=",
+                            "Respawn.Position_Y"
                           ]
-                        }
-                      ],
-                      "actions": [
+                        },
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Player_2",
+                            "=",
+                            "0"
+                          ]
+                        },
                         {
                           "type": {
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Game_Status",
+                            "Player_No2.Status",
                             "=",
-                            "\"Jump Scare\""
+                            "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVolumeMusicCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "1",
+                            "*",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_2",
+                                "Flippable",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_2",
+                                "Flippable",
+                                "no"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Happy_Content",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Game_Status",
+                                "=",
+                                "\"Jump Scare1\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -19354,6 +20715,7 @@
                   ]
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -19377,46 +20739,328 @@
                         "",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreXY"
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Status",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Scream Tom 1.mp3",
+                        "",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Player_3",
+                        "Animation",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
                       },
                       "parameters": [
                         "Player_3",
                         "=",
-                        "460",
+                        "-90"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                      },
+                      "parameters": [
+                        "Player_3",
+                        "Flippable",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Black_TxtBackground2",
+                        "940",
+                        "500",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Resizable",
+                        "2000",
+                        "200"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
                         "=",
-                        "765"
+                        "8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_YouDied",
+                        "775",
+                        "480",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "=",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVolumeMusicCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "/",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Elden Ring  YOU DIED [Sound Effect].mp3",
+                        "",
+                        "50",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "7"
                       ]
                     }
                   ],
                   "events": [
                     {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Teleport Player Back To Bonfre"
+                    },
+                    {
                       "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                      "conditions": [],
+                      "actions": [
                         {
                           "type": {
-                            "value": "BooleanVariable"
+                            "value": "MettreXY"
                           },
                           "parameters": [
-                            "Happy_Content",
-                            "True",
-                            ""
+                            "Player_3",
+                            "=",
+                            "Respawn.Position_X",
+                            "=",
+                            "Respawn.Position_Y"
                           ]
-                        }
-                      ],
-                      "actions": [
+                        },
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Player_3",
+                            "=",
+                            "0"
+                          ]
+                        },
                         {
                           "type": {
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Game_Status",
+                            "Player_No3.Status",
                             "=",
-                            "\"Jump Scare\""
+                            "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVolumeMusicCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "1",
+                            "*",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_3",
+                                "Flippable",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_3",
+                                "Flippable",
+                                "no"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Happy_Content",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Game_Status",
+                                "=",
+                                "\"Jump Scare1\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -19705,6 +21349,35 @@
                             "Checkpoint_PopUp",
                             "True",
                             ""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Happy_Content",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Game_Status",
+                                "=",
+                                "\"Jump Scare2\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -20094,6 +21767,17 @@
                         "Txt_Checkpoint_Discovered2",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVolumeMusicCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "*",
+                        "2"
+                      ]
                     }
                   ]
                 }
@@ -20470,6 +22154,7 @@
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -20490,6 +22175,240 @@
                         "Bonfire",
                         "Player_1.X()",
                         "Player_1.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Animation",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_X",
+                        "=",
+                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_Y",
+                        "=",
+                        "Bonfire.Y() - 35"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PickNearest"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Player_2.X()",
+                        "Player_2.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Animation",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_X",
+                        "=",
+                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_Y",
+                        "=",
+                        "Bonfire.Y() - 35"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PickNearest"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Player_3.X()",
+                        "Player_3.Y()",
                         ""
                       ]
                     },
@@ -20671,7 +22590,7 @@
                       "parameters": [
                         "Game_Status",
                         "=",
-                        "\"Jump Scare\""
+                        "\"Jump Scare1\""
                       ]
                     },
                     {
@@ -20689,7 +22608,7 @@
                       "parameters": [
                         "Game_Status",
                         "=",
-                        "\"Scaring\""
+                        "\"Happying\""
                       ]
                     },
                     {
@@ -20699,9 +22618,9 @@
                       "parameters": [
                         "",
                         "Reward1",
-                        "CameraCenterX()",
-                        "CameraCenterY()",
-                        ""
+                        "960",
+                        "540",
+                        "\"UI\""
                       ]
                     },
                     {
@@ -20764,24 +22683,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "MettreXY"
-                      },
-                      "parameters": [
-                        "Reward1",
-                        "=",
-                        "CameraCenterX()",
-                        "=",
-                        "CameraCenterY()"
-                      ]
-                    }
-                  ]
                 }
               ],
               "parameters": []
@@ -20791,7 +22692,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "disabled": true,
               "folded": true,
               "name": "2",
               "source": "",
@@ -20802,14 +22702,12 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "CollisionNP"
+                        "value": "StringVariable"
                       },
                       "parameters": [
-                        "Player_1",
-                        "Demon",
-                        "",
-                        "",
-                        ""
+                        "Game_Status",
+                        "=",
+                        "\"Jump Scare2\""
                       ]
                     },
                     {
@@ -20822,51 +22720,83 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                        "value": "SetStringVariable"
                       },
                       "parameters": [
-                        "Demon",
-                        "Animation",
+                        "Game_Status",
                         "=",
-                        "\"Hurt\""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::Name"
-                      },
-                      "parameters": [
-                        "Demon",
-                        "Animation",
-                        "=",
-                        "\"Hurt\""
+                        "\"Happying\""
                       ]
                     },
                     {
                       "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                        "value": "Create"
                       },
                       "parameters": [
-                        "Demon",
-                        "Animation"
+                        "",
+                        "Reward2",
+                        "960",
+                        "700",
+                        "\"UI\""
                       ]
-                    }
-                  ],
-                  "actions": [
+                    },
                     {
                       "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
                       },
                       "parameters": [
-                        "Demon",
-                        "Animation",
+                        "Reward2",
+                        "Scale",
                         "=",
-                        "\"Fly\""
+                        "6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StopMusicCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "鸡你太美-啊啊哟！.mp3",
+                        "",
+                        "100",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Reward2",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Game_Status",
+                        "=",
+                        "\"Play\""
                       ]
                     }
                   ]
