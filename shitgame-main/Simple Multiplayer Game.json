@@ -1149,6 +1149,34 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "Scream Tom 1.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Scream Tom 1.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "p1_dead.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "p1_dead.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Elden Ring  YOU DIED [Sound Effect].mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Elden Ring  YOU DIED [Sound Effect].mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1696,6 +1724,54 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "p1_jump.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 3,
+                        "y": 2
+                      },
+                      {
+                        "x": 68,
+                        "y": 2
+                      },
+                      {
+                        "x": 68,
+                        "y": 94
+                      },
+                      {
+                        "x": 3,
+                        "y": 94
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dead",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "p1_dead.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -3725,7 +3801,15 @@
       "width": 32,
       "variables": [],
       "effects": [],
-      "behaviors": []
+      "behaviors": [
+        {
+          "canBeGrabbed": true,
+          "name": "Platform",
+          "platformType": "NormalPlatform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "yGrabOffset": 0
+        }
+      ]
     },
     {
       "adaptCollisionMaskAutomatically": true,
@@ -4583,7 +4667,7 @@
     {
       "name": "Volume",
       "type": "number",
-      "value": 50
+      "value": 100
     },
     {
       "name": "Game_Status",
@@ -8790,7 +8874,7 @@
                       "parameters": [
                         "StrLength(Player_Name)",
                         ">",
-                        "12"
+                        "15"
                       ]
                     },
                     {
@@ -8853,7 +8937,7 @@
                       "parameters": [
                         "StrLength(Player_Name)",
                         "<=",
-                        "12"
+                        "15"
                       ]
                     }
                   ],
@@ -15777,13 +15861,23 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4027225833325952,
+        "zoomFactor": 0.35269049347712617,
         "windowMask": false
       },
       "objectsGroups": [],
       "variables": [
         {
           "name": "Checkpoint_PopUp",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "YouDied_PopUp",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Black_Screen",
           "type": "boolean",
           "value": false
         }
@@ -17613,7 +17707,7 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "Black_TxtBackground",
+          "name": "Black_TxtBackground1",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -17754,6 +17848,170 @@
             "characterSize": 75,
             "color": "122;101;76"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Txt_YouDied",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "YOU DIED",
+          "font": "Mantinia.otf",
+          "textAlignment": "center",
+          "characterSize": 75,
+          "color": {
+            "b": 33,
+            "g": 29,
+            "r": 141
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 0,
+            "shadowBlurRadius": 3,
+            "shadowColor": "184;151;115",
+            "shadowDistance": 19,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "YOU DIED",
+            "font": "Mantinia.otf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 75,
+            "color": "141;29;33"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Black_TxtBackground2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Black",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Untitled-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 300,
+                        "y": 100
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 12
+                          },
+                          {
+                            "x": 600,
+                            "y": 12
+                          },
+                          {
+                            "x": 600,
+                            "y": 164
+                          },
+                          {
+                            "x": 0,
+                            "y": 164
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Black_TxtBackground3",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Black",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Untitled-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 300,
+                        "y": 100
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 12
+                          },
+                          {
+                            "x": 600,
+                            "y": 12
+                          },
+                          {
+                            "x": 600,
+                            "y": 164
+                          },
+                          {
+                            "x": 0,
+                            "y": 164
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -17768,7 +18026,38 @@
             ]
           },
           {
+            "folderName": "PopUp_Checkpoint",
+            "children": [
+              {
+                "objectName": "Black_TxtBackground1"
+              },
+              {
+                "objectName": "Txt_Checkpoint_Discovered0"
+              },
+              {
+                "objectName": "Txt_Checkpoint_Discovered1"
+              },
+              {
+                "objectName": "Txt_Checkpoint_Discovered2"
+              }
+            ]
+          },
+          {
+            "folderName": "PopUp_YouDied",
+            "children": [
+              {
+                "objectName": "Black_TxtBackground2"
+              },
+              {
+                "objectName": "Txt_YouDied"
+              }
+            ]
+          },
+          {
             "objectName": "Block"
+          },
+          {
+            "objectName": "Black_TxtBackground3"
           },
           {
             "folderName": "Nice Things",
@@ -17783,18 +18072,6 @@
           },
           {
             "objectName": "COUT"
-          },
-          {
-            "objectName": "Txt_Checkpoint_Discovered0"
-          },
-          {
-            "objectName": "Txt_Checkpoint_Discovered1"
-          },
-          {
-            "objectName": "Txt_Checkpoint_Discovered2"
-          },
-          {
-            "objectName": "Black_TxtBackground"
           }
         ]
       },
@@ -17821,6 +18098,7 @@
           "target": "Players Color"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -17998,6 +18276,34 @@
               "conditions": [
                 {
                   "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"NULL\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "value": "StringVariable"
                   },
                   "parameters": [
@@ -18042,6 +18348,34 @@
               "conditions": [
                 {
                   "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"NULL\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "value": "StringVariable"
                   },
                   "parameters": [
@@ -18077,6 +18411,34 @@
                   "parameters": [
                     "Txt_P3",
                     ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"NULL\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ]
@@ -18369,7 +18731,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Mechanics",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -18408,46 +18769,240 @@
                         "",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreXY"
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Status",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Scream Tom 1.mp3",
+                        "",
+                        "30",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Player_1",
+                        "Animation",
+                        "=",
+                        "\"Dead\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
                       },
                       "parameters": [
                         "Player_1",
                         "=",
-                        "280",
+                        "-90"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                      },
+                      "parameters": [
+                        "Player_1",
+                        "Flippable",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Black_TxtBackground2",
+                        "940",
+                        "500",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Resizable",
+                        "2000",
+                        "200"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
                         "=",
-                        "765"
+                        "8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_YouDied",
+                        "775",
+                        "480",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "=",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Elden Ring  YOU DIED [Sound Effect].mp3",
+                        "",
+                        "50",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "7"
                       ]
                     }
                   ],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
+                      "conditions": [],
+                      "actions": [
                         {
                           "type": {
-                            "value": "BooleanVariable"
+                            "value": "MettreXY"
                           },
                           "parameters": [
-                            "Happy_Content",
-                            "True",
-                            ""
+                            "Player_1",
+                            "=",
+                            "280",
+                            "=",
+                            "765"
                           ]
-                        }
-                      ],
-                      "actions": [
+                        },
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Player_1",
+                            "=",
+                            "0"
+                          ]
+                        },
                         {
                           "type": {
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Game_Status",
+                            "Player_No1.Status",
                             "=",
-                            "\"Jump Scare\""
+                            "\"Play\""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Happy_Content",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Game_Status",
+                                "=",
+                                "\"Jump Scare\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -18752,7 +19307,7 @@
                           },
                           "parameters": [
                             "",
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "940",
                             "500",
                             "\"UI\""
@@ -18763,7 +19318,7 @@
                             "value": "ResizableCapability::ResizableBehavior::SetSize"
                           },
                           "parameters": [
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "Resizable",
                             "2000",
                             "200"
@@ -18774,7 +19329,7 @@
                             "value": "ChangePlan"
                           },
                           "parameters": [
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "=",
                             "8"
                           ]
@@ -18784,7 +19339,7 @@
                             "value": "OpacityCapability::OpacityBehavior::SetValue"
                           },
                           "parameters": [
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "Opacity",
                             "=",
                             "0"
@@ -19032,7 +19587,7 @@
                             "value": "OpacityCapability::OpacityBehavior::Value"
                           },
                           "parameters": [
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "Opacity",
                             "<=",
                             "200"
@@ -19045,7 +19600,7 @@
                             "value": "OpacityCapability::OpacityBehavior::SetValue"
                           },
                           "parameters": [
-                            "Black_TxtBackground",
+                            "Black_TxtBackground1",
                             "Opacity",
                             "+",
                             "1"
@@ -19075,10 +19630,10 @@
                         "value": "OpacityCapability::OpacityBehavior::SetValue"
                       },
                       "parameters": [
-                        "Black_TxtBackground",
+                        "Black_TxtBackground1",
                         "Opacity",
                         "-",
-                        "10"
+                        "5"
                       ]
                     },
                     {
@@ -19089,7 +19644,7 @@
                         "Txt_Checkpoint_Discovered0",
                         "Opacity",
                         "-",
-                        "10"
+                        "5"
                       ]
                     },
                     {
@@ -19180,7 +19735,7 @@
                         "value": "Wait"
                       },
                       "parameters": [
-                        "1.5"
+                        "2"
                       ]
                     },
                     {
@@ -19188,7 +19743,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Black_TxtBackground",
+                        "Black_TxtBackground1",
                         ""
                       ]
                     },
@@ -19216,6 +19771,365 @@
                       },
                       "parameters": [
                         "Txt_Checkpoint_Discovered2",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "You Died Pop Up",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "Opacity",
+                        "+",
+                        "5"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "OpacityCapability::OpacityBehavior::Value"
+                          },
+                          "parameters": [
+                            "Black_TxtBackground2",
+                            "Opacity",
+                            "<=",
+                            "200"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "OpacityCapability::OpacityBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Black_TxtBackground2",
+                            "Opacity",
+                            "+",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        "Opacity",
+                        "-",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        "Opacity",
+                        "-",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "2.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "YouDied_PopUp",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground2",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Txt_YouDied",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Black_Screen",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Black_TxtBackground3",
+                        "960",
+                        "600",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
+                        "Resizable",
+                        "2000",
+                        "2500"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
+                        "=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Black Screen Pop Up",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Black_Screen",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
+                        "Opacity",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Black_Screen",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
+                        "Opacity",
+                        "-",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Black_Screen",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Black_Screen",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Black_TxtBackground3",
                         ""
                       ]
                     }
@@ -19986,6 +20900,16 @@
                     "=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20012,6 +20936,16 @@
                     "=",
                     "2"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20037,6 +20971,16 @@
                     "Player_Number",
                     "=",
                     "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ],
@@ -20093,6 +21037,16 @@
                     "=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20119,6 +21073,16 @@
                     "=",
                     "2"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20144,6 +21108,16 @@
                     "Player_Number",
                     "=",
                     "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ],
@@ -20211,6 +21185,16 @@
                     "=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20237,6 +21221,16 @@
                     "=",
                     "2"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20262,6 +21256,16 @@
                     "Player_Number",
                     "=",
                     "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ],
@@ -20328,6 +21332,16 @@
                     "=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20354,6 +21368,16 @@
                     "=",
                     "2"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20379,6 +21403,16 @@
                     "Player_Number",
                     "=",
                     "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ],
@@ -20435,6 +21469,16 @@
                     "=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20461,6 +21505,16 @@
                     "=",
                     "2"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [
@@ -20486,6 +21540,16 @@
                     "Player_Number",
                     "=",
                     "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Status",
+                    "=",
+                    "\"Play\""
                   ]
                 }
               ],
