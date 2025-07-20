@@ -1177,6 +1177,16 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "Weight of the World  NieR_ Automata - Violin _ Piano Cover.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Weight of the World  NieR_ Automata - Violin _ Piano Cover.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -3803,10 +3813,10 @@
       "effects": [],
       "behaviors": [
         {
-          "canBeGrabbed": true,
           "name": "Platform",
-          "platformType": "NormalPlatform",
           "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": true,
+          "platformType": "NormalPlatform",
           "yGrabOffset": 0
         }
       ]
@@ -4667,7 +4677,7 @@
     {
       "name": "Volume",
       "type": "number",
-      "value": 100
+      "value": 50
     },
     {
       "name": "Game_Status",
@@ -4759,8 +4769,40 @@
     },
     {
       "name": "Checkpoint",
-      "type": "number",
-      "value": 0
+      "type": "structure",
+      "children": [
+        {
+          "name": "CP1",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "CP2",
+          "type": "boolean",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "Respawn",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Flip",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Position_X",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Position_Y",
+          "type": "number",
+          "value": 0
+        }
+      ]
     },
     {
       "name": "Happy_Content",
@@ -5216,7 +5258,7 @@
           "string": "HOST",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 100,
+          "characterSize": 120,
           "color": {
             "b": 255,
             "g": 255,
@@ -5240,7 +5282,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 100,
+            "characterSize": 120,
             "color": "255;255;255"
           }
         },
@@ -5282,7 +5324,7 @@
           "string": "JOIN",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 100,
+          "characterSize": 120,
           "color": {
             "b": 255,
             "g": 255,
@@ -5306,7 +5348,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 100,
+            "characterSize": 120,
             "color": "255;255;255"
           }
         },
@@ -5351,7 +5393,7 @@
           "string": "Do you want to host or join the game?",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 80,
+          "characterSize": 100,
           "color": {
             "b": 255,
             "g": 255,
@@ -5375,7 +5417,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 80,
+            "characterSize": 100,
             "color": "255;255;255"
           }
         },
@@ -16166,6 +16208,22 @@
               "value": 1
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "COUT",
+          "persistentUuid": "754bda06-d52b-4cd9-b128-ac096486b5de",
+          "width": 0,
+          "x": 215,
+          "y": 634,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -18126,10 +18184,10 @@
               },
               "parameters": [
                 "",
-                "Super Mario Bros (NES) Music - Overworld Theme.mp3",
+                "Weight of the World  NieR_ Automata - Violin _ Piano Cover.mp3",
                 "1",
                 "",
-                "10",
+                "30",
                 ""
               ]
             },
@@ -18139,6 +18197,15 @@
               },
               "parameters": [
                 "Block"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\""
               ]
             }
           ],
@@ -18439,6 +18506,147 @@
                     "Player_No3.Status",
                     "=",
                     "\"Play\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Flip",
+                    "False",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_X",
+                    "=",
+                    "280"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_Y",
+                    "=",
+                    "765"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Flip",
+                    "False",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_X",
+                    "=",
+                    "370"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_Y",
+                    "=",
+                    "765"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Player_Number",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Flip",
+                    "False",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_X",
+                    "=",
+                    "460"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Respawn.Position_Y",
+                    "=",
+                    "765"
                   ]
                 }
               ]
@@ -18796,7 +19004,7 @@
                         "",
                         "Scream Tom 1.mp3",
                         "",
-                        "30",
+                        "25",
                         ""
                       ]
                     },
@@ -18941,6 +19149,18 @@
                   ],
                   "events": [
                     {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Teleport Player Back To Bonfre"
+                    },
+                    {
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [],
                       "actions": [
@@ -18951,9 +19171,9 @@
                           "parameters": [
                             "Player_1",
                             "=",
-                            "280",
+                            "Respawn.Position_X",
                             "=",
-                            "765"
+                            "Respawn.Position_Y"
                           ]
                         },
                         {
@@ -18978,6 +19198,60 @@
                         }
                       ],
                       "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_1",
+                                "Flippable",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlipX"
+                              },
+                              "parameters": [
+                                "Player_1",
+                                "Flippable",
+                                "no"
+                              ]
+                            }
+                          ]
+                        },
                         {
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
@@ -19167,17 +19441,6 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "NumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "ID",
-                        "=",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "AnimatableCapability::AnimatableBehavior::Name"
                       },
                       "parameters": [
@@ -19239,16 +19502,6 @@
                     }
                   ],
                   "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Checkpoint",
-                        "=",
-                        "1"
-                      ]
-                    },
                     {
                       "type": {
                         "value": "AnimatableCapability::AnimatableBehavior::SetName"
@@ -19455,6 +19708,74 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Checkpoints",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Bonfire",
+                                "ID",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Checkpoint.CP1",
+                                "True",
+                                "1"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Bonfire",
+                                "ID",
+                                "=",
+                                "2"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Checkpoint.CP2",
+                                "True",
+                                "1"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
                     }
                   ]
                 },
@@ -20137,6 +20458,135 @@
                 }
               ],
               "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Set Respawn Position",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PickNearest"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Player_1.X()",
+                        "Player_1.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Bonfire",
+                        "Animation",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_X",
+                        "=",
+                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Respawn.Position_Y",
+                        "=",
+                        "Bonfire.Y() - 35"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Flip",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
             }
           ],
           "parameters": []
@@ -20440,7 +20890,7 @@
                 "COUT",
                 "Text",
                 "=",
-                "ToString(StrLength(Player_No1.Name))"
+                "ToString(RandomWithStep(50,100,200))"
               ]
             }
           ]
@@ -39830,8 +40280,8 @@
           "name": "Txt_Host_Or_Join",
           "persistentUuid": "38202f8c-cb2e-48d5-b644-c229ca371488",
           "width": 0,
-          "x": 416,
-          "y": 230,
+          "x": 281,
+          "y": 253,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -39846,8 +40296,8 @@
           "name": "Txt_Btn_Join",
           "persistentUuid": "96b4e7fc-83ad-4cca-b6fb-8dd8f0ada88a",
           "width": 0,
-          "x": 873,
-          "y": 700,
+          "x": 856,
+          "y": 720,
           "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
@@ -39862,8 +40312,8 @@
           "name": "Txt_Btn_Host",
           "persistentUuid": "90eb8879-f548-472a-828d-7a250c2640db",
           "width": 0,
-          "x": 862,
-          "y": 490,
+          "x": 845,
+          "y": 500,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
