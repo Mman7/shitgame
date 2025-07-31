@@ -48169,6 +48169,7 @@
                 "  console.warn('Running offline mode');",
                 "  return;",
                 "}",
+                "window.client.sendPing();",
                 "window.client.sendToAll(playerData.toJSON());",
                 "",
                 ""
