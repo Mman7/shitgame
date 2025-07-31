@@ -28213,7 +28213,7 @@
     {
       "name": "Happy_Content",
       "type": "boolean",
-      "value": false
+      "value": true
     }
   ],
   "layouts": [
@@ -56448,7 +56448,7 @@
                 "        const client = dgram.createSocket('udp4');",
                 "        this.port = 54122;",
                 "        this.hostIp;",
-                "        this.connectorList = [];",
+                "        this.connectorList = ['127.0.0.1'];",
                 "        client.bind(this.port)",
                 "        this.client = client;",
                 "        // for dev testing",
@@ -56457,7 +56457,19 @@
                 "    setHostIp(ip){",
                 "        this.hostIp = ip;",
                 "    }",
+                "    // SEND PING -----",
+                "    sendPing(){",
+                "        const playerNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                "        const data = JSON.stringify({",
+                "            TYPE : 'CONNECTION',",
+                "            PlayerNumber: playerNum,",
+                "            Connection : true",
+                "        });",
+                "        this.sendToAll(data)",
+                "    }",
+                "",
                 "    sendToAll(data){",
+                "        if(!data) throw new Error('data is not provide');",
                 "        console.log('exec send to all');",
                 "        for(var i in this.connectorList){",
                 "            var ip = this.connectorList[i];",
@@ -66650,8 +66662,12 @@
             {
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
-                "window.client.client.on('message',(data,rinfo)=>{",
-                "    console.log(data)",
+                "window.client.client.on('message',(msg,rinfo)=>{",
+                "    const data = JSON.parse(msg);",
+                "    if(data.TYPE == 'CONNECTION'){",
+                "        const game = runtimeScene.getGame();",
+                "        const playerNumber = game.getVariables().get(`Player_${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
+                "    }",
                 "});"
               ],
               "parameterObjects": "",
@@ -66659,6 +66675,30 @@
               "eventsSheetExpanded": false
             }
           ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Send dick",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "window.client.sendPing();",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -66779,7 +66819,7 @@
                 "",
                 "\"P1 Connection Fail\"",
                 ">=",
-                "1"
+                "2"
               ]
             },
             {
@@ -66863,7 +66903,7 @@
                 "",
                 "\"P2 Connection Fail\"",
                 ">=",
-                "1"
+                "2"
               ]
             },
             {
@@ -66947,7 +66987,7 @@
                 "",
                 "\"P3 Connection Fail\"",
                 ">=",
-                "1"
+                "2"
               ]
             },
             {
@@ -67024,9 +67064,9 @@
           "type": "BuiltinCommonInstructions::JsCode",
           "inlineCode": [
             "// Change the variable \"Player_No1.Connection\" to True if the Player_Number == 1 every single time.",
-            "const game = runtimeScene.getGame();",
-            "const playerNumber = game.getVariables().get('Player_Number').getAsNumber();",
-            "if(playerNumber == 1) game.getVariables().get('Player_No1').getChild('Connection').setBoolean(true);",
+            "// const game = runtimeScene.getGame();",
+            "// const playerNumber = game.getVariables().get('Player_Number').getAsNumber();",
+            "// if(playerNumber == 1) game.getVariables().get('Player_No1').getChild('Connection').setBoolean(true);",
             ""
           ],
           "parameterObjects": "",
