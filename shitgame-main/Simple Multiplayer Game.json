@@ -30880,6 +30880,18 @@
           ],
           "events": [
             {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const vol = localStorage.getItem('volume');",
+                "if(!vol) return;",
+                "runtimeScene.getGame().getVariables().get('Volume').setNumber(vol);",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -56486,6 +56498,7 @@
                 "                    this.addConnector(rinfo.address)",
                 "                    this.client.send(res,this.port,rinfo.address)",
                 "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
+                "                    game.getVariables().get('Player_No2').getChild('Connection').setBoolean(true);",
                 "                }",
                 "            ",
                 "            if(data.TYPE === response.lobby_status){",
@@ -56525,7 +56538,8 @@
                 "                for(var i in list){",
                 "                    this.addConnector(i)",
                 "                }",
-                "                ",
+                "                const game = runtimeScene.getGame();",
+                "                game.getVariables().get('Player_No2').getChild('Connection').setBoolean(true);",
                 "                console.log('Joined to ' + rinfo.address)",
                 "                // Apply host data",
                 "                const lobbyStatus = JSON.parse(data.Lobby);",
@@ -56619,6 +56633,19 @@
                     "=",
                     "SquareWhiteSlider.Value()"
                   ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "console.log('save v')",
+                    "const volumn = runtimeScene.getGame().getVariables().get('Volume').getAsNumber();",
+                    "localStorage.setItem('volume',volumn);"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
                 }
               ]
             }
@@ -66617,6 +66644,19 @@
                 "",
                 "\"P3 Connection Fail\""
               ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "window.client.client.on('message',(data,rinfo)=>{",
+                "    console.log(data)",
+                "});"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
             }
           ]
         },
