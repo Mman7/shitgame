@@ -5397,7 +5397,7 @@
       ],
       "animations": [
         {
-          "name": "Stand",
+          "name": "Idle",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -33013,7 +33013,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Button Join",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -35442,6 +35441,53 @@
       },
       "events": [
         {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "DEV",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"F3\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Game_Status",
+                    "=",
+                    "\"Start Game\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": "window.client.sendStart()",
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -35463,6 +35509,7 @@
           "target": "Secret Rewards"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -36148,6 +36195,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Host Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -36374,6 +36422,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Wait Host Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -36751,6 +36800,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Check Picked Character",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -38376,7 +38426,7 @@
                     "Dajiba",
                     "Animation",
                     "=",
-                    "\"Stand\""
+                    "\"Idle\""
                   ]
                 }
               ]
@@ -47970,7 +48020,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "name": "Player Model % Handle movements",
+              "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
@@ -47986,10 +48036,10 @@
                     "",
                     "class Player {",
                     "  constructor({number}) {",
-                    "    this.update(number);",
+                    "    this.update();",
+                    "    this.playerNumber = number;",
                     "  }",
-                    "  update(number){",
-                    "    this.playerNumber = runtimeScene.getGame().getVariables().get(`Player_Number`).getAsNumber();",
+                    "  update(){",
                     "    this.playerVal = runtimeScene.getGame().getVariables().get(`Player_No${this.playerNumber}`);",
                     "    this.playerCharacter = this.playerVal.getChild(\"Character\").getAsString();",
                     "    this.object = runtimeScene.getObjects(`${this.playerCharacter}`)[0];",
@@ -48002,9 +48052,11 @@
                     "  }",
                     "  setPos = (x,y) => this.object.setPosition(x,y);",
                     "  setAni = (aniName) => this.object.setAnimationName(aniName);",
-                    "  setAngle = (angle) => this.object.setAngle(angle)",
-                    "  setFlip = (value) => value === 'Right' ? this.object.flipX(false) : this.object.flipX(true)",
+                    "  setAngle = (angle) => this.object.setAngle(angle);",
+                    "  setFlip = (value) => value === 'Right' ? this.object.flipX(false) : this.object.flipX(true);",
+                    "",
                     "  toJSON() {",
+                    "    this.update();",
                     "    return JSON.stringify({",
                     "      TYPE: 'MOVEMENT',",
                     "      Character: this.playerCharacter,",
@@ -48021,20 +48073,28 @@
                     "}",
                     "",
                     "const player1 = new Player({number:1});",
+                    "player1.update();",
                     "const player2 = new Player({number:2});",
+                    "player2.update();",
                     "const player3 = new Player({number:3});",
-                    "// add to windows ",
-                    " window.player1 = player1;",
-                    " window.player2 = player2;",
-                    " window.player3 = player3;",
+                    "player3.update();",
+                    "",
+                    "// check null and add to windows ",
+                    "const p1c = runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Character').getAsString();",
+                    "const p2c = runtimeScene.getGame().getVariables().get(`Player_No2`).getChild('Character').getAsString();",
+                    "const p3c = runtimeScene.getGame().getVariables().get(`Player_No3`).getChild('Character').getAsString();",
+                    "",
+                    "if(p1c !== \"NULL\")window.player1 = player1;",
+                    "if(p2c !== \"NULL\")window.player2 = player2;",
+                    "if(p3c !== \"NULL\")window.player3 = player3;",
                     "",
                     "if(!window.client){",
                     "  console.warn('Running offline mode');",
                     "  return;",
                     "}",
+                    "",
                     "const client = window.client.client;",
                     "client.on('message', (msg, rinfo) => {",
-                    "  console.log(`data received from ${rinfo.address}`)",
                     "  setImmediate(() => {",
                     "    const data = JSON.parse(msg.toString());",
                     "    if(data.TYPE === 'MOVEMENT'){",
@@ -48044,13 +48104,13 @@
                     "    const playerCharacter = data.Character;",
                     "    const playerAni = data.Animation;",
                     "    const facingDir = data.FacingDir;",
-                    "    const x = playerPosInData['x'];",
+                    "    const x = playerPosInData['x'] ;",
                     "    const y = playerPosInData['y'];",
                     "    switch (playerNum) {",
                     "      case 1:",
-                    "        player1.setPos(x,y)",
-                    "        player1.setAni(playerAni)",
-                    "        player1.setFlip(facingDir)",
+                    "        player1.setPos(x,y);",
+                    "        player1.setAni(playerAni);",
+                    "        player1.setFlip(facingDir);",
                     "        break;",
                     "",
                     "      case 2:",
@@ -48066,7 +48126,7 @@
                     "        break;",
                     "",
                     "      default:",
-                    "      throw new Error('data incorrect or player not fouond');",
+                    "      throw new Error('data incorrect or player not found');",
                     "    }",
                     "  }",
                     "  });",
@@ -48290,18 +48350,15 @@
                 "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
                 "window.client.sendPing();",
                 "",
-                "if(playerNumber == 1) {",
-                "  window.player1.update();",
+                "if(playerNumber == 1) ",
                 "  window.client.sendToAll(window.player1.toJSON());",
-                "}",
-                "if(playerNumber == 2) {",
-                "  window.player2.update();",
+                "",
+                "if(playerNumber == 2) ",
                 "  window.client.sendToAll(window.player2.toJSON());",
-                "}",
-                "if(playerNumber == 3) {",
-                "  window.player3.update();",
+                "",
+                "if(playerNumber == 3) ",
                 "  window.client.sendToAll(window.player3.toJSON());",
-                "}",
+                "",
                 "",
                 "",
                 ""
@@ -48947,6 +49004,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Mechanics",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -56585,7 +56643,7 @@
                 "        client.bind(this.port)",
                 "        this.client = client;",
                 "        // for dev testing",
-                "        // this.hostLobby()",
+                "        this.hostLobby()",
                 "    }",
                 "    setHostIp(ip){",
                 "        this.hostIp = ip;",
@@ -56615,7 +56673,6 @@
                 "            TYPE: response.game_status,",
                 "            GameStatus: gameStatus,",
                 "        })",
-                "        console.log(data)",
                 "        this.sendToAll(data);",
                 "    }",
                 "",
@@ -58871,12 +58928,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Left",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -58895,8 +58952,7 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
-                    "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");",
-                    ""
+                    "runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");"
                   ],
                   "parameterObjects": "",
                   "useStrict": true,
@@ -58951,16 +59007,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -58986,16 +59032,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "yes"
                           ]
                         }
                       ]
@@ -59023,16 +59059,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -59058,16 +59084,6 @@
                           "parameters": [
                             "Dajiba",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "yes"
                           ]
                         }
                       ]
@@ -59123,16 +59139,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -59158,16 +59164,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "yes"
                           ]
                         }
                       ]
@@ -59195,16 +59191,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -59230,16 +59216,6 @@
                           "parameters": [
                             "Dajiba",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "yes"
                           ]
                         }
                       ]
@@ -59295,16 +59271,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -59330,16 +59296,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "yes"
                           ]
                         }
                       ]
@@ -59367,16 +59323,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     },
@@ -59403,16 +59349,6 @@
                             "Dajiba",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "yes"
-                          ]
                         }
                       ]
                     }
@@ -59428,12 +59364,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Right",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -59452,7 +59388,7 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
-                    "runtimeScene.getGame().getVariables().get(`Player_${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
+                    "runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
                   ],
                   "parameterObjects": "",
                   "useStrict": true,
@@ -59507,16 +59443,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59542,16 +59468,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
@@ -59579,16 +59495,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59614,16 +59520,6 @@
                           "parameters": [
                             "Dajiba",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
@@ -59679,16 +59575,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59714,16 +59600,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
@@ -59751,16 +59627,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59786,16 +59652,6 @@
                           "parameters": [
                             "Dajiba",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
@@ -59851,16 +59707,6 @@
                             "Arthur",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59886,16 +59732,6 @@
                           "parameters": [
                             "Knight",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
@@ -59923,16 +59759,6 @@
                             "Witch",
                             "PlatformerObject"
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Flippable",
-                            "no"
-                          ]
                         }
                       ]
                     },
@@ -59958,16 +59784,6 @@
                           "parameters": [
                             "Dajiba",
                             "PlatformerObject"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "FlippableCapability::FlippableBehavior::FlipX"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Flippable",
-                            "no"
                           ]
                         }
                       ]
