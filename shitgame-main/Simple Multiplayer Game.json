@@ -27838,6 +27838,132 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "COUT1",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "NULL",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "NULL",
+        "font": "",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
+        "color": "0;0;0"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "COUT2",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "NULL",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "NULL",
+        "font": "",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
+        "color": "0;0;0"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "COUT3",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "NULL",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "NULL",
+        "font": "",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -27965,6 +28091,20 @@
       },
       {
         "objectName": "Bonfire"
+      },
+      {
+        "folderName": "COUT",
+        "children": [
+          {
+            "objectName": "COUT1"
+          },
+          {
+            "objectName": "COUT2"
+          },
+          {
+            "objectName": "COUT3"
+          }
+        ]
       },
       {
         "objectName": "Txt_Player_Disconnected"
@@ -28214,6 +28354,20 @@
       "name": "Happy_Content",
       "type": "boolean",
       "value": true
+    },
+    {
+      "name": "Test",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 0
+        }
+      ]
     }
   ],
   "layouts": [
@@ -30886,17 +31040,36 @@
                 "if(!vol) return;",
                 "runtimeScene.getGame().getVariables().get('Volume').setNumber(vol);",
                 "",
+                "let backgroundTask;",
+                "window.addEventListener(\"blur\", () => {",
+                "  console.log(\"Window blurred — starting background task\");",
+                "",
+                "  backgroundTask = setInterval(() => {",
+                "    console.log(\"Running background task\");",
+                "    window.client.sendPing()",
+                "  }, 500); ",
+                "});",
+                "",
+                "window.addEventListener(\"focus\", () => {",
+                "  console.log(\"Window focused — stopping background task\");",
+                "  clearInterval(backgroundTask);",
+                "});",
+                "",
                 "window.client.client.on('message',(msg,rinfo)=>{",
                 "    const data = JSON.parse(msg);",
                 "    if(data.TYPE == 'CONNECTION'){",
                 "        const game = runtimeScene.getGame();",
-                "        const playerNumber = game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
+                "        game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
+                "        const abc = game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').getAsBoolean();",
+                "        // if(data.PlayerNumber == 1) return;",
+                "        console.log(data.PlayerNumber);",
+                "        console.log(abc);",
                 "    }",
                 "});"
               ],
               "parameterObjects": "",
               "useStrict": true,
-              "eventsSheetExpanded": false
+              "eventsSheetExpanded": true
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -34504,6 +34677,54 @@
               "value": 2
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT1",
+          "persistentUuid": "c6b8a517-b75d-4c99-8f70-da6e8609d6db",
+          "width": 0,
+          "x": 1099,
+          "y": 157,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT2",
+          "persistentUuid": "6faecee7-3fc1-42d9-8221-ce812eccc295",
+          "width": 0,
+          "x": 1105,
+          "y": 291,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT3",
+          "persistentUuid": "01930b9a-12b4-4f42-aea8-c01f05e55a2d",
+          "width": 0,
+          "x": 1093,
+          "y": 485,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -38378,18 +38599,40 @@
           "parameters": []
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
             {
               "type": {
-                "value": "SetNumberVariable"
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
-                "Player_Number",
+                "COUT1",
+                "Text",
                 "=",
-                "2"
+                "Test[0]"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "COUT2",
+                "Text",
+                "=",
+                "Test[1]"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "COUT3",
+                "Text",
+                "=",
+                "Player_No3.Connection"
               ]
             }
           ]
@@ -45351,48 +45594,6 @@
       ],
       "objects": [
         {
-          "assetStoreId": "",
-          "bold": true,
-          "italic": false,
-          "name": "COUT1",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "NULL",
-          "font": "",
-          "textAlignment": "center",
-          "characterSize": 30,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          },
-          "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "NULL",
-            "font": "",
-            "textAlignment": "center",
-            "verticalTextAlignment": "center",
-            "characterSize": 30,
-            "color": "0;0;0"
-          }
-        },
-        {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Block",
@@ -46651,90 +46852,6 @@
           ]
         },
         {
-          "assetStoreId": "",
-          "bold": true,
-          "italic": false,
-          "name": "COUT2",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "NULL",
-          "font": "",
-          "textAlignment": "center",
-          "characterSize": 30,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          },
-          "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "NULL",
-            "font": "",
-            "textAlignment": "center",
-            "verticalTextAlignment": "center",
-            "characterSize": 30,
-            "color": "0;0;0"
-          }
-        },
-        {
-          "assetStoreId": "",
-          "bold": true,
-          "italic": false,
-          "name": "COUT3",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "NULL",
-          "font": "",
-          "textAlignment": "center",
-          "characterSize": 30,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          },
-          "content": {
-            "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "NULL",
-            "font": "",
-            "textAlignment": "center",
-            "verticalTextAlignment": "center",
-            "characterSize": 30,
-            "color": "0;0;0"
-          }
-        },
-        {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Ladder",
@@ -46850,15 +46967,6 @@
           },
           {
             "objectName": "Ladder"
-          },
-          {
-            "objectName": "COUT1"
-          },
-          {
-            "objectName": "COUT2"
-          },
-          {
-            "objectName": "COUT3"
           },
           {
             "objectName": "Detect_Block"
@@ -56481,7 +56589,7 @@
                 "        client.bind(this.port)",
                 "        this.client = client;",
                 "        // for dev testing",
-                "        // this.hostLobby()",
+                "        this.hostLobby()",
                 "    }",
                 "    setHostIp(ip){",
                 "        this.hostIp = ip;",
@@ -56499,7 +56607,6 @@
                 "",
                 "    sendToAll(data){",
                 "        if(!data) throw new Error('data is not provide');",
-                "        console.log('exec send to all');",
                 "        for(var i in this.connectorList){",
                 "            var ip = this.connectorList[i];",
                 "            this.client.send(data,this.port,ip)",
@@ -56539,7 +56646,6 @@
                 "                    this.addConnector(rinfo.address)",
                 "                    this.client.send(res,this.port,rinfo.address)",
                 "                    console.log(`PLAYER JOINED: ${rinfo.address}`)",
-                "                    game.getVariables().get('Player_No2').getChild('Connection').setBoolean(true);",
                 "                }",
                 "            ",
                 "            if(data.TYPE === response.lobby_status){",
@@ -66646,6 +66752,7 @@
       "name": "Check_Connections",
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -66728,21 +66835,21 @@
           "actions": [
             {
               "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"P1 Connection Fail\""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetBooleanVariable"
               },
               "parameters": [
                 "Player_No1.Connection",
                 "False",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"P1 Connection Fail\""
               ]
             }
           ]
@@ -67067,6 +67174,32 @@
               "parameters": [
                 "Txt_Player_Disconnected",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Test[0]",
+                "=",
+                "TimerElapsedTime(\"P1 Connection Fail\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Test[1]",
+                "=",
+                "TimerElapsedTime(\"P2 Connection Fail\")"
               ]
             }
           ]
