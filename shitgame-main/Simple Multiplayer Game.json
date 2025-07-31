@@ -30885,7 +30885,14 @@
                 "const vol = localStorage.getItem('volume');",
                 "if(!vol) return;",
                 "runtimeScene.getGame().getVariables().get('Volume').setNumber(vol);",
-                ""
+                "",
+                "window.client.client.on('message',(msg,rinfo)=>{",
+                "    const data = JSON.parse(msg);",
+                "    if(data.TYPE == 'CONNECTION'){",
+                "        const game = runtimeScene.getGame();",
+                "        const playerNumber = game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
+                "    }",
+                "});"
               ],
               "parameterObjects": "",
               "useStrict": true,
@@ -39241,6 +39248,13 @@
           "target": "Secret Rewards"
         },
         {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Check_Connections"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -42861,6 +42875,13 @@
             "includeConfig": 0
           },
           "target": "Secret Rewards"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -46872,6 +46893,13 @@
             "includeConfig": 0
           },
           "target": "Secret Rewards"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -56652,7 +56680,6 @@
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
-                    "console.log('save v')",
                     "const volumn = runtimeScene.getGame().getVariables().get('Volume').getAsNumber();",
                     "localStorage.setItem('volume',volumn);"
                   ],
@@ -66658,23 +66685,6 @@
                 "\"P3 Connection Fail\""
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "window.client.client.on('message',(msg,rinfo)=>{",
-                "    const data = JSON.parse(msg);",
-                "    if(data.TYPE == 'CONNECTION'){",
-                "        const game = runtimeScene.getGame();",
-                "        const playerNumber = game.getVariables().get(`Player_${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
-                "    }",
-                "});"
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
           ]
         },
         {
@@ -67060,19 +67070,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": [
-            "// Change the variable \"Player_No1.Connection\" to True if the Player_Number == 1 every single time.",
-            "// const game = runtimeScene.getGame();",
-            "// const playerNumber = game.getVariables().get('Player_Number').getAsNumber();",
-            "// if(playerNumber == 1) game.getVariables().get('Player_No1').getChild('Connection').setBoolean(true);",
-            ""
-          ],
-          "parameterObjects": "",
-          "useStrict": true,
-          "eventsSheetExpanded": false
         }
       ]
     },
