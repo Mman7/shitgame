@@ -35564,7 +35564,6 @@
           "target": "Secret Rewards"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -36639,7 +36638,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Starting Game",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -36896,6 +36894,19 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "// // Auto choose player\r",
+                    "// console.log('SEND DATA')\r",
+                    "// window.client.lobby.update();\r",
+                    "// //send back to host\r",
+                    "// window.client.sendToAll(window.client.lobby.toJSON())"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
                 }
               ]
             },
@@ -36912,6 +36923,7 @@
               "comment": "Randomize Character (Just the current player only)"
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -46148,7 +46160,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.3645833333333398,
+        "zoomFactor": 0.30887412163427047,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -46768,6 +46780,22 @@
               "value": 1
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT1",
+          "persistentUuid": "983b6905-8518-43cc-872e-668168314901",
+          "width": 0,
+          "x": 210,
+          "y": 668,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -49165,6 +49193,7 @@
                     "  witch : 'Witch',",
                     "  dajiba : 'Dajiba',",
                     "}",
+                    "// TODO fix two player cant move",
                     "",
                     "class Player {",
                     "  constructor({number}) {",
@@ -49211,24 +49240,15 @@
                     "const player3 = new Player({number:3});",
                     "player3.update();",
                     "",
-                    "// check null and add to windows ",
-                    "const p1c = runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Character').getAsString();",
-                    "const p2c = runtimeScene.getGame().getVariables().get(`Player_No2`).getChild('Character').getAsString();",
-                    "const p3c = runtimeScene.getGame().getVariables().get(`Player_No3`).getChild('Character').getAsString();",
+                    "window.player1 = player1;",
+                    "window.player2 = player2;",
+                    "window.player3 = player3;",
                     "",
-                    "if(p1c !== \"NULL\")window.player1 = player1;",
-                    "if(p2c !== \"NULL\")window.player2 = player2;",
-                    "if(p3c !== \"NULL\")window.player3 = player3;",
-                    "",
-                    "if(!window.client){",
-                    "  console.warn('Running offline mode');",
-                    "  return;",
-                    "}",
-                    "",
+                    "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
                     "const client = window.client.client;",
                     "client.on('message', (msg, rinfo) => {",
-                    "  setImmediate(() => {",
                     "    const data = JSON.parse(msg.toString());",
+                    "    console.log(data);",
                     "    if(data.TYPE === 'MOVEMENT'){",
                     "    const playerNum = data.Player;",
                     "    const playerPosInData = data.Position;",
@@ -49261,8 +49281,7 @@
                     "      throw new Error('data incorrect or player not found');",
                     "    }",
                     "  }",
-                    "  });",
-                    "});"
+                    "  });"
                   ],
                   "parameterObjects": "",
                   "useStrict": true,
@@ -49467,7 +49486,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Send data to host",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -49475,21 +49493,15 @@
             {
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
-                "if(!window.client){",
-                "  console.warn('Running offline mode');",
-                "  return;",
-                "}",
-                "",
                 "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
-                "window.client.sendPing();",
                 "",
-                "if(playerNumber == 1) ",
+                "if(playerNumber === 1) ",
                 "  window.client.sendToAll(window.player1.toJSON());",
                 "",
-                "if(playerNumber == 2) ",
+                "if(playerNumber === 2) ",
                 "  window.client.sendToAll(window.player2.toJSON());",
                 "",
-                "if(playerNumber == 3) ",
+                "if(playerNumber === 3) ",
                 "  window.client.sendToAll(window.player3.toJSON());",
                 "",
                 "",
@@ -57358,13 +57370,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "disabled": true,
-          "folded": true,
           "name": "Testing",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57392,6 +57403,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57420,6 +57432,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57447,6 +57460,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57475,6 +57489,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57502,6 +57517,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -57525,6 +57541,23 @@
                     "Text",
                     "=",
                     "\"No Ladder\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "COUT1",
+                    "Text",
+                    "=",
+                    "Player_No1.X"
                   ]
                 }
               ]
@@ -57772,6 +57805,8 @@
                 "        const client = dgram.createSocket('udp4');",
                 "        this.port = 54122;",
                 "        this.hostIp;",
+                "        //TODO maybe because this ",
+                "        // host send it to him self",
                 "        this.connectorList = ['127.0.0.1'];",
                 "        client.bind(this.port)",
                 "        this.client = client;",
@@ -57799,7 +57834,9 @@
                 "        });",
                 "        this.sendToAll(data)",
                 "    }",
-                "",
+                "    sendToIp(data){",
+                "        this.client.send(data,this.port,'26.74.153.175')",
+                "    }",
                 "    sendToAll(data){",
                 "        if(!data) throw new Error('data is not provide');",
                 "        for(var i in this.connectorList){",
@@ -67709,35 +67746,7 @@
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"P1 Connection Fail\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"P2 Connection Fail\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"P3 Connection Fail\""
-              ]
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "colorB": 228,
@@ -67757,7 +67766,6 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "// Keep Player connection\r",
-                    "console.log('dddddddddddddd')\r",
                     "let backgroundTask;\r",
                     "let foreGroundTask;\r",
                     "\r",
