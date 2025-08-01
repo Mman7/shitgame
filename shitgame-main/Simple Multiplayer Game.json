@@ -30990,7 +30990,13 @@
           "target": "Secret Rewards"
         },
         {
-          "folded": true,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "Check_Connections"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -31040,35 +31046,12 @@
                 "const vol = localStorage.getItem('volume');",
                 "if(!vol) return;",
                 "runtimeScene.getGame().getVariables().get('Volume').setNumber(vol);",
-                "",
-                "// PREVENT PLAYER BLUR",
-                "let backgroundTask;",
-                "window.addEventListener(\"blur\", () => {",
-                "  console.log(\"Window blurred — starting background task\");",
-                "",
-                "  backgroundTask = setInterval(() => {",
-                "    console.log(\"Running background task\");",
-                "    window.client.sendPing()",
-                "  }, 500); ",
-                "});",
-                "",
-                "window.addEventListener(\"focus\", () => {",
-                "  console.log(\"Window focused — stopping background task\");",
-                "  clearInterval(backgroundTask);",
-                "});",
-                "",
-                "window.client.client.on('message',(msg,rinfo)=>{",
-                "    const data = JSON.parse(msg);",
-                "    if(data.TYPE == 'CONNECTION'){",
-                "        const game = runtimeScene.getGame();",
-                "        game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
-                "        const abc = game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').getAsBoolean();",
-                "    }",
-                "});"
+                " ",
+                ""
               ],
               "parameterObjects": "",
               "useStrict": true,
-              "eventsSheetExpanded": true
+              "eventsSheetExpanded": false
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -35565,13 +35548,6 @@
             }
           ],
           "parameters": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Link",
-          "include": {
-            "includeConfig": 0
-          },
-          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
@@ -48177,6 +48153,7 @@
       },
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -49175,7 +49152,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -57799,6 +57775,14 @@
                 "        this.connectorList = ['127.0.0.1'];",
                 "        client.bind(this.port)",
                 "        this.client = client;",
+                "        client.on('message',(msg,rinfo)=>{",
+                "            const data = JSON.parse(msg);",
+                "            if(data.TYPE == 'CONNECTION'){",
+                "                const game = runtimeScene.getGame();",
+                "                game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
+                "                const abc = game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').getAsBoolean();",
+                "            }",
+                "        });",
                 "        // for dev testing",
                 "        this.hostLobby()",
                 "    }",
@@ -67714,7 +67698,6 @@
       "name": "Check_Connections",
       "events": [
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -67754,31 +67737,56 @@
                 "\"P3 Connection Fail\""
               ]
             }
-          ]
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "name": "Send dick",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
+          ],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": "window.client.sendPing();",
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Every 500ms send ping",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "// Keep Player connection\r",
+                    "console.log('dddddddddddddd')\r",
+                    "let backgroundTask;\r",
+                    "let foreGroundTask;\r",
+                    "\r",
+                    "window.addEventListener(\"focus\", () => {\r",
+                    "  console.log('123')\r",
+                    "  foreGroundTask = setInterval(() => {\r",
+                    "    console.log(\"Running foreground task\");\r",
+                    "    window.client.sendPing()\r",
+                    "  }, 500); \r",
+                    "  clearInterval(backgroundTask);\r",
+                    "});\r",
+                    "\r",
+                    "window.addEventListener(\"blur\", () => {\r",
+                    "  backgroundTask = setInterval(() => {\r",
+                    "    console.log(\"Running background task\");\r",
+                    "    window.client.sendPing()\r",
+                    "  }, 500); \r",
+                    "  clearInterval(foreGroundTask);\r",
+                    "});\r",
+                    ""
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": true
+                }
+              ],
+              "parameters": []
             }
-          ],
-          "parameters": []
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
