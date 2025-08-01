@@ -13800,7 +13800,7 @@
           "directions": [
             {
               "looping": true,
-              "timeBetweenFrames": 0.06,
+              "timeBetweenFrames": 0.05,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -19139,7 +19139,7 @@
           "directions": [
             {
               "looping": true,
-              "timeBetweenFrames": 0.06,
+              "timeBetweenFrames": 0.05,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -19871,7 +19871,7 @@
           "directions": [
             {
               "looping": false,
-              "timeBetweenFrames": 0.06,
+              "timeBetweenFrames": 0.05,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -23722,7 +23722,7 @@
           "directions": [
             {
               "looping": true,
-              "timeBetweenFrames": 0.06,
+              "timeBetweenFrames": 0.05,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -24454,7 +24454,7 @@
           "directions": [
             {
               "looping": false,
-              "timeBetweenFrames": 0.06,
+              "timeBetweenFrames": 0.05,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -28353,7 +28353,7 @@
     {
       "name": "Happy_Content",
       "type": "boolean",
-      "value": true
+      "value": false
     },
     {
       "name": "Test",
@@ -30973,14 +30973,14 @@
           "include": {
             "includeConfig": 0
           },
-          "target": "Multiplayer Lobby"
+          "target": "Settings"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
           },
-          "target": "Settings"
+          "target": "Multiplayer Lobby"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
@@ -30990,6 +30990,7 @@
           "target": "Secret Rewards"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -31665,7 +31666,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "name": "Hint",
+              "name": "Happy Content",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
@@ -31674,59 +31675,28 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "ButtonStates::ButtonFSM::IsFocused"
+                        "value": "SpriteToggleSwitch::SpriteToggleSwitch::IsChecked"
                       },
                       "parameters": [
-                        "Hint",
-                        "ButtonFSM",
+                        "SquareWhiteToggle",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                        "value": "SetBooleanVariable"
                       },
                       "parameters": [
-                        "Hint",
-                        "Effect",
-                        "\"Bright\"",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "White_Box",
-                        "1215",
-                        "550",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ResizableCapability::ResizableBehavior::SetSize"
-                      },
-                      "parameters": [
-                        "White_Box",
-                        "Resizable",
-                        "360",
-                        "50"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "Txt_Hint",
-                        "1040",
-                        "550",
+                        "Happy_Content",
+                        "True",
                         ""
                       ]
                     }
@@ -31738,11 +31708,43 @@
                     {
                       "type": {
                         "inverted": true,
-                        "value": "ButtonStates::ButtonFSM::IsFocused"
+                        "value": "SpriteToggleSwitch::SpriteToggleSwitch::IsChecked"
                       },
                       "parameters": [
-                        "Hint",
-                        "ButtonFSM",
+                        "SquareWhiteToggle",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Happy_Content",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Happy_Content",
+                        "True",
                         ""
                       ]
                     }
@@ -31750,102 +31752,167 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                        "value": "SpriteToggleSwitch::SpriteToggleSwitch::SetChecked"
                       },
                       "parameters": [
-                        "Hint",
-                        "Effect",
-                        "\"Bright\"",
-                        "no"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "White_Box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "Txt_Hint",
+                        "SquareWhiteToggle",
+                        "",
                         ""
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Happy_Content",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SpriteToggleSwitch::SpriteToggleSwitch::SetChecked"
+                      },
+                      "parameters": [
+                        "SquareWhiteToggle",
+                        "no",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Hint",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::IsFocused"
+                          },
+                          "parameters": [
+                            "Hint",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "EffectCapability::EffectBehavior::EnableEffect"
+                          },
+                          "parameters": [
+                            "Hint",
+                            "Effect",
+                            "\"Bright\"",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "White_Box",
+                            "1215",
+                            "550",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetSize"
+                          },
+                          "parameters": [
+                            "White_Box",
+                            "Resizable",
+                            "360",
+                            "50"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Txt_Hint",
+                            "1040",
+                            "550",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "ButtonStates::ButtonFSM::IsFocused"
+                          },
+                          "parameters": [
+                            "Hint",
+                            "ButtonFSM",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "EffectCapability::EffectBehavior::EnableEffect"
+                          },
+                          "parameters": [
+                            "Hint",
+                            "Effect",
+                            "\"Bright\"",
+                            "no"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "White_Box",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "Txt_Hint",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
                 }
               ],
               "parameters": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Happy Content"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "SpriteToggleSwitch::SpriteToggleSwitch::IsChecked"
-                  },
-                  "parameters": [
-                    "SquareWhiteToggle",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Happy_Content",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SpriteToggleSwitch::SpriteToggleSwitch::IsChecked"
-                  },
-                  "parameters": [
-                    "SquareWhiteToggle",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Happy_Content",
-                    "False",
-                    ""
-                  ]
-                }
-              ]
             },
             {
               "colorB": 228,
@@ -33013,6 +33080,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Button Join",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -33726,6 +33794,28 @@
                   "actions": [
                     {
                       "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "Game_Status",
+                        "=",
+                        "\"LobbyFull\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Txt_FailToJoin",
+                        "500",
+                        "515",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                       },
                       "parameters": [
@@ -34326,51 +34416,82 @@
           "parameters": []
         },
         {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Just Fking Test",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "Player_No2.Status",
-                "=",
-                "\"Picked\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Happy_Content",
+                    "True",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "Player_No2.Character",
-                "=",
-                "\"Knight\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"F1\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Happy_Content",
+                    "False",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "Player_No3.Status",
-                "=",
-                "\"Picked\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "Player_No3.Character",
-                "=",
-                "\"Witch\""
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Status",
+                    "=",
+                    "\"Picked\""
+                  ]
+                }
               ]
             }
-          ]
+          ],
+          "parameters": []
         }
       ],
       "layers": [
@@ -34491,6 +34612,11 @@
           "name": "Dajiba_Animation",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "Random_Character",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -34674,54 +34800,6 @@
               "value": 2
             }
           ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "COUT1",
-          "persistentUuid": "c6b8a517-b75d-4c99-8f70-da6e8609d6db",
-          "width": 0,
-          "x": 1099,
-          "y": 157,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "COUT2",
-          "persistentUuid": "6faecee7-3fc1-42d9-8221-ce812eccc295",
-          "width": 0,
-          "x": 1105,
-          "y": 291,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "COUT3",
-          "persistentUuid": "01930b9a-12b4-4f42-aea8-c01f05e55a2d",
-          "width": 0,
-          "x": 1093,
-          "y": 485,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
         }
       ],
       "objects": [
@@ -34975,7 +35053,7 @@
           "string": "Waiting the host to start.",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 100,
+          "characterSize": 80,
           "color": {
             "b": 255,
             "g": 255,
@@ -34999,7 +35077,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 100,
+            "characterSize": 80,
             "color": "255;255;255"
           }
         },
@@ -35445,6 +35523,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "DEV",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -35682,39 +35761,6 @@
                 }
               ],
               "parameters": []
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringVariable"
-              },
-              "parameters": [
-                "Game_Status",
-                "=",
-                "\"Start Game\""
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "\"Game Scene\"",
-                ""
-              ]
             }
           ]
         },
@@ -36499,8 +36545,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host1",
-                    "1200",
-                    "950",
+                    "1100",
+                    "965",
                     ""
                   ]
                 },
@@ -36528,8 +36574,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host2",
-                    "1200",
-                    "950",
+                    "1100",
+                    "965",
                     ""
                   ]
                 },
@@ -36557,8 +36603,8 @@
                   "parameters": [
                     "",
                     "Txt_Wait_Host3",
-                    "1200",
-                    "950",
+                    "1100",
+                    "965",
                     ""
                   ]
                 },
@@ -36603,6 +36649,1114 @@
                         "Game_Status",
                         "=",
                         "\"Wait Host Start\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Starting Game",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Game_Status",
+                    "=",
+                    "\"Start Game\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "IF P1 only"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Status",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Status",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Game Scene\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "IF P1 and P2"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Status",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Game Scene\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "IF P1 P2 P3"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Game Scene\"",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Randomize Character (Just the current player only)"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Game_Status",
+                    "=",
+                    "\"Start Game\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Random_Character",
+                        "=",
+                        "RandomInRange(1,4)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "3"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "4"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Random_Character",
+                        "=",
+                        "RandomInRange(1,4)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "3"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "4"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Player_Number",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Status",
+                        "!=",
+                        "\"NULL\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character",
+                        "=",
+                        "\"NULL\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Random_Character",
+                        "=",
+                        "RandomInRange(1,4)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "3"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Random_Character",
+                            "=",
+                            "4"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "!=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -38646,6 +39800,7 @@
           "parameters": []
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -39528,6 +40683,13 @@
           "include": {
             "includeConfig": 0
           },
+          "target": "Check_Connections"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
           "target": "Players Color"
         },
         {
@@ -39536,13 +40698,6 @@
             "includeConfig": 0
           },
           "target": "Secret Rewards"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Link",
-          "include": {
-            "includeConfig": 0
-          },
-          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -43164,14 +44319,14 @@
           "include": {
             "includeConfig": 0
           },
-          "target": "Secret Rewards"
+          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
           },
-          "target": "Check_Connections"
+          "target": "Secret Rewards"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -47026,14 +48181,14 @@
           "include": {
             "includeConfig": 0
           },
-          "target": "Settings"
+          "target": "Check_Connections"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
           },
-          "target": "Players Movement"
+          "target": "Settings"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
@@ -47047,14 +48202,14 @@
           "include": {
             "includeConfig": 0
           },
-          "target": "Secret Rewards"
+          "target": "Players Movement"
         },
         {
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
           },
-          "target": "Check_Connections"
+          "target": "Secret Rewards"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -48020,6 +49175,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -48335,6 +49491,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Send data to host",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -56806,18 +57963,10 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "AjoutObjConcern"
+                    "value": "SceneInstancesCount"
                   },
                   "parameters": [
                     "",
-                    "SquareWhiteSlider"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PickedInstancesCount"
-                  },
-                  "parameters": [
                     "SquareWhiteSlider",
                     "=",
                     "1"
@@ -67321,6 +68470,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "3",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -67353,6 +68503,16 @@
                       "parameters": [
                         "",
                         "\"i\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Happy_Content",
+                        "True",
+                        ""
                       ]
                     }
                   ],
