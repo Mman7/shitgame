@@ -7075,8 +7075,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7123,8 +7123,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7159,8 +7159,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7207,8 +7207,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7243,8 +7243,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7279,8 +7279,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7327,8 +7327,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7363,8 +7363,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -7399,8 +7399,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 295,
+                    "y": 340
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -28143,6 +28143,11 @@
           "value": "NULL"
         },
         {
+          "name": "Character_Status",
+          "type": "string",
+          "value": "NULL"
+        },
+        {
           "name": "Connection",
           "type": "boolean",
           "value": false
@@ -28190,6 +28195,11 @@
       "children": [
         {
           "name": "Character",
+          "type": "string",
+          "value": "NULL"
+        },
+        {
+          "name": "Character_Status",
           "type": "string",
           "value": "NULL"
         },
@@ -28245,6 +28255,11 @@
           "value": "NULL"
         },
         {
+          "name": "Character_Status",
+          "type": "string",
+          "value": "NULL"
+        },
+        {
           "name": "Connection",
           "type": "boolean",
           "value": false
@@ -28288,15 +28303,17 @@
     },
     {
       "name": "Checkpoint",
-      "type": "structure",
+      "type": "array",
       "children": [
         {
-          "name": "CP1",
+          "type": "boolean",
+          "value": true
+        },
+        {
           "type": "boolean",
           "value": false
         },
         {
-          "name": "CP2",
           "type": "boolean",
           "value": false
         }
@@ -33064,7 +33081,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Button Join",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -34409,55 +34425,6 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Happy_Content",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "KeyFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"F1\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Happy_Content",
-                    "False",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
               "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
@@ -35079,7 +35046,7 @@
           "string": "Waiting the host to start..",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 100,
+          "characterSize": 80,
           "color": {
             "b": 255,
             "g": 255,
@@ -35103,7 +35070,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 100,
+            "characterSize": 80,
             "color": "255;255;255"
           }
         },
@@ -35121,7 +35088,7 @@
           "string": "Waiting the host to start...",
           "font": "Jaro-Regular-VariableFont_opsz.ttf",
           "textAlignment": "center",
-          "characterSize": 100,
+          "characterSize": 80,
           "color": {
             "b": 255,
             "g": 255,
@@ -35145,7 +35112,7 @@
             "font": "Jaro-Regular-VariableFont_opsz.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 100,
+            "characterSize": 80,
             "color": "255;255;255"
           }
         },
@@ -46159,7 +46126,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.29879853636069553,
+        "zoomFactor": 0.38958562738273556,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -46331,8 +46298,8 @@
           "name": "Bonfire",
           "persistentUuid": "f8987858-0e06-488f-953b-221fc7beab4b",
           "width": 86.76470588235293,
-          "x": 781,
-          "y": 792,
+          "x": 832,
+          "y": 840,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -48273,6 +48240,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Create Players Model",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -48314,6 +48282,16 @@
                         },
                         {
                           "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "Player_No1.Character_Status",
+                            "=",
+                            "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "Create"
                           },
                           "parameters": [
@@ -48324,252 +48302,254 @@
                             ""
                           ]
                         }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No1.Character",
-                            "=",
-                            "\"Arthur\""
-                          ]
-                        }
                       ],
-                      "actions": [
+                      "events": [
                         {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Arthur",
-                            "315",
-                            "820",
-                            ""
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Arthur",
+                                "315",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Scale",
-                            "=",
-                            "0.4"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Knight",
+                                "315",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Witch",
+                                "315",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No1.Character",
-                            "=",
-                            "\"Knight\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Knight",
-                            "315",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No1.Character",
-                            "=",
-                            "\"Witch\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Witch",
-                            "315",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No1.Character",
-                            "=",
-                            "\"Dajiba\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Dajiba",
-                            "315",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Scale",
-                            "=",
-                            "1.25"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No1.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Dajiba",
+                                "315",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Scale",
+                                "=",
+                                "1.25"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -48582,6 +48562,7 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
+                  "folded": true,
                   "name": "P2",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -48613,6 +48594,16 @@
                         },
                         {
                           "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "Player_No2.Character_Status",
+                            "=",
+                            "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "Create"
                           },
                           "parameters": [
@@ -48623,252 +48614,254 @@
                             ""
                           ]
                         }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No2.Character",
-                            "=",
-                            "\"Arthur\""
-                          ]
-                        }
                       ],
-                      "actions": [
+                      "events": [
                         {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Arthur",
-                            "365",
-                            "820",
-                            ""
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Arthur",
+                                "365",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Scale",
-                            "=",
-                            "0.4"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Knight",
+                                "365",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Witch",
+                                "365",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No2.Character",
-                            "=",
-                            "\"Knight\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Knight",
-                            "365",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No2.Character",
-                            "=",
-                            "\"Witch\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Witch",
-                            "365",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No2.Character",
-                            "=",
-                            "\"Dajiba\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Dajiba",
-                            "365",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Scale",
-                            "=",
-                            "1.25"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No2.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Dajiba",
+                                "365",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Scale",
+                                "=",
+                                "1.25"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -48881,6 +48874,7 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
+                  "folded": true,
                   "name": "P3",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -48912,6 +48906,16 @@
                         },
                         {
                           "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "Player_No3.Character_Status",
+                            "=",
+                            "\"Play\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "Create"
                           },
                           "parameters": [
@@ -48922,252 +48926,254 @@
                             ""
                           ]
                         }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No3.Character",
-                            "=",
-                            "\"Arthur\""
-                          ]
-                        }
                       ],
-                      "actions": [
+                      "events": [
                         {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Arthur",
-                            "415",
-                            "820",
-                            ""
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Arthur\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Arthur",
+                                "415",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Arthur",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Scale",
-                            "=",
-                            "0.4"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Knight\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Knight",
+                                "415",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Knight",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Witch\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Witch",
+                                "415",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Scale",
+                                "=",
+                                "0.4"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Witch",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         },
                         {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No3.Character",
-                            "=",
-                            "\"Knight\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Knight",
-                            "415",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Knight",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No3.Character",
-                            "=",
-                            "\"Witch\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Witch",
-                            "415",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Scale",
-                            "=",
-                            "0.4"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Witch",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "StringVariable"
-                          },
-                          "parameters": [
-                            "Player_No3.Character",
-                            "=",
-                            "\"Dajiba\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Dajiba",
-                            "415",
-                            "820",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Scale",
-                            "=",
-                            "1.25"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Bright\"",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
-                          },
-                          "parameters": [
-                            "Dajiba",
-                            "Effect",
-                            "\"Glow\"",
-                            "no"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "StringVariable"
+                              },
+                              "parameters": [
+                                "Player_No3.Character",
+                                "=",
+                                "\"Dajiba\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Dajiba",
+                                "415",
+                                "820",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Scale",
+                                "=",
+                                "1.25"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Bright\"",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "Dajiba",
+                                "Effect",
+                                "\"Glow\"",
+                                "no"
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -50153,7 +50159,6 @@
                   "actions": [],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -50191,7 +50196,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No1.Status",
+                            "Player_No1.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -50391,7 +50396,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No1.Status",
+                                "Player_No1.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -50426,12 +50431,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -50453,12 +50458,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -50495,7 +50500,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -50533,7 +50537,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No1.Status",
+                            "Player_No1.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -50733,7 +50737,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No1.Status",
+                                "Player_No1.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -50768,12 +50772,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -50795,12 +50799,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -50837,7 +50841,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -50875,7 +50878,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No1.Status",
+                            "Player_No1.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -51075,7 +51078,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No1.Status",
+                                "Player_No1.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -51110,12 +51113,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -51137,12 +51140,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No1.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -51179,7 +51182,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -51217,7 +51219,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No1.Status",
+                            "Player_No1.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -51434,7 +51436,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No1.Status",
+                                    "Player_No1.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -51469,12 +51471,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No1.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -51496,12 +51498,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No1.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -51615,7 +51617,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No1.Status",
+                                    "Player_No1.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -51650,12 +51652,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No1.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -51677,12 +51679,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No1.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -51740,7 +51742,6 @@
                   "actions": [],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -51778,7 +51779,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No2.Status",
+                            "Player_No2.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -51978,7 +51979,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No2.Status",
+                                "Player_No2.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -52013,12 +52014,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -52040,12 +52041,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -52082,7 +52083,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -52120,7 +52120,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No2.Status",
+                            "Player_No2.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -52320,7 +52320,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No2.Status",
+                                "Player_No2.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -52355,12 +52355,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -52382,12 +52382,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -52424,7 +52424,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -52462,7 +52461,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No2.Status",
+                            "Player_No2.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -52662,7 +52661,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No2.Status",
+                                "Player_No2.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -52697,12 +52696,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -52724,12 +52723,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No2.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -52766,7 +52765,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -52804,7 +52802,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No2.Status",
+                            "Player_No2.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -53021,7 +53019,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No2.Status",
+                                    "Player_No2.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -53056,12 +53054,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No2.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -53083,12 +53081,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No2.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -53202,7 +53200,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No1.Status",
+                                    "Player_No2.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -53237,12 +53235,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No2.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -53264,12 +53262,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No2.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -53327,7 +53325,6 @@
                   "actions": [],
                   "events": [
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -53365,7 +53362,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No3.Status",
+                            "Player_No3.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -53565,7 +53562,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No3.Status",
+                                "Player_No3.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -53600,12 +53597,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -53627,12 +53624,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Arthur",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -53669,7 +53666,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -53707,7 +53703,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No3.Status",
+                            "Player_No3.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -53907,7 +53903,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No3.Status",
+                                "Player_No3.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -53942,12 +53938,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -53969,12 +53965,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Knight",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -54011,7 +54007,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -54049,7 +54044,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No3.Status",
+                            "Player_No3.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -54249,7 +54244,7 @@
                                 "value": "SetStringVariable"
                               },
                               "parameters": [
-                                "Player_No3.Status",
+                                "Player_No3.Character_Status",
                                 "=",
                                 "\"Play\""
                               ]
@@ -54284,12 +54279,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "yes"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Left\""
                                   ]
                                 }
                               ]
@@ -54311,12 +54306,12 @@
                               "actions": [
                                 {
                                   "type": {
-                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                    "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Witch",
-                                    "Flippable",
-                                    "no"
+                                    "Player_No3.Facing_Direction",
+                                    "=",
+                                    "\"Right\""
                                   ]
                                 }
                               ]
@@ -54353,7 +54348,6 @@
                       ]
                     },
                     {
-                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -54391,7 +54385,7 @@
                             "value": "SetStringVariable"
                           },
                           "parameters": [
-                            "Player_No3.Status",
+                            "Player_No3.Character_Status",
                             "=",
                             "\"Dead\""
                           ]
@@ -54608,7 +54602,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No3.Status",
+                                    "Player_No3.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -54643,12 +54637,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No3.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -54670,12 +54664,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No3.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -54789,7 +54783,7 @@
                                     "value": "SetStringVariable"
                                   },
                                   "parameters": [
-                                    "Player_No1.Status",
+                                    "Player_No3.Character_Status",
                                     "=",
                                     "\"Play\""
                                   ]
@@ -54824,12 +54818,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "yes"
+                                        "Player_No3.Facing_Direction",
+                                        "=",
+                                        "\"Left\""
                                       ]
                                     }
                                   ]
@@ -54851,12 +54845,12 @@
                                   "actions": [
                                     {
                                       "type": {
-                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                        "value": "SetStringVariable"
                                       },
                                       "parameters": [
-                                        "Dajiba",
-                                        "Flippable",
-                                        "no"
+                                        "Player_No3.Facing_Direction",
+                                        "=",
+                                        "\"Right\""
                                       ]
                                     }
                                   ]
@@ -54904,7 +54898,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "disabled": true,
               "folded": true,
               "name": "Player Touch Bonfire",
               "source": "",
@@ -54935,7 +54928,7 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_1",
+                            "Arthur",
                             "Bonfire",
                             "",
                             "",
@@ -54947,7 +54940,7 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_2",
+                            "Knight",
                             "Bonfire",
                             "",
                             "",
@@ -54959,7 +54952,19 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_3",
+                            "Witch",
+                            "Bonfire",
+                            "",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Dajiba",
                             "Bonfire",
                             "",
                             "",
@@ -55242,7 +55247,7 @@
                                 "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Checkpoint.CP1",
+                                "Checkpoint[1]",
                                 "True",
                                 "1"
                               ]
@@ -55270,7 +55275,7 @@
                                 "value": "SetBooleanVariable"
                               },
                               "parameters": [
-                                "Checkpoint.CP2",
+                                "Checkpoint[2]",
                                 "True",
                                 "1"
                               ]
@@ -55978,7 +55983,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "disabled": true,
               "folded": true,
               "name": "Set Respawn Position",
               "source": "",
@@ -55997,76 +56001,122 @@
                         "=",
                         "1"
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "PickNearest"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Player_1.X()",
-                        "Player_1.Y()",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::Name"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Animation",
-                        "!=",
-                        "\"Idle\""
-                      ]
                     }
                   ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_X",
-                        "=",
-                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_Y",
-                        "=",
-                        "Bonfire.Y() - 35"
-                      ]
-                    }
-                  ],
+                  "actions": [],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
                           "type": {
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No1.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Arthur\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Arthur.X()",
+                            "Arthur.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "True",
-                            ""
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -56076,25 +56126,345 @@
                       "conditions": [
                         {
                           "type": {
-                            "inverted": true,
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No1.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Knight\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Knight.X()",
+                            "Knight.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "False",
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No1.Character",
+                            "=",
+                            "\"Witch\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Witch.X()",
+                            "Witch.Y()",
                             ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No1.Character",
+                            "=",
+                            "\"Dajiba\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Dajiba.X()",
+                            "Dajiba.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -56114,76 +56484,122 @@
                         "=",
                         "2"
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "PickNearest"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Player_2.X()",
-                        "Player_2.Y()",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::Name"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Animation",
-                        "!=",
-                        "\"Idle\""
-                      ]
                     }
                   ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_X",
-                        "=",
-                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_Y",
-                        "=",
-                        "Bonfire.Y() - 35"
-                      ]
-                    }
-                  ],
+                  "actions": [],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
                           "type": {
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No2.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Arthur\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Arthur.X()",
+                            "Arthur.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "True",
-                            ""
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -56193,25 +56609,345 @@
                       "conditions": [
                         {
                           "type": {
-                            "inverted": true,
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No2.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Knight\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Knight.X()",
+                            "Knight.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "False",
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No2.Character",
+                            "=",
+                            "\"Witch\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Witch.X()",
+                            "Witch.Y()",
                             ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No2.Character",
+                            "=",
+                            "\"Dajiba\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Dajiba.X()",
+                            "Dajiba.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -56231,76 +56967,122 @@
                         "=",
                         "3"
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "PickNearest"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Player_3.X()",
-                        "Player_3.Y()",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::Name"
-                      },
-                      "parameters": [
-                        "Bonfire",
-                        "Animation",
-                        "!=",
-                        "\"Idle\""
-                      ]
                     }
                   ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_X",
-                        "=",
-                        "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Respawn.Position_Y",
-                        "=",
-                        "Bonfire.Y() - 35"
-                      ]
-                    }
-                  ],
+                  "actions": [],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
                           "type": {
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No3.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Arthur\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Arthur.X()",
+                            "Arthur.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "True",
-                            ""
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -56310,25 +57092,345 @@
                       "conditions": [
                         {
                           "type": {
-                            "inverted": true,
-                            "value": "NumberVariable"
+                            "value": "StringVariable"
                           },
                           "parameters": [
-                            "Respawn.Position_X",
+                            "Player_No3.Character",
                             "=",
-                            "Bonfire.X() + 70"
+                            "\"Knight\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Knight.X()",
+                            "Knight.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
                           ]
                         }
                       ],
                       "actions": [
                         {
                           "type": {
-                            "value": "SetBooleanVariable"
+                            "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Respawn.Flip",
-                            "False",
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No3.Character",
+                            "=",
+                            "\"Witch\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Witch.X()",
+                            "Witch.Y()",
                             ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "Player_No3.Character",
+                            "=",
+                            "\"Dajiba\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PickNearest"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Dajiba.X()",
+                            "Dajiba.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                          },
+                          "parameters": [
+                            "Bonfire",
+                            "Animation",
+                            "!=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_X",
+                            "=",
+                            "Bonfire.X() + 70 + (140 * (-1) * RandomInRange(0,1))"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Respawn.Position_Y",
+                            "=",
+                            "Bonfire.Y() - 35"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Position_X",
+                                "=",
+                                "Bonfire.X() + 70"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "Respawn.Flip",
+                                "False",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -57383,176 +58485,6 @@
             {
               "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::IsJumping"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT1",
-                    "Text",
-                    "=",
-                    "\"Jumping\""
-                  ]
-                }
-              ]
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "PlatformBehavior::IsJumping"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT1",
-                    "Text",
-                    "=",
-                    "\"No Jumping\""
-                  ]
-                }
-              ]
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::IsFalling"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT2",
-                    "Text",
-                    "=",
-                    "\"Falling\""
-                  ]
-                }
-              ]
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "PlatformBehavior::IsFalling"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT2",
-                    "Text",
-                    "=",
-                    "\"No Falling\""
-                  ]
-                }
-              ]
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "PlatformBehavior::IsOnLadder"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT3",
-                    "Text",
-                    "=",
-                    "\"Ladder\""
-                  ]
-                }
-              ]
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "PlatformBehavior::IsOnLadder"
-                  },
-                  "parameters": [
-                    "Arthur",
-                    "PlatformerObject"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "COUT3",
-                    "Text",
-                    "=",
-                    "\"No Ladder\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
                 {
@@ -57563,7 +58495,7 @@
                     "COUT1",
                     "Text",
                     "=",
-                    "Player_No1.X"
+                    "Respawn.Flip"
                   ]
                 }
               ]
@@ -59004,12 +59936,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Up",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -59043,6 +59975,16 @@
                       },
                       "parameters": [
                         "Player_No1.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -59218,6 +60160,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -59387,6 +60339,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -59550,12 +60512,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Down",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -59589,6 +60551,16 @@
                       },
                       "parameters": [
                         "Player_No1.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -59764,6 +60736,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -59933,6 +60915,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -60120,6 +61112,8 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                    "const isPlay = runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Character_Status\").getAsString();",
+                    "if(isPlay !== \"Play\" ) return;",
                     "runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Facing_Direction\").setString(\"Left\");"
                   ],
                   "parameterObjects": "",
@@ -60145,6 +61139,16 @@
                       },
                       "parameters": [
                         "Player_No1.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -60280,6 +61284,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -60409,6 +61423,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -60556,6 +61580,8 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "const pNum = runtimeScene.getGame().getVariables().get('Player_Number').getAsNumber();",
+                    "const isPlay = runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Character_Status\").getAsString();",
+                    "if(isPlay !== \"Play\" ) return;",
                     "runtimeScene.getGame().getVariables().get(`Player_No${pNum}`).getChild(\"Facing_Direction\").setString(\"Right\");"
                   ],
                   "parameterObjects": "",
@@ -60581,6 +61607,16 @@
                       },
                       "parameters": [
                         "Player_No1.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -60716,6 +61752,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -60845,6 +61891,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -60968,12 +62024,12 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Jump",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -61007,6 +62063,16 @@
                       },
                       "parameters": [
                         "Player_No1.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -61142,6 +62208,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -61271,6 +62347,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -61400,6 +62486,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -61477,6 +62564,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No1.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -61664,7 +62761,7 @@
                             "Dajiba",
                             "Animation",
                             "=",
-                            "\"Stand\""
+                            "\"Idle\""
                           ]
                         }
                       ]
@@ -61693,6 +62790,16 @@
                         "=",
                         "\"Play\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No2.Character_Status",
+                        "=",
+                        "\"Play\""
+                      ]
                     }
                   ],
                   "actions": [],
@@ -61880,7 +62987,7 @@
                             "Dajiba",
                             "Animation",
                             "=",
-                            "\"Stand\""
+                            "\"Idle\""
                           ]
                         }
                       ]
@@ -61906,6 +63013,16 @@
                       },
                       "parameters": [
                         "Player_No3.Status",
+                        "=",
+                        "\"Play\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Player_No3.Character_Status",
                         "=",
                         "\"Play\""
                       ]
@@ -62096,7 +63213,7 @@
                             "Dajiba",
                             "Animation",
                             "=",
-                            "\"Stand\""
+                            "\"Idle\""
                           ]
                         }
                       ]
@@ -62137,6 +63254,16 @@
                   },
                   "parameters": [
                     "Player_No1.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Character_Status",
                     "=",
                     "\"Play\""
                   ]
@@ -62352,6 +63479,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -62561,6 +63698,16 @@
                   },
                   "parameters": [
                     "Player_No3.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Character_Status",
                     "=",
                     "\"Play\""
                   ]
@@ -62790,6 +63937,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -63296,6 +64453,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -63799,6 +64966,16 @@
                   },
                   "parameters": [
                     "Player_No3.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Character_Status",
                     "=",
                     "\"Play\""
                   ]
@@ -64321,6 +65498,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -64719,6 +65906,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -65114,6 +66311,16 @@
                   },
                   "parameters": [
                     "Player_No3.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Character_Status",
                     "=",
                     "\"Play\""
                   ]
@@ -65528,6 +66735,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No1.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -66056,6 +67273,16 @@
                     "=",
                     "\"Play\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No2.Character_Status",
+                    "=",
+                    "\"Play\""
+                  ]
                 }
               ],
               "actions": [],
@@ -66581,6 +67808,16 @@
                   },
                   "parameters": [
                     "Player_No3.Status",
+                    "=",
+                    "\"Play\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Player_No3.Character_Status",
                     "=",
                     "\"Play\""
                   ]
