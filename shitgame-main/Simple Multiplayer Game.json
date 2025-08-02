@@ -36287,6 +36287,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Host Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -36494,21 +36495,6 @@
                     "\"Start Game\""
                   ]
                 }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": [
-                    "// Auto choose player\r",
-                    "window.client.lobby.update();\r",
-                    "//send back to host\r",
-                    "window.client.sendToAll(window.client.lobby.toJSON())\r",
-                    "window.client.sendStart()"
-                  ],
-                  "parameterObjects": "",
-                  "useStrict": true,
-                  "eventsSheetExpanded": false
-                }
               ]
             }
           ],
@@ -36713,7 +36699,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Starting Game",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -38448,6 +38433,7 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
+                  "folded": true,
                   "name": "Bots Pick Character",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -39270,6 +39256,33 @@
                     }
                   ],
                   "parameters": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "// Auto choose player",
+                    "//send start to all",
+                    "const p1s = window.client.lobby.getPlayerStatus(1);",
+                    "const p2s = window.client.lobby.getPlayerStatus(2);",
+                    "const p3s = window.client.lobby.getPlayerStatus(3);",
+                    "if(p1s !== 'NULL'){",
+                    "    window.client.lobby.setPlayerStatus(1,'Play');",
+                    "}",
+                    "if(p2s !== 'NULL'){",
+                    "    window.client.lobby.setPlayerStatus(2,'Play');",
+                    "}",
+                    "if(p3s !== 'NULL'){",
+                    "    window.client.lobby.setPlayerStatus(3,'Play');",
+                    "}",
+                    "",
+                    "window.client.lobby.update();",
+                    "window.client.sendToAll(window.client.lobby.toJSON());",
+                    "//TODO here ",
+                    "window.client.sendStart();"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
                 }
               ]
             }
@@ -50735,7 +50748,6 @@
                     "    this.playerCharacter = this.playerVal.getChild(\"Character\").getAsString();",
                     "    this.object = runtimeScene.getObjects(`${this.playerCharacter}`)[0];",
                     "    if(this.playerCharacter === 'NULL') return;",
-                    "    // this.playerVal.getChild(\"Status\").setString('Play');",
                     "    this.facingDir = this.playerVal.getChild(\"Facing_Direction\").getAsString();",
                     "    this.posX = this.object.x;",
                     "    this.posY = this.object.y;",
@@ -50749,8 +50761,9 @@
                     "",
                     "  checkCharacterValid = () => this.playerCharacter !== 'NULL';",
                     "",
-                    "  toJSON() {",
+                    "  toJSON = () => {",
                     "    this.update();",
+                    "      console.log(this.playerCharacter)",
                     "    if(this.checkCharacterValid()){",
                     "      this.setFlip(this.facingDir)",
                     "      return JSON.stringify({",
@@ -51031,6 +51044,9 @@
                 "",
                 "if(playerNumber === 1) ",
                 "  window.client.sendToAll(window.player1.toJSON());",
+                "// console.log(window.player1.playerVal._children)",
+                "  // console.log(window.player1.playerVal._children.Character_Status._str)",
+                "  // console.log(window.player1.playerVal._children.Status._str)",
                 "",
                 "if(playerNumber === 2) ",
                 "  window.client.sendToAll(window.player2.toJSON());",
@@ -60191,7 +60207,8 @@
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
                 "const dgram = require('dgram');",
-                "",
+                "// console log all data",
+                "// console.log(window.client.lobby.gameVar)",
                 "class LobbyStatus {",
                 "  constructor() {",
                 "    this.update()",
@@ -60273,8 +60290,9 @@
                 "                game.getVariables().get(`Player_No${data.PlayerNumber}`).getChild('Connection').setBoolean(data.Connection);",
                 "            }",
                 "        });",
+                "        this.client.bind(this.port)",
                 "        // for dev testing",
-                "        // this.hostLobby()",
+                "        this.hostLobby()",
                 "    }",
                 "    ",
                 "    setHostIp(ip){",
@@ -60316,7 +60334,6 @@
                 "    }",
                 "    ",
                 "    hostLobby(){",
-                "        this.client.bind(this.port)",
                 "        console.log('lobby host')",
                 "        this.connectorList.push('127.0.0.1')",
                 "        this.client.on('message',(msg,rinfo)=>{",
