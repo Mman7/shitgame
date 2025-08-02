@@ -31112,7 +31112,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Just Run For 1 Time",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -31164,7 +31163,7 @@
                     "    console.log(\"Running foreground task\");\r",
                     "    window.client.lobby.update()\r",
                     "    window.client.sendPing()\r",
-                    "  }, 50); \r",
+                    "  }, 500); \r",
                     "  clearInterval(backgroundTask);\r",
                     "});\r",
                     "\r",
@@ -31173,7 +31172,7 @@
                     "    console.log(\"Running background task\");\r",
                     "    window.client.lobby.update()\r",
                     "    window.client.sendPing()\r",
-                    "  }, 50); \r",
+                    "  }, 500); \r",
                     "  clearInterval(foreGroundTask);\r",
                     "});\r",
                     ""
@@ -35672,7 +35671,8 @@
                 "// Auto choose player",
                 "window.client.lobby.update();",
                 "//send back to host",
-                "window.client.sendToAll(window.client.lobby.toJSON())"
+                "window.client.sendToAll(window.client.lobby.toJSON())",
+                ""
               ],
               "parameterObjects": "",
               "useStrict": true,
@@ -36287,7 +36287,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Host Start",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -36499,7 +36498,13 @@
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": "window.client.sendStart()",
+                  "inlineCode": [
+                    "// Auto choose player\r",
+                    "window.client.lobby.update();\r",
+                    "//send back to host\r",
+                    "window.client.sendToAll(window.client.lobby.toJSON())\r",
+                    "window.client.sendStart()"
+                  ],
                   "parameterObjects": "",
                   "useStrict": true,
                   "eventsSheetExpanded": false
@@ -36714,6 +36719,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -37005,18 +37011,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::JsCode",
-                  "inlineCode": [
-                    "// Auto choose player\r",
-                    "window.client.lobby.update();\r",
-                    "//send back to host\r",
-                    "window.client.sendToAll(window.client.lobby.toJSON())"
-                  ],
-                  "parameterObjects": "",
-                  "useStrict": true,
-                  "eventsSheetExpanded": false
                 }
               ]
             },
@@ -37863,6 +37857,7 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
+                  "folded": true,
                   "name": "Random Again If Same Character",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -49751,18 +49746,10 @@
           ],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": "window.client.sendToAll(window.client.lobby.toJSON())",
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            },
-            {
               "colorB": 228,
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Create Players Model",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -50073,6 +50060,19 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::JsCode",
+                          "inlineCode": [
+                            "const a = runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Status');",
+                            "console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')",
+                            "console.log(a)",
+                            "// runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Status').setString('Play');",
+                            "console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"
+                          ],
+                          "parameterObjects": "",
+                          "useStrict": true,
+                          "eventsSheetExpanded": false
                         }
                       ]
                     }
@@ -50711,7 +50711,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -50736,6 +50735,7 @@
                     "    this.playerCharacter = this.playerVal.getChild(\"Character\").getAsString();",
                     "    this.object = runtimeScene.getObjects(`${this.playerCharacter}`)[0];",
                     "    if(this.playerCharacter === 'NULL') return;",
+                    "    // this.playerVal.getChild(\"Status\").setString('Play');",
                     "    this.facingDir = this.playerVal.getChild(\"Facing_Direction\").getAsString();",
                     "    this.posX = this.object.x;",
                     "    this.posY = this.object.y;",
@@ -50751,7 +50751,7 @@
                     "",
                     "  toJSON() {",
                     "    this.update();",
-                    "    if(this.checkCharacterValid){",
+                    "    if(this.checkCharacterValid()){",
                     "      this.setFlip(this.facingDir)",
                     "      return JSON.stringify({",
                     "        TYPE: 'MOVEMENT',",
@@ -50774,7 +50774,6 @@
                     "const player1 = new Player({number:1});",
                     "const player2 = new Player({number:2});",
                     "const player3 = new Player({number:3});",
-                    "console.log(player1.playerVal)",
                     "window.player1 = player1;",
                     "window.player2 = player2;",
                     "window.player3 = player3;",
@@ -50815,7 +50814,8 @@
                     "      throw new Error('data incorrect or player not found');",
                     "    }",
                     "  }",
-                    "  });"
+                    "  });",
+                    ""
                   ],
                   "parameterObjects": "",
                   "useStrict": true,
@@ -51020,6 +51020,40 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "name": "Send data to host",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
+                "",
+                "if(playerNumber === 1) ",
+                "  window.client.sendToAll(window.player1.toJSON());",
+                "",
+                "if(playerNumber === 2) ",
+                "  window.client.sendToAll(window.player2.toJSON());",
+                "",
+                "if(playerNumber === 3) ",
+                "  window.client.sendToAll(window.player3.toJSON());",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
           "folded": true,
           "name": "Camera",
           "source": "",
@@ -51156,6 +51190,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Players Name",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -59221,41 +59256,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
-          "name": "Send data to host",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
-                "",
-                "if(playerNumber === 1) ",
-                "  window.client.sendToAll(window.player1.toJSON());",
-                "",
-                "if(playerNumber === 2) ",
-                "  window.client.sendToAll(window.player2.toJSON());",
-                "",
-                "if(playerNumber === 3) ",
-                "  window.client.sendToAll(window.player3.toJSON());",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": true
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
           "disabled": true,
           "name": "Boss Behavior",
           "source": "",
@@ -60229,7 +60229,7 @@
                 "",
                 "  toJSON() {",
                 "    return JSON.stringify({",
-                "      TYPE: 'LOBBY_STATUS',",
+                "      TYPE: response.lobby_status,",
                 "      LOBBY: {",
                 "          Player1Status: this.player1Status,",
                 "          Player2Status: this.player2Status,",
@@ -60275,7 +60275,6 @@
                 "        });",
                 "        // for dev testing",
                 "        // this.hostLobby()",
-                "        client.bind(this.port)",
                 "    }",
                 "    ",
                 "    setHostIp(ip){",
@@ -60309,8 +60308,6 @@
                 "    }",
                 "",
                 "    addConnector(newIp){",
-                "        // prevent player add his own device to list",
-                "        // if(newIp == '127.0.0.1' || '0.0.0.0') return;",
                 "        // prevent split digit bug",
                 "        if(newIp.length < 8) return;",
                 "        // check list includes newIp",
@@ -60319,9 +60316,9 @@
                 "    }",
                 "    ",
                 "    hostLobby(){",
-                "        // this.client.bind(this.port)",
+                "        this.client.bind(this.port)",
                 "        console.log('lobby host')",
-                "        // this.connectorList.push('127.0.0.1')",
+                "        this.connectorList.push('127.0.0.1')",
                 "        this.client.on('message',(msg,rinfo)=>{",
                 "            const data = JSON.parse(msg.toString())",
                 "            if(data.TYPE == request.initial_req)",
@@ -60369,12 +60366,12 @@
                 "                    this.addConnector(i)",
                 "                }",
                 "                const game = runtimeScene.getGame();",
-                "                game.getVariables().get('Player_No2').getChild('Connection').setBoolean(true);",
                 "                console.log('Joined to ' + rinfo.address)",
                 "                // Apply host data",
                 "                const lobbyStatus = JSON.parse(data.Lobby);",
                 "                const lobby = lobbyStatus.LOBBY;",
                 "                this.lobby.applyData(lobby)",
+                "                console.log('aaaaaaaaaaaaaaaaaaaaaaaa')",
                 "                runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('200');",
                 "            }",
                 "             if(data.TYPE === response.lobby_status){",
