@@ -50763,7 +50763,6 @@
                     "",
                     "  toJSON = () => {",
                     "    this.update();",
-                    "      console.log(this.playerCharacter)",
                     "    if(this.checkCharacterValid()){",
                     "      this.setFlip(this.facingDir)",
                     "      return JSON.stringify({",
@@ -51033,6 +51032,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Send data to host",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -51044,9 +51044,6 @@
                 "",
                 "if(playerNumber === 1) ",
                 "  window.client.sendToAll(window.player1.toJSON());",
-                "// console.log(window.player1.playerVal._children)",
-                "  // console.log(window.player1.playerVal._children.Character_Status._str)",
-                "  // console.log(window.player1.playerVal._children.Status._str)",
                 "",
                 "if(playerNumber === 2) ",
                 "  window.client.sendToAll(window.player2.toJSON());",
@@ -51061,6 +51058,54 @@
               "parameterObjects": "",
               "useStrict": true,
               "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "DEV force set Play",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"F10\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "const pnum = runtimeScene.getGame().getVariables().get(`Player_Number`).getAsNumber();",
+                    "const a = runtimeScene.getGame().getVariables().get(`Player_No${pnum}`).getChild(\"Status\").getAsString();",
+                    "const setPlay = (str) => runtimeScene.getGame().getVariables().get(`Player_No${pnum}`).getChild(\"Status\").setString(str);",
+                    "a === 'Play' ? setPlay('Picked') : setPlay('Play');",
+                    "console.log(runtimeScene.getGame().getVariables().get(`Player_No${pnum}`).getChild(\"Status\").getAsString())"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
             }
           ],
           "parameters": []
@@ -60207,8 +60252,10 @@
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
                 "const dgram = require('dgram');",
+                "",
                 "// console log all data",
                 "// console.log(window.client.lobby.gameVar)",
+                "",
                 "class LobbyStatus {",
                 "  constructor() {",
                 "    this.update()",
@@ -60291,6 +60338,7 @@
                 "            }",
                 "        });",
                 "        this.client.bind(this.port)",
+                "        ",
                 "        // for dev testing",
                 "        this.hostLobby()",
                 "    }",
@@ -60392,6 +60440,7 @@
                 "                runtimeScene.getGame().getVariables().get(\"Game_Status\").setString('200');",
                 "            }",
                 "             if(data.TYPE === response.lobby_status){",
+                "                // console.log(data);",
                 "                const lobby = data.LOBBY;",
                 "                this.lobby.applyData(lobby)",
                 "                console.log('client lobby updated')",
