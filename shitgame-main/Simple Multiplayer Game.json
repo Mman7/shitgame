@@ -49763,6 +49763,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Create Players Model",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -50724,6 +50725,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -50753,7 +50755,11 @@
                     "    this.posY = this.object.y;",
                     "    this.angle = this.object.angle",
                     "    this.animationName = this.object.getAnimationName();",
+                    "    this.characterStat = this.playerVal.getChild(\"Character\").getAsString();",
+                    "    // console.log(`Character Status: ${this.playerVal._children.Character_Status._str}`);",
+                    "    // console.log(`AniName : ${this.animationName}`);",
                     "  }",
+                    "  setCharacterStat = (str) => this.playerVal.getChild(\"Character\").setString(str)",
                     "  setPos = (x,y) => this.object.setPosition(x,y);",
                     "  setAni = (aniName) => this.object.setAnimationName(aniName);",
                     "  setAngle = (angle) => this.object.setAngle(angle);",
@@ -50772,6 +50778,7 @@
                     "        FacingDir: this.facingDir,",
                     "        Angle: this.angle,",
                     "        Animation: this.animationName,",
+                    "        CharacterStatus: this.characterStat,",
                     "        Position: {",
                     "          x: this.posX,",
                     "          y: this.posY,",
@@ -50801,6 +50808,7 @@
                     "    const playerCharacter = data.Character;",
                     "    const playerAni = data.Animation;",
                     "    const facingDir = data.FacingDir;",
+                    "    const charStat = data.CharacterStatus;",
                     "    const x = playerPosInData['x'] ;",
                     "    const y = playerPosInData['y'];",
                     "    switch (playerNum) {",
@@ -50808,18 +50816,21 @@
                     "        player1.setPos(x,y);",
                     "        player1.setAni(playerAni);",
                     "        player1.setFlip(facingDir);",
+                    "        player1.setCharacterStat(charStat);",
                     "        break;",
                     "",
                     "      case 2:",
                     "        player2.setPos(x,y)",
                     "        player2.setAni(playerAni)",
                     "        player2.setFlip(facingDir)",
+                    "        player2.setCharacterStat(charStat);",
                     "        break;",
                     "",
                     "      case 3:",
                     "        player3.setPos(x,y)",
                     "        player3.setAni(playerAni)",
                     "        player3.setFlip(facingDir)",
+                    "        player3.setCharacterStat(charStat);",
                     "        break;",
                     "",
                     "      default:",
@@ -51033,40 +51044,6 @@
           "colorR": 74,
           "creationTime": 0,
           "folded": true,
-          "name": "Send data to host",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
-                "",
-                "if(playerNumber === 1) ",
-                "  window.client.sendToAll(window.player1.toJSON());",
-                "",
-                "if(playerNumber === 2) ",
-                "  window.client.sendToAll(window.player2.toJSON());",
-                "",
-                "if(playerNumber === 3) ",
-                "  window.client.sendToAll(window.player3.toJSON());",
-                "",
-                "",
-                "",
-                ""
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": true
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
           "name": "DEV force set Play",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -51744,6 +51721,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Mechanics",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -51753,13 +51731,11 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Player Touch Block (Dead)",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -51820,6 +51796,17 @@
                         },
                         {
                           "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "Arthur",
+                            "Animation",
+                            "=",
+                            "\"Die\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "PlaySound"
                           },
                           "parameters": [
@@ -51828,17 +51815,6 @@
                             "",
                             "25",
                             ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                          },
-                          "parameters": [
-                            "Arthur",
-                            "Animation",
-                            "=",
-                            "\"Die\""
                           ]
                         },
                         {
@@ -52086,6 +52062,7 @@
                               ]
                             },
                             {
+                              "disabled": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
@@ -60081,6 +60058,41 @@
                   ]
                 }
               ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Send data to host",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
+                "",
+                "if(playerNumber === 1) ",
+                "  window.client.sendToAll(window.player1.toJSON())",
+                "",
+                "if(playerNumber === 2) ",
+                "  window.client.sendToAll(window.player2.toJSON());",
+                "",
+                "if(playerNumber === 3) ",
+                "  window.client.sendToAll(window.player3.toJSON());",
+                "",
+                "",
+                "",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
             }
           ],
           "parameters": []
