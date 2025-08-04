@@ -5183,6 +5183,14 @@
         "name": "11.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Detect_Block_Boss.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Detect_Block_Boss",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -27964,6 +27972,134 @@
         "characterSize": 30,
         "color": "0;0;0"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Detect_Block_Boss",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Detect_Block_Boss",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Detect_Block_Boss",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Detect_Block",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "ID",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Detect_Block",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Detect_Block",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -28073,6 +28209,23 @@
         ]
       },
       {
+        "folderName": "Detect Blocks",
+        "children": [
+          {
+            "objectName": "Detect_Block"
+          },
+          {
+            "objectName": "Detect_Block_Boss"
+          }
+        ]
+      },
+      {
+        "objectName": "Flag"
+      },
+      {
+        "objectName": "Bonfire"
+      },
+      {
         "folderName": "Secret Rewards",
         "children": [
           {
@@ -28085,12 +28238,6 @@
             "objectName": "Jiba"
           }
         ]
-      },
-      {
-        "objectName": "Flag"
-      },
-      {
-        "objectName": "Bonfire"
       },
       {
         "folderName": "COUT",
@@ -28160,7 +28307,12 @@
         {
           "name": "HP",
           "type": "number",
-          "value": 100
+          "value": 0
+        },
+        {
+          "name": "Invulnerable",
+          "type": "boolean",
+          "value": false
         },
         {
           "name": "Name",
@@ -28216,7 +28368,12 @@
         {
           "name": "HP",
           "type": "number",
-          "value": 100
+          "value": 0
+        },
+        {
+          "name": "Invulnerable",
+          "type": "boolean",
+          "value": false
         },
         {
           "name": "Name",
@@ -28272,7 +28429,12 @@
         {
           "name": "HP",
           "type": "number",
-          "value": 100
+          "value": 0
+        },
+        {
+          "name": "Invulnerable",
+          "type": "boolean",
+          "value": false
         },
         {
           "name": "Name",
@@ -28360,6 +28522,11 @@
             },
             {
               "name": "Status",
+              "type": "string",
+              "value": "NULL"
+            },
+            {
+              "name": "Target",
               "type": "string",
               "value": "NULL"
             }
@@ -31112,6 +31279,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Just Run For 1 Time",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -47836,29 +48004,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 100,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Bonfire",
-          "persistentUuid": "f8987858-0e06-488f-953b-221fc7beab4b",
-          "width": 86.76470588235293,
-          "x": 832,
-          "y": 840,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ID",
-              "type": "number",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -48292,6 +48437,54 @@
               "value": 1
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT1",
+          "persistentUuid": "f9c9820b-0f77-4372-90fd-4f425256d19f",
+          "width": 0,
+          "x": 251,
+          "y": 599,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT2",
+          "persistentUuid": "27942d98-7ad5-491f-ac3c-9a98d61180ac",
+          "width": 0,
+          "x": 473,
+          "y": 599,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "COUT3",
+          "persistentUuid": "2e93714d-2dc0-4c20-8906-39153463aa29",
+          "width": 0,
+          "x": 692,
+          "y": 610,
+          "zOrder": 22,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -49489,73 +49682,6 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "Detect_Block",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [
-            {
-              "name": "ID",
-              "type": "number",
-              "value": 0
-            }
-          ],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "Detect_Block",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "Detect_Block",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 32,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
           "name": "Ladder",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -49669,9 +49795,6 @@
           },
           {
             "objectName": "Ladder"
-          },
-          {
-            "objectName": "Detect_Block"
           }
         ]
       },
@@ -49712,6 +49835,7 @@
           "target": "Secret Rewards"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -49792,6 +49916,16 @@
                         }
                       ],
                       "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Player_No1.HP",
+                            "=",
+                            "100"
+                          ]
+                        },
                         {
                           "type": {
                             "value": "SetStringVariable"
@@ -50119,6 +50253,16 @@
                       "actions": [
                         {
                           "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Player_No2.HP",
+                            "=",
+                            "100"
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "SetStringVariable"
                           },
                           "parameters": [
@@ -50431,6 +50575,16 @@
                       "actions": [
                         {
                           "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Player_No3.HP",
+                            "=",
+                            "100"
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "SetStringVariable"
                           },
                           "parameters": [
@@ -50724,6 +50878,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Player Model and Handle Action",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -51732,6 +51887,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Player Touch Block (Dead)",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -59043,7 +59199,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "disabled": true,
           "name": "Detect_Block",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -59072,7 +59227,7 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_1",
+                            "Arthur",
                             "Detect_Block",
                             "",
                             "",
@@ -59084,7 +59239,7 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_2",
+                            "Knight",
                             "Detect_Block",
                             "",
                             "",
@@ -59096,7 +59251,19 @@
                             "value": "CollisionNP"
                           },
                           "parameters": [
-                            "Player_3",
+                            "Witch",
+                            "Detect_Block",
+                            "",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Dajiba",
                             "Detect_Block",
                             "",
                             "",
@@ -59133,8 +59300,8 @@
                       "parameters": [
                         "Dad_Cat",
                         "Dad_Cat",
-                        "!=",
-                        "1"
+                        "=",
+                        "0"
                       ]
                     },
                     {
@@ -59295,7 +59462,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "disabled": true,
           "name": "Boss Behavior",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -59305,13 +59471,11 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Boss 1",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
-                  "disabled": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -59388,44 +59552,1390 @@
                           "colorG": 176,
                           "colorR": 74,
                           "creationTime": 0,
-                          "name": "Targeting P1",
+                          "folded": true,
+                          "name": "Attack",
                           "source": "",
                           "type": "BuiltinCommonInstructions::Group",
                           "events": [
                             {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Attack P1",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.X",
+                                        "<",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P1\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.X",
+                                        ">",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P1\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "no"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Attack P2",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.X",
+                                        "<",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P2\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.X",
+                                        ">",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P2\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "no"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Attack P3",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.X",
+                                        "<",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P3\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.X",
+                                        ">",
+                                        "Dad_Cat.X()"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                        "<",
+                                        "300"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Target",
+                                        "=",
+                                        "\"P3\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable",
+                                        "no"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Attack\""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Ready To Attack"
+                            },
+                            {
+                              "folded": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
                                   "type": {
-                                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                                    "value": "AnimatableCapability::AnimatableBehavior::Name"
                                   },
                                   "parameters": [
-                                    "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
-                                    "<",
-                                    "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_2.X(),Player_2.Y())"
+                                    "Dad_Cat",
+                                    "Animation",
+                                    "=",
+                                    "\"Attack\""
                                   ]
                                 },
                                 {
                                   "type": {
-                                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                                    "value": "Sprite"
                                   },
                                   "parameters": [
-                                    "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
-                                    "<",
-                                    "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_3.X(),Player_3.Y())"
+                                    "Dad_Cat",
+                                    "=",
+                                    "9"
                                   ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
                                 }
                               ],
                               "actions": [],
                               "events": [
                                 {
-                                  "colorB": 228,
-                                  "colorG": 176,
-                                  "colorR": 74,
-                                  "creationTime": 0,
-                                  "name": "Chase P1",
-                                  "source": "",
-                                  "type": "BuiltinCommonInstructions::Group",
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "Detect_Block_Boss",
+                                        "Dad_Cat.X() - 140",
+                                        "Dad_Cat.Y()",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                      },
+                                      "parameters": [
+                                        "Detect_Block_Boss",
+                                        "Resizable",
+                                        "130",
+                                        "175"
+                                      ]
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Boss.B1.Target",
+                                            "=",
+                                            "\"P1\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                            ">",
+                                            "250"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "AddForceAL"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "-180",
+                                            "25000",
+                                            "0"
+                                          ]
+                                        }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Arthur",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Arthur",
+                                                "-",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Knight",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Knight",
+                                                "-",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Witch",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Witch",
+                                                "-",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Dajiba",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Dajiba",
+                                                "-",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "inverted": true,
+                                        "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Flippable"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "Detect_Block_Boss",
+                                        "Dad_Cat.X() + 140",
+                                        "Dad_Cat.Y()",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ResizableCapability::ResizableBehavior::SetSize"
+                                      },
+                                      "parameters": [
+                                        "Detect_Block_Boss",
+                                        "Resizable",
+                                        "130",
+                                        "175"
+                                      ]
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Boss.B1.Target",
+                                            "=",
+                                            "\"P1\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                            ">",
+                                            "250"
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "AddForceAL"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "0",
+                                            "25000",
+                                            "0"
+                                          ]
+                                        }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Arthur",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Arthur",
+                                                "+",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Knight",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Knight",
+                                                "+",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Witch",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Witch",
+                                                "+",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "CollisionNP"
+                                              },
+                                              "parameters": [
+                                                "Dajiba",
+                                                "Detect_Block_Boss",
+                                                "",
+                                                "",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::Once"
+                                              },
+                                              "parameters": []
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "MettreX"
+                                              },
+                                              "parameters": [
+                                                "Dajiba",
+                                                "+",
+                                                "50"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "Flippable"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "Detect_Block_Boss",
+                                    "=",
+                                    "Dad_Cat.X() - 140",
+                                    "=",
+                                    "Dad_Cat.Y()"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "Flippable"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "Detect_Block_Boss",
+                                    "=",
+                                    "Dad_Cat.X() + 140",
+                                    "=",
+                                    "Dad_Cat.Y()"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "Animation",
+                                    "=",
+                                    "\"Attack\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Sprite"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "=",
+                                    "15"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Delete"
+                                  },
+                                  "parameters": [
+                                    "Detect_Block_Boss",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "Reset Animation"
+                            },
+                            {
+                              "folded": true,
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "Animation",
+                                    "=",
+                                    "\"Attack\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                                  },
+                                  "parameters": [
+                                    "Dad_Cat",
+                                    "Animation"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberVariable"
+                                  },
+                                  "parameters": [
+                                    "Boss.B1.HP",
+                                    ">",
+                                    "0"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "Random_Number",
+                                    "=",
+                                    "RandomInRange(0,2)"
+                                  ]
+                                }
+                              ],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Random_Number",
+                                        "=",
+                                        "0"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Status",
+                                        "=",
+                                        "\"Rest\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Eating\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Wait"
+                                      },
+                                      "parameters": [
+                                        "2"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetStringVariable"
+                                      },
+                                      "parameters": [
+                                        "Boss.B1.Status",
+                                        "=",
+                                        "\"Battle\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Or"
+                                      },
+                                      "parameters": [],
+                                      "subInstructions": [
+                                        {
+                                          "type": {
+                                            "value": "NumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Random_Number",
+                                            "=",
+                                            "1"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "NumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Random_Number",
+                                            "=",
+                                            "2"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "Dad_Cat",
+                                        "Animation",
+                                        "=",
+                                        "\"Walking\""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "parameters": []
+                        },
+                        {
+                          "colorB": 228,
+                          "colorG": 176,
+                          "colorR": 74,
+                          "creationTime": 0,
+                          "folded": true,
+                          "name": "Chase",
+                          "source": "",
+                          "type": "BuiltinCommonInstructions::Group",
+                          "events": [
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Chase P1",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
                                   "events": [
                                     {
                                       "type": "BuiltinCommonInstructions::Standard",
@@ -59435,7 +60945,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "Player_1.X()",
+                                            "Player_No1.X",
                                             "<",
                                             "Dad_Cat.X()"
                                           ]
@@ -59445,7 +60955,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
                                             ">=",
                                             "300"
                                           ]
@@ -59523,7 +61033,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "Player_1.X()",
+                                            "Player_No1.X",
                                             ">",
                                             "Dad_Cat.X()"
                                           ]
@@ -59533,7 +61043,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)",
                                             ">=",
                                             "300"
                                           ]
@@ -59603,17 +61113,56 @@
                                         }
                                       ]
                                     }
-                                  ],
-                                  "parameters": []
-                                },
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Chase P2",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
                                 {
-                                  "colorB": 228,
-                                  "colorG": 176,
-                                  "colorR": 74,
-                                  "creationTime": 0,
-                                  "name": "Attack P1",
-                                  "source": "",
-                                  "type": "BuiltinCommonInstructions::Group",
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
                                   "events": [
                                     {
                                       "type": "BuiltinCommonInstructions::Standard",
@@ -59623,7 +61172,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "Player_1.X()",
+                                            "Player_No2.X",
                                             "<",
                                             "Dad_Cat.X()"
                                           ]
@@ -59633,8 +61182,8 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
-                                            "<",
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                            ">=",
                                             "300"
                                           ]
                                         },
@@ -59648,12 +61197,6 @@
                                             "!=",
                                             "\"Attack\""
                                           ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "BuiltinCommonInstructions::Once"
-                                          },
-                                          "parameters": []
                                         }
                                       ],
                                       "actions": [
@@ -59669,13 +61212,42 @@
                                         },
                                         {
                                           "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                            "value": "PlatformBehavior::SimulateLeftKey"
                                           },
                                           "parameters": [
                                             "Dad_Cat",
-                                            "Animation",
-                                            "=",
-                                            "\"Attack\""
+                                            "PlatformerObject"
+                                          ]
+                                        }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "!=",
+                                                "\"Walking\""
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "=",
+                                                "\"Walking\""
+                                              ]
+                                            }
                                           ]
                                         }
                                       ]
@@ -59688,7 +61260,7 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "Player_1.X()",
+                                            "Player_No2.X",
                                             ">",
                                             "Dad_Cat.X()"
                                           ]
@@ -59698,8 +61270,8 @@
                                             "value": "BuiltinCommonInstructions::CompareNumbers"
                                           },
                                           "parameters": [
-                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_1.X(),Player_1.Y())",
-                                            "<",
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)",
+                                            ">=",
                                             "300"
                                           ]
                                         },
@@ -59713,12 +61285,6 @@
                                             "!=",
                                             "\"Attack\""
                                           ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "BuiltinCommonInstructions::Once"
-                                          },
-                                          "parameters": []
                                         }
                                       ],
                                       "actions": [
@@ -59734,168 +61300,11 @@
                                         },
                                         {
                                           "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                            "value": "PlatformBehavior::SimulateRightKey"
                                           },
                                           "parameters": [
                                             "Dad_Cat",
-                                            "Animation",
-                                            "=",
-                                            "\"Attack\""
-                                          ]
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "BuiltinCommonInstructions::Standard",
-                                      "conditions": [
-                                        {
-                                          "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::Name"
-                                          },
-                                          "parameters": [
-                                            "Dad_Cat",
-                                            "Animation",
-                                            "=",
-                                            "\"Attack\""
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "Sprite"
-                                          },
-                                          "parameters": [
-                                            "Dad_Cat",
-                                            "=",
-                                            "9"
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "BuiltinCommonInstructions::Once"
-                                          },
-                                          "parameters": []
-                                        }
-                                      ],
-                                      "actions": [],
-                                      "events": [
-                                        {
-                                          "type": "BuiltinCommonInstructions::Standard",
-                                          "conditions": [
-                                            {
-                                              "type": {
-                                                "value": "FlippableCapability::FlippableBehavior::FlippedX"
-                                              },
-                                              "parameters": [
-                                                "Dad_Cat",
-                                                "Flippable"
-                                              ]
-                                            }
-                                          ],
-                                          "actions": [
-                                            {
-                                              "type": {
-                                                "value": "AddForceAL"
-                                              },
-                                              "parameters": [
-                                                "Dad_Cat",
-                                                "-180",
-                                                "25000",
-                                                "0"
-                                              ]
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "BuiltinCommonInstructions::Standard",
-                                          "conditions": [
-                                            {
-                                              "type": {
-                                                "inverted": true,
-                                                "value": "FlippableCapability::FlippableBehavior::FlippedX"
-                                              },
-                                              "parameters": [
-                                                "Dad_Cat",
-                                                "Flippable"
-                                              ]
-                                            }
-                                          ],
-                                          "actions": [
-                                            {
-                                              "type": {
-                                                "value": "AddForceAL"
-                                              },
-                                              "parameters": [
-                                                "Dad_Cat",
-                                                "0",
-                                                "25000",
-                                                "0"
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "BuiltinCommonInstructions::Comment",
-                                      "color": {
-                                        "b": 109,
-                                        "g": 230,
-                                        "r": 255,
-                                        "textB": 0,
-                                        "textG": 0,
-                                        "textR": 0
-                                      },
-                                      "comment": "Reset Animation"
-                                    },
-                                    {
-                                      "type": "BuiltinCommonInstructions::Standard",
-                                      "conditions": [
-                                        {
-                                          "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::Name"
-                                          },
-                                          "parameters": [
-                                            "Dad_Cat",
-                                            "Animation",
-                                            "=",
-                                            "\"Attack\""
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-                                          },
-                                          "parameters": [
-                                            "Dad_Cat",
-                                            "Animation"
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "NumberVariable"
-                                          },
-                                          "parameters": [
-                                            "Boss.B1.HP",
-                                            ">",
-                                            "0"
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "BuiltinCommonInstructions::Once"
-                                          },
-                                          "parameters": []
-                                        }
-                                      ],
-                                      "actions": [
-                                        {
-                                          "type": {
-                                            "value": "SetNumberVariable"
-                                          },
-                                          "parameters": [
-                                            "Random_Number",
-                                            "=",
-                                            "RandomInRange(0,2)"
+                                            "PlatformerObject"
                                           ]
                                         }
                                       ],
@@ -59905,97 +61314,13 @@
                                           "conditions": [
                                             {
                                               "type": {
-                                                "value": "NumberVariable"
-                                              },
-                                              "parameters": [
-                                                "Random_Number",
-                                                "=",
-                                                "0"
-                                              ]
-                                            }
-                                          ],
-                                          "actions": [
-                                            {
-                                              "type": {
-                                                "value": "SetStringVariable"
-                                              },
-                                              "parameters": [
-                                                "Boss.B1.Status",
-                                                "=",
-                                                "\"Rest\""
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                                "value": "AnimatableCapability::AnimatableBehavior::Name"
                                               },
                                               "parameters": [
                                                 "Dad_Cat",
                                                 "Animation",
-                                                "=",
-                                                "\"Eating\""
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "Wait"
-                                              },
-                                              "parameters": [
-                                                "2"
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "SetStringVariable"
-                                              },
-                                              "parameters": [
-                                                "Boss.B1.Status",
-                                                "=",
-                                                "\"Battle\""
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                                              },
-                                              "parameters": [
-                                                "Dad_Cat",
-                                                "Animation",
-                                                "=",
+                                                "!=",
                                                 "\"Walking\""
-                                              ]
-                                            }
-                                          ]
-                                        },
-                                        {
-                                          "type": "BuiltinCommonInstructions::Standard",
-                                          "conditions": [
-                                            {
-                                              "type": {
-                                                "value": "BuiltinCommonInstructions::Or"
-                                              },
-                                              "parameters": [],
-                                              "subInstructions": [
-                                                {
-                                                  "type": {
-                                                    "value": "NumberVariable"
-                                                  },
-                                                  "parameters": [
-                                                    "Random_Number",
-                                                    "=",
-                                                    "1"
-                                                  ]
-                                                },
-                                                {
-                                                  "type": {
-                                                    "value": "NumberVariable"
-                                                  },
-                                                  "parameters": [
-                                                    "Random_Number",
-                                                    "=",
-                                                    "2"
-                                                  ]
-                                                }
                                               ]
                                             }
                                           ],
@@ -60015,10 +61340,1126 @@
                                         }
                                       ]
                                     }
-                                  ],
-                                  "parameters": []
+                                  ]
                                 }
-                              ]
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "Chase P3",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "NumberVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.HP",
+                                        "!=",
+                                        "0"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No1.X,Player_No1.Y)"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                                      },
+                                      "parameters": [
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                        "<",
+                                        "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No2.X,Player_No2.Y)"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.X",
+                                            "<",
+                                            "Dad_Cat.X()"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                            ">=",
+                                            "300"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "Animation",
+                                            "!=",
+                                            "\"Attack\""
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "Flippable",
+                                            "yes"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "PlatformBehavior::SimulateLeftKey"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "PlatformerObject"
+                                          ]
+                                        }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "!=",
+                                                "\"Walking\""
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "=",
+                                                "\"Walking\""
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.X",
+                                            ">",
+                                            "Dad_Cat.X()"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                                          },
+                                          "parameters": [
+                                            "DistanceBetweenPositions(Dad_Cat.X(),Dad_Cat.Y(),Player_No3.X,Player_No3.Y)",
+                                            ">=",
+                                            "300"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "Animation",
+                                            "!=",
+                                            "\"Attack\""
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "Flippable",
+                                            "no"
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "PlatformBehavior::SimulateRightKey"
+                                          },
+                                          "parameters": [
+                                            "Dad_Cat",
+                                            "PlatformerObject"
+                                          ]
+                                        }
+                                      ],
+                                      "events": [
+                                        {
+                                          "type": "BuiltinCommonInstructions::Standard",
+                                          "conditions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::Name"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "!=",
+                                                "\"Walking\""
+                                              ]
+                                            }
+                                          ],
+                                          "actions": [
+                                            {
+                                              "type": {
+                                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                              },
+                                              "parameters": [
+                                                "Dad_Cat",
+                                                "Animation",
+                                                "=",
+                                                "\"Walking\""
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            }
+                          ],
+                          "parameters": []
+                        },
+                        {
+                          "colorB": 228,
+                          "colorG": 176,
+                          "colorR": 74,
+                          "creationTime": 0,
+                          "folded": true,
+                          "name": "Players Being Hit",
+                          "source": "",
+                          "type": "BuiltinCommonInstructions::Group",
+                          "events": [
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "P1",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.Invulnerable",
+                                        "=",
+                                        ""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Character",
+                                            "=",
+                                            "\"Arthur\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Arthur",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Character",
+                                            "=",
+                                            "\"Knight\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Knight",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Character",
+                                            "=",
+                                            "\"Witch\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Witch",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Character",
+                                            "=",
+                                            "\"Dajiba\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Dajiba",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No1.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.Invulnerable",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Wait"
+                                      },
+                                      "parameters": [
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetBooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No1.Invulnerable",
+                                        "False",
+                                        ""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "P2",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.Invulnerable",
+                                        "=",
+                                        ""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Character",
+                                            "=",
+                                            "\"Arthur\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Arthur",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Character",
+                                            "=",
+                                            "\"Knight\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Knight",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Character",
+                                            "=",
+                                            "\"Witch\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Witch",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Character",
+                                            "=",
+                                            "\"Dajiba\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Dajiba",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No2.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.Invulnerable",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Wait"
+                                      },
+                                      "parameters": [
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetBooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No2.Invulnerable",
+                                        "False",
+                                        ""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "folded": true,
+                              "name": "P3",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.Invulnerable",
+                                        "=",
+                                        ""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Character",
+                                            "=",
+                                            "\"Arthur\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Arthur",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Character",
+                                            "=",
+                                            "\"Knight\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Knight",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Character",
+                                            "=",
+                                            "\"Witch\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Witch",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "StringVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Character",
+                                            "=",
+                                            "\"Dajiba\""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "CollisionNP"
+                                          },
+                                          "parameters": [
+                                            "Dajiba",
+                                            "Detect_Block_Boss",
+                                            "",
+                                            "",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Once"
+                                          },
+                                          "parameters": []
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "SetBooleanVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.Invulnerable",
+                                            "True",
+                                            ""
+                                          ]
+                                        },
+                                        {
+                                          "type": {
+                                            "value": "SetNumberVariable"
+                                          },
+                                          "parameters": [
+                                            "Player_No3.HP",
+                                            "-",
+                                            "20"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.Invulnerable",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::Once"
+                                      },
+                                      "parameters": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "Wait"
+                                      },
+                                      "parameters": [
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetBooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Player_No3.Invulnerable",
+                                        "False",
+                                        ""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
                             }
                           ],
                           "parameters": []
@@ -60043,7 +62484,6 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -60055,7 +62495,65 @@
                     "COUT1",
                     "Text",
                     "=",
-                    "Respawn.Flip"
+                    "Player_No1.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "COUT2",
+                    "Text",
+                    "=",
+                    "Player_No2.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "COUT3",
+                    "Text",
+                    "=",
+                    "Player_No3.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "COUT1",
+                    "=",
+                    "Player_No1.X",
+                    "=",
+                    "Player_No1.Y - 100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "COUT2",
+                    "=",
+                    "Player_No2.X",
+                    "=",
+                    "Player_No2.Y - 100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "COUT3",
+                    "=",
+                    "Player_No3.X",
+                    "=",
+                    "Player_No3.Y - 100"
                   ]
                 }
               ]
@@ -60068,6 +62566,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Send data to host",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
