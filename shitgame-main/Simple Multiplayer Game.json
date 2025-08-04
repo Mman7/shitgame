@@ -28271,6 +28271,11 @@
       "value": "NULL"
     },
     {
+      "name": "Host",
+      "type": "boolean",
+      "value": false
+    },
+    {
       "name": "Player_Number",
       "type": "number",
       "value": 0
@@ -31226,6 +31231,16 @@
               "parameters": [
                 "Block"
               ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "Host",
+                "False",
+                ""
+              ]
             }
           ],
           "events": [
@@ -33280,6 +33295,16 @@
                   "parameters": [
                     "",
                     "\"Lobby\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Host",
+                    "True",
                     ""
                   ]
                 },
@@ -59471,6 +59496,7 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Boss 1",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -59572,6 +59598,16 @@
                                   "conditions": [
                                     {
                                       "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
                                       },
                                       "parameters": [
@@ -59655,6 +59691,16 @@
                                 {
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
                                     {
                                       "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
@@ -59755,6 +59801,16 @@
                                   "conditions": [
                                     {
                                       "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
                                       },
                                       "parameters": [
@@ -59838,6 +59894,16 @@
                                 {
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
                                     {
                                       "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
@@ -59938,6 +60004,16 @@
                                   "conditions": [
                                     {
                                       "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
                                       },
                                       "parameters": [
@@ -60021,6 +60097,16 @@
                                 {
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
                                     {
                                       "type": {
                                         "value": "BuiltinCommonInstructions::CompareNumbers"
@@ -60906,6 +60992,16 @@
                                   "conditions": [
                                     {
                                       "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "NumberVariable"
                                       },
                                       "parameters": [
@@ -61133,6 +61229,16 @@
                                   "conditions": [
                                     {
                                       "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
                                         "value": "NumberVariable"
                                       },
                                       "parameters": [
@@ -61358,6 +61464,16 @@
                                 {
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BooleanVariable"
+                                      },
+                                      "parameters": [
+                                        "Host",
+                                        "True",
+                                        ""
+                                      ]
+                                    },
                                     {
                                       "type": {
                                         "value": "NumberVariable"
@@ -61596,6 +61712,7 @@
                               "type": "BuiltinCommonInstructions::Group",
                               "events": [
                                 {
+                                  "folded": true,
                                   "type": "BuiltinCommonInstructions::Standard",
                                   "conditions": [
                                     {
