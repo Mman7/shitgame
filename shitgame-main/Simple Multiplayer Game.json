@@ -31294,7 +31294,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Just Run For 1 Time",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -31338,26 +31337,12 @@
                   "type": "BuiltinCommonInstructions::JsCode",
                   "inlineCode": [
                     "// Keep Player connection\r",
-                    "let backgroundTask;\r",
-                    "let foreGroundTask;\r",
+                    "setInterval(() => {\r",
+                    "  console.log(\"Running foreground task\");\r",
+                    "  window.client.lobby.update()\r",
+                    "  window.client.sendPing()\r",
+                    "}, 500); \r",
                     "\r",
-                    "window.addEventListener(\"focus\", () => {\r",
-                    "  foreGroundTask = setInterval(() => {\r",
-                    "    console.log(\"Running foreground task\");\r",
-                    "    window.client.lobby.update()\r",
-                    "    window.client.sendPing()\r",
-                    "  }, 500); \r",
-                    "  clearInterval(backgroundTask);\r",
-                    "});\r",
-                    "\r",
-                    "window.addEventListener(\"blur\", () => {\r",
-                    "  backgroundTask = setInterval(() => {\r",
-                    "    console.log(\"Running background task\");\r",
-                    "    window.client.lobby.update()\r",
-                    "    window.client.sendPing()\r",
-                    "  }, 500); \r",
-                    "  clearInterval(foreGroundTask);\r",
-                    "});\r",
                     ""
                   ],
                   "parameterObjects": "",
@@ -39487,6 +39472,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Change Character",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -47865,7 +47851,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.38958562738273556,
+        "zoomFactor": 0.44485159988867295,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -49860,7 +49846,6 @@
           "target": "Secret Rewards"
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -49927,6 +49912,7 @@
                   "type": "BuiltinCommonInstructions::Group",
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -50232,19 +50218,6 @@
                               ]
                             }
                           ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::JsCode",
-                          "inlineCode": [
-                            "const a = runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Status');",
-                            "console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')",
-                            "console.log(a)",
-                            "// runtimeScene.getGame().getVariables().get(`Player_No1`).getChild('Status').setString('Play');",
-                            "console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"
-                          ],
-                          "parameterObjects": "",
-                          "useStrict": true,
-                          "eventsSheetExpanded": false
                         }
                       ]
                     }
@@ -50262,6 +50235,7 @@
                   "type": "BuiltinCommonInstructions::Group",
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -50934,8 +50908,6 @@
                     "    this.angle = this.object.angle",
                     "    this.animationName = this.object.getAnimationName();",
                     "    this.characterStat = this.playerVal.getChild(\"Character_Status\").getAsString();",
-                    "    // console.log(`Character Status: ${this.playerVal._children.Character_Status._str}`);",
-                    "    // console.log(`AniName : ${this.animationName}`);",
                     "  }",
                     "  setCharacterStat = (str) => this.playerVal.getChild(\"Character_Status\").setString(str)",
                     "  setPos = (x,y) => this.object.setPosition(x,y);",
@@ -50976,8 +50948,8 @@
                     "window.player3 = player3;",
                     "",
                     "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
-                    "const client = window.client.client;",
-                    "client.on('message', (msg, rinfo) => {",
+                    "",
+                    "client.client.on('message', (msg, rinfo) => {",
                     "    const data = JSON.parse(msg.toString());",
                     "    if(data.TYPE === 'MOVEMENT'){",
                     "    const playerNum = data.Player;",
@@ -50991,6 +50963,7 @@
                     "    const y = playerPosInData['y'];",
                     "    switch (playerNum) {",
                     "      case 1:",
+                    "      if(playerNumber == 1) return;",
                     "        player1.setPos(x,y);",
                     "        player1.setAni(playerAni);",
                     "        player1.setFlip(facingDir);",
@@ -50999,6 +50972,7 @@
                     "        break;",
                     "",
                     "      case 2:",
+                    "       if(playerNumber == 2) return;",
                     "        player2.setPos(x,y)",
                     "        player2.setAni(playerAni)",
                     "        player2.setFlip(facingDir)",
@@ -51007,6 +50981,7 @@
                     "        break;",
                     "",
                     "      case 3:",
+                    "       if(playerNumber == 3) return;",
                     "        player3.setPos(x,y)",
                     "        player3.setAni(playerAni)",
                     "        player3.setFlip(facingDir)",
@@ -59224,6 +59199,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Detect_Block",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -59233,7 +59209,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Block Boss 1",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -59473,6 +59448,82 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": [
+                        "const isHost = runtimeScene.getGame().getVariables().get('Host').getAsBoolean();",
+                        "",
+                        "class Boss{",
+                        "    constructor(){",
+                        "        this.update()",
+                        "    }",
+                        "    update(){",
+                        "        this.boss = runtimeScene.getGame().getVariables().get('Boss').getChild('B1').getAllChildren();",
+                        "        this.alive = this.boss.Alive.getAsBoolean();",
+                        "        this.hp = this.boss.HP.getAsNumber();",
+                        "        this.status = this.boss.Status.getAsString()",
+                        "        this.target = this.boss.Target.getAsString()",
+                        "        this.object = runtimeScene.getObjects('Dad_Cat')[0];",
+                        "        this.aniName = this.object.getAnimationName();",
+                        "        this.posX = this.object.x;",
+                        "        this.posY = this.object.y;",
+                        "    }",
+                        "    setAlive = (bool) => this.boss.Alive.setValue(bool);",
+                        "    setHp = (num) => this.boss.HP.setValue(num);",
+                        "    setStatus = (stat) => this.boss.Status.setValue(stat);",
+                        "    setTarget = (target) => this.boss.Target.setValue(target);",
+                        "    setAni = (aniName) => this.object.setAnimationName(aniName);",
+                        "    setPos = (x,y) => this.object.setPosition(x,y);",
+                        "",
+                        "    toJSON(){",
+                        "        return JSON.stringify({",
+                        "            TYPE: 'BOSS',",
+                        "            Alive: this.alive,",
+                        "            HP: this.hp,",
+                        "            Status: this.status,",
+                        "            Target: this.target,",
+                        "            AniName: this.aniName,",
+                        "            PosX: this.posX,",
+                        "            PosY: this.posY",
+                        "        })",
+                        "    }",
+                        "}",
+                        "",
+                        "let b1 = new Boss()",
+                        "window.b1 = b1;",
+                        "",
+                        "if(isHost){",
+                        "    console.log('host')",
+                        "    client.sendToAll(b1.toJSON());",
+                        "}",
+                        "",
+                        "if(!isHost){",
+                        "    console.log('client')",
+                        "    client.client.on('message', (msg, rinfo) => {",
+                        "    const data = JSON.parse(msg.toString());",
+                        "    if(data.TYPE === 'BOSS'){",
+                        "        const alive = data.Alive",
+                        "        const hp = data.HP",
+                        "        const status = data.Status",
+                        "        const target = data.Target",
+                        "        const aniName = data.AniName;",
+                        "        const posX = data.PosX;",
+                        "        const posY = data.PosY;",
+                        "        b1.alive = alive;",
+                        "        b1.setHp(hp);",
+                        "        b1.setStatus(status);",
+                        "        b1.setTarget(target);",
+                        "        b1.setAni(aniName);",
+                        "        b1.setPos(posX,posY)",
+                        "     }",
+                        "    })",
+                        "}",
+                        ""
+                      ],
+                      "parameterObjects": "",
+                      "useStrict": true,
+                      "eventsSheetExpanded": true
                     }
                   ]
                 }
@@ -59487,6 +59538,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Boss Behavior",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -59496,7 +59548,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Boss 1",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -59573,6 +59624,34 @@
                       ],
                       "actions": [],
                       "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "Boss.B1.Alive",
+                                "False",
+                                "="
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                              },
+                              "parameters": [
+                                "Dad_Cat",
+                                "Animation",
+                                "=",
+                                "\"Sleeping\""
+                              ]
+                            }
+                          ]
+                        },
                         {
                           "colorB": 228,
                           "colorG": 176,
@@ -62596,6 +62675,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Testing",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -62683,7 +62763,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Send data to host",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -62692,17 +62771,14 @@
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
                 "const playerNumber = runtimeScene.getGame().getVariables().get(\"Player_Number\").getAsNumber();",
-                "",
                 "if(playerNumber === 1) ",
-                "  window.client.sendToAll(window.player1.toJSON())",
+                "  client.sendToAll(player1.toJSON())",
                 "",
                 "if(playerNumber === 2) ",
-                "  window.client.sendToAll(window.player2.toJSON());",
+                "  client.sendToAll(player2.toJSON());",
                 "",
                 "if(playerNumber === 3) ",
-                "  window.client.sendToAll(window.player3.toJSON());",
-                "",
-                "",
+                "  client.sendToAll(player3.toJSON());",
                 "",
                 ""
               ],
@@ -63061,7 +63137,6 @@
                 "                const newList = list.split(',');",
                 "                newList.forEach((element)=>{",
                 "                    this.addConnector(element);",
-                "                    console.log(element)",
                 "                })",
                 "                const game = runtimeScene.getGame();",
                 "                console.log('Joined to ' + rinfo.address)",
